@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User4Scene2TrackClientCaseProgress">
+   <children>
+      <Text layoutX="142.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Track Client Case Progress">
+         <font>
+            <Font name="Times New Roman" size="29.0" />
+         </font>
+      </Text>
+      <ComboBox layoutX="290.0" layoutY="70.0" prefWidth="150.0" />
+      <Text layoutX="188.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Client Case">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </Text>
+      <TableView layoutX="13.0" layoutY="110.0" prefHeight="208.0" prefWidth="574.0">
+        <columns>
+          <TableColumn prefWidth="194.4000244140625" text="Document Submission Status" />
+          <TableColumn prefWidth="219.20001220703125" text="Legal Review Status" />
+            <TableColumn prefWidth="163.20001220703125" text="Overall Progress" />
+        </columns>
+      </TableView>
+      <Button layoutX="257.0" layoutY="328.0" mnemonicParsing="false" text="Send Update" />
+      <Label layoutX="13.0" layoutY="358.0" prefHeight="34.0" prefWidth="574.0" textAlignment="JUSTIFY" />
+   </children>
+</AnchorPane>

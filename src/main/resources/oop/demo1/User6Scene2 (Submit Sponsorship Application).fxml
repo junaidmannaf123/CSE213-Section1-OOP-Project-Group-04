@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User6Scene2SubmitSponsorshipApplication">
+   <children>
+      <Text layoutX="111.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Submit Sponsorship Application">
+         <font>
+            <Font name="Times New Roman" size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="160.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Sponsorship Type" />
+      <ComboBox layoutX="300.0" layoutY="106.0" prefWidth="150.0" />
+      <TextField layoutX="301.0" layoutY="149.0" />
+      <Text layoutX="164.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Family Member’s Name" />
+      <Button layoutX="225.0" layoutY="200.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Upload Documents" />
+      <Button layoutX="225.0" layoutY="235.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Submit Application" />
+      <Label layoutX="225.0" layoutY="271.0" prefHeight="26.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
