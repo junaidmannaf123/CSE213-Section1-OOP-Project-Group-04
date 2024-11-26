@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="524.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra2.User8goal7">
+   <children>
+      <TableView fx:id="rolespermissiontableview" layoutX="192.0" layoutY="137.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="84.79998779296875" text="roles" />
+          <TableColumn prefWidth="114.4000244140625" text="permission" />
+        </columns>
+      </TableView>
+      <TextField fx:id="editpermisntextfield" layoutX="226.0" layoutY="359.0" promptText="edit specific permission" />
+      <Button fx:id="savechangesbutton" layoutX="248.0" layoutY="412.0" mnemonicParsing="false" text="save changes" />
+      <Button fx:id="notifyusersbutton" layoutX="252.0" layoutY="449.0" mnemonicParsing="false" text="notify users" />
+      <Text fx:id="reviewcompleximmcasetext" layoutX="175.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage System Permissions" underline="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

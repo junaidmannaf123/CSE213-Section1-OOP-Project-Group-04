@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labproject.U1g2">
+   <children>
+      <Label layoutX="121.0" layoutY="114.0" text="Client:">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="167.0" layoutY="36.0" prefHeight="27.0" prefWidth="297.0" text="Assist with Document Preparation">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="184.0" layoutY="109.0" prefWidth="150.0" />
+      <Label layoutX="223.0" layoutY="360.0" prefHeight="16.0" prefWidth="189.0">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="342.0" layoutY="168.0" prefHeight="140.0" prefWidth="217.0" />
+      <Button layoutX="99.0" layoutY="187.0" mnemonicParsing="false" text="Upload File" />
+      <Button layoutX="83.0" layoutY="282.0" mnemonicParsing="false" text="Submit" />
+      <Label layoutX="260.0" layoutY="168.0" text="Feedback:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="230.0" prefHeight="16.0" prefWidth="189.0">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labproject.U4g6">
+   <children>
+      <Label layoutX="187.0" layoutY="56.0" prefHeight="27.0" prefWidth="297.0" text="Download Consultation Notes">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="186.0" layoutY="134.0" prefHeight="16.0" prefWidth="79.0" text="Session:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="283.0" layoutY="184.0" mnemonicParsing="false" text="Download" />
+      <Label layoutX="197.0" layoutY="229.0" prefHeight="16.0" prefWidth="189.0">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="263.0" layoutY="129.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
