@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User4Scene2TrackClientCaseProgress">
    <children>
       <Text layoutX="142.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Track Client Case Progress">
@@ -32,5 +31,6 @@
       </TableView>
       <Button layoutX="257.0" layoutY="328.0" mnemonicParsing="false" text="Send Update" />
       <Label layoutX="13.0" layoutY="358.0" prefHeight="34.0" prefWidth="574.0" textAlignment="JUSTIFY" />
+      <Button layoutX="13.0" layoutY="14.0" mnemonicParsing="false" text="⬅" />
    </children>
 </AnchorPane>

@@ -21,5 +21,6 @@
       <Button layoutX="178.0" layoutY="200.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="108.0" text="Assign Case" />
       <Label layoutX="179.0" layoutY="243.0" prefHeight="18.0" prefWidth="268.0" />
       <Button layoutX="300.0" layoutY="201.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Send Notification" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" />
    </children>
 </AnchorPane>
