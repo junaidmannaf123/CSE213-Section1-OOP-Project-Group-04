@@ -62,5 +62,6 @@
                 <Font size="18.0" />
             </font>
         </Button>
+        <Button fx:id="backButton" layoutX="11.0" layoutY="18.0" mnemonicParsing="false" text="⬅" onAction="#handleBackToLogin" />
     </children>
 </AnchorPane>

@@ -75,7 +75,26 @@ public class User6ClientFSDashboardController {
         // Switch to another scene if necessary
         switchScene(event, "UploadFinancialEvidence.fxml");
     }
+    @FXML
+    private void handleBackToLogin(ActionEvent event) {
+        try {
+            // Load the Login scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScene.fxml"));
+            Parent root = loader.load();
 
+            // Get the current stage
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Set the new scene
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            System.out.println("Navigating back to the Login scene...");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error while navigating back to Login scene: " + e.getMessage());
+        }
+    }
     // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {

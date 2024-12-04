@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:controller="oop.demo1.User5CaseManagerDashboardController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User5CaseManagerDashboardController">
     <children>
         <Text layoutX="174.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Case Manager Dashboard" textAlignment="CENTER" wrappingWidth="316.00006103515625">
             <font>
@@ -15,53 +15,48 @@
         </Text>
         <Line endX="360.0" endY="-1.1444091796875E-5" layoutX="300.0" layoutY="62.0" startX="-300.0" startY="-1.1444091796875E-5" />
 
-        <!-- Adding onAction handlers for each button -->
-        <Button fx:id="trackClientProgressButton" layoutX="25.0" layoutY="125.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Track Client Case Progress" textAlignment="CENTER" onAction="#handleTrackClientProgress">
+        <!-- Buttons with onAction handlers -->
+        <Button fx:id="trackClientProgressButton" layoutX="25.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleTrackClientProgress" prefHeight="40.0" prefWidth="268.0" text="Track Client Case Progress" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-
-        <Button fx:id="assignCaseButton" layoutX="25.0" layoutY="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Assign Case to Legal Adviser" textAlignment="CENTER" onAction="#handleAssignCase">
+        <Button fx:id="assignCaseButton" layoutX="25.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleAssignCase" prefHeight="40.0" prefWidth="268.0" text="Assign Case to Legal Adviser" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-
-        <Button fx:id="caseCompletionButton" layoutX="25.0" layoutY="234.0" mnemonicParsing="false" text="Case Completion Confirmation" textAlignment="CENTER" onAction="#handleCaseCompletion">
+        <Button fx:id="caseCompletionButton" layoutX="25.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleCaseCompletion" text="Case Completion Confirmation" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-
-        <Button fx:id="handleEscalationsButton" layoutX="25.0" layoutY="289.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Handle Client Escalations" textAlignment="CENTER" onAction="#handleClientEscalations">
+        <Button fx:id="handleEscalationsButton" layoutX="25.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleClientEscalations" prefHeight="40.0" prefWidth="268.0" text="Handle Client Escalations" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-
-        <Button fx:id="generateReportsButton" layoutX="332.0" layoutY="125.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Generate Case Reports" textAlignment="CENTER" onAction="#handleGenerateReports">
+        <Button fx:id="generateReportsButton" layoutX="332.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleGenerateReports" prefHeight="40.0" prefWidth="294.0" text="Generate Case Reports" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-
-        <Button fx:id="monitorTimelinesButton" layoutX="332.0" layoutY="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Monitor Case Timelines" textAlignment="CENTER" onAction="#handleMonitorTimelines">
+        <Button fx:id="monitorTimelinesButton" layoutX="332.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleMonitorTimelines" prefHeight="40.0" prefWidth="294.0" text="Monitor Case Timelines" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-
-        <Button fx:id="coordinateDepartmentsButton" layoutX="333.0" layoutY="234.0" mnemonicParsing="false" text="Coordinate Between Departments" textAlignment="CENTER" onAction="#handleCoordinateDepartments">
+        <Button fx:id="coordinateDepartmentsButton" layoutX="333.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleCoordinateDepartments" text="Coordinate Between Departments" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-
-        <Button fx:id="archiveCasesButton" layoutX="332.0" layoutY="289.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Archive Completed Cases" textAlignment="CENTER" onAction="#handleArchiveCases">
+        <Button fx:id="archiveCasesButton" layoutX="332.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleArchiveCases" prefHeight="40.0" prefWidth="294.0" text="Archive Completed Cases" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
+        <!-- Back Button -->
+        <Button fx:id="backButton" layoutX="11.0" layoutY="18.0" mnemonicParsing="false" text="⬅" onAction="#handleBackToLogin" />
     </children>
 </AnchorPane>
