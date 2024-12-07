@@ -15,7 +15,6 @@
         </Text>
         <Line endX="360.0" endY="-1.1444091796875E-5" layoutX="300.0" layoutY="62.0" startX="-300.0" startY="-1.1444091796875E-5" />
 
-        <!-- Buttons with onAction handlers -->
         <Button fx:id="trackClientProgressButton" layoutX="25.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleTrackClientProgress" prefHeight="40.0" prefWidth="268.0" text="Track Client Case Progress" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
@@ -56,7 +55,6 @@
                 <Font size="18.0" />
             </font>
         </Button>
-        <!-- Back Button -->
         <Button fx:id="backButton" layoutX="11.0" layoutY="18.0" mnemonicParsing="false" text="⬅" onAction="#handleBackToLogin" />
     </children>
 </AnchorPane>
