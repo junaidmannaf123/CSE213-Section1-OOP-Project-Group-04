@@ -54,10 +54,16 @@ public class LoginSceneController implements Initializable {
             return;
         }
 
+        // Temporary hardcoded login credentials for testing
+        if (!loginId.equals("A") || !password.equals("1")) {
+            showAlert("Login Failed", "Invalid login credentials.", Alert.AlertType.ERROR);
+            return;
+        }
+
         // Switch scene based on user type
         switch (userType) {
             case "Immigration Consultant":
-                switchToDashboard("u3dashboard.fxml", "Immigration Consultant Dashboard");
+                switchToDashboard("Tasnin Siza/u3dashboard.fxml", "Immigration Consultant Dashboard");
                 break;
             case "Immigration Applicant":
                 switchToDashboard("u4dashboard.fxml", "Immigration Applicant Dashboard");
