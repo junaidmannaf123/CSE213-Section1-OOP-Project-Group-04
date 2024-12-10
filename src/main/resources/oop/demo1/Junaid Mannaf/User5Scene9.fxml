@@ -7,18 +7,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User5Scene9ArchiveCompletedCasesController">
    <children>
       <Text layoutX="148.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Archive Completed Cases">
          <font>
             <Font name="Times New Roman" size="29.0" />
          </font>
       </Text>
-      <ComboBox layoutX="299.0" layoutY="117.0" prefWidth="150.0" />
+      <ComboBox fx:id="completedCaseComboBox" layoutX="299.0" layoutY="117.0" prefWidth="150.0" />
       <Text layoutX="164.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Completed Case" />
-      <Button layoutX="301.0" layoutY="159.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Notify Client" />
-      <Button layoutX="163.0" layoutY="159.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" text="Archive Case" />
-      <Label layoutX="147.0" layoutY="200.0" prefHeight="33.0" prefWidth="303.0" textAlignment="CENTER" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" />
+      <Button fx:id="notifyClientButton" layoutX="301.0" layoutY="159.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Notify Client" onAction="#handleNotifyClient" />
+      <Button fx:id="archiveCaseButton" layoutX="163.0" layoutY="159.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" text="Archive Case" onAction="#handleArchiveCase" />
+      <Label fx:id="statusLabel" layoutX="147.0" layoutY="200.0" prefHeight="33.0" prefWidth="303.0" textAlignment="CENTER" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" onAction="#handleBackToDashboard" />
    </children>
 </AnchorPane>

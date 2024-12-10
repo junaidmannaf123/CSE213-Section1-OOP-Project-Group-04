@@ -7,19 +7,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User4Scene5HandleClientEscalations">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User5Scene5HandleClientEscalationsController">
    <children>
       <Text layoutX="149.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Handle Client Escalations">
          <font>
             <Font name="Times New Roman" size="29.0" />
          </font>
       </Text>
-      <ComboBox layoutX="300.0" layoutY="122.0" prefWidth="150.0" />
+      <ComboBox fx:id="escalatedCaseComboBox" layoutX="300.0" layoutY="122.0" prefWidth="150.0" />
       <Text layoutX="176.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Escalated Case" />
-      <Label layoutX="131.0" layoutY="161.0" prefHeight="44.0" prefWidth="349.0" textAlignment="CENTER" />
-      <Button layoutX="130.0" layoutY="220.0" mnemonicParsing="false" text="Assign to Consultant/Adviser" />
-      <Button layoutX="315.0" layoutY="220.0" mnemonicParsing="false" text="Send Follow-Up Notification" />
-      <Label layoutX="131.0" layoutY="262.0" prefHeight="44.0" prefWidth="349.0" textAlignment="CENTER" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" />
+      <Label fx:id="statusLabel" layoutX="131.0" layoutY="161.0" prefHeight="44.0" prefWidth="349.0" textAlignment="CENTER" />
+      <Button fx:id="assignButton" layoutX="130.0" layoutY="220.0" mnemonicParsing="false" text="Assign to Consultant/Adviser" onAction="#handleAssignToConsultant" />
+      <Button fx:id="followUpButton" layoutX="315.0" layoutY="220.0" mnemonicParsing="false" text="Send Follow-Up Notification" onAction="#handleFollowUpNotification" />
+      <Label fx:id="notificationLabel" layoutX="131.0" layoutY="262.0" prefHeight="44.0" prefWidth="349.0" textAlignment="CENTER" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" onAction="#handleBackToDashboard" />
    </children>
 </AnchorPane>

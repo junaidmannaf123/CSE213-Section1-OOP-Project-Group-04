@@ -77,7 +77,7 @@ public class User5Scene2TrackClientCaseProgressController {
     @FXML
     private void handleBackToDashboard(ActionEvent event) {
         System.out.println("Navigating back to Dashboard...");
-        switchScene(event, "User5CaseManagerDashboard.fxml");
+        switchScene(event, "/oop/demo1/Junaid Mannaf/User5CaseManagerDashboard.fxml");
     }
 
     // Helper method to switch scenes

@@ -9,24 +9,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Text layoutX="159.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monitor Case Timelines">
-         <font>
-            <Font name="Times New Roman" size="29.0" />
-         </font>
-      </Text>
-      <ComboBox layoutX="300.0" layoutY="83.0" prefWidth="150.0" />
-      <Text layoutX="194.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Client Case" />
-      <TableView layoutX="14.0" layoutY="130.0" prefHeight="200.0" prefWidth="572.0">
-        <columns>
-          <TableColumn prefWidth="168.0" text="Milestone" />
-          <TableColumn prefWidth="269.60003662109375" text="Due Date" />
-            <TableColumn prefWidth="134.39996337890625" text="Status" />
-        </columns>
-      </TableView>
-      <Button layoutX="217.0" layoutY="340.0" mnemonicParsing="false" text="Send Follow-Up Notification" />
-      <Label layoutX="216.0" layoutY="383.0" prefHeight="18.0" prefWidth="166.0" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" />
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User5Scene7MonitorCaseTimelinesController">
+    <children>
+        <Text layoutX="159.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monitor Case Timelines">
+            <font>
+                <Font name="Times New Roman" size="29.0" />
+            </font>
+        </Text>
+        <ComboBox fx:id="clientCaseComboBox" layoutX="300.0" layoutY="83.0" prefWidth="150.0" />
+        <Text layoutX="194.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Client Case" />
+        <TableView fx:id="caseTimelineTable" layoutX="14.0" layoutY="130.0" prefHeight="200.0" prefWidth="572.0">
+            <columns>
+                <TableColumn fx:id="milestoneColumn" prefWidth="168.0" text="Milestone" />
+                <TableColumn fx:id="dueDateColumn" prefWidth="269.6" text="Due Date" />
+                <TableColumn fx:id="statusColumn" prefWidth="134.4" text="Status" />
+            </columns>
+        </TableView>
+        <Button fx:id="followUpNotificationButton" layoutX="217.0" layoutY="340.0" mnemonicParsing="false" text="Send Follow-Up Notification" onAction="#handleSendFollowUpNotification" />
+        <Label fx:id="statusLabel" layoutX="216.0" layoutY="383.0" prefHeight="18.0" prefWidth="166.0" />
+        <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" onAction="#handleBackToDashboard" />
+    </children>
 </AnchorPane>

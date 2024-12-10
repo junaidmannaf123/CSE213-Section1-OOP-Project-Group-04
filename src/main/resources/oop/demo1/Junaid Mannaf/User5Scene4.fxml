@@ -7,18 +7,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User5Scene4SendCaseCompletionConfirmationController">
    <children>
       <Text layoutX="85.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send Case Completion Confirmation">
          <font>
             <Font name="Times New Roman" size="29.0" />
          </font>
       </Text>
-      <ComboBox layoutX="300.0" layoutY="154.0" prefWidth="150.0" />
+      <ComboBox fx:id="completedCaseComboBox" layoutX="300.0" layoutY="154.0" prefWidth="150.0" />
       <Text layoutX="166.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Completed Case" />
-      <Button layoutX="300.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Send Notification" />
-      <Button layoutX="166.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" text="Mark As Complete" />
-      <Label layoutX="166.0" layoutY="226.0" prefHeight="32.0" prefWidth="286.0" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" />
+      <Button fx:id="sendNotificationButton" layoutX="300.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Send Notification" onAction="#handleSendNotification" />
+      <Button fx:id="markCompleteButton" layoutX="166.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" text="Mark As Complete" onAction="#handleMarkAsComplete" />
+      <Label fx:id="statusLabel" layoutX="166.0" layoutY="226.0" prefHeight="32.0" prefWidth="286.0" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" onAction="#handleBackToDashboard" />
    </children>
 </AnchorPane>
