@@ -7,16 +7,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User7Goal1Controller">
    <children>
-      <Button fx:id="submitnotesbutton" layoutX="240.0" layoutY="512.0" mnemonicParsing="false" text="submit notes" />
-      <Button fx:id="usnbutton" layoutX="210.0" layoutY="548.0" mnemonicParsing="false" text="update status and notify" />
-      <ComboBox fx:id="lofcccombobox" layoutX="175.0" layoutY="167.0" prefHeight="26.0" prefWidth="214.0" promptText="list of flagged complex cases" />
-      <TextArea fx:id="casedetaildtextarea" layoutX="182.0" layoutY="256.0" prefHeight="200.0" prefWidth="200.0" promptText="display and edit case details" />
-      <Text fx:id="reviewcompleximmcasetext" layoutX="133.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Review Complex Immigration Cases" underline="true">
+      <Button fx:id="submitNotesButton" layoutX="240.0" layoutY="512.0" mnemonicParsing="false" text="Submit Notes" onAction="#handleSubmitNotes" />
+      <Button fx:id="updateStatusAndNotifyButton" layoutX="210.0" layoutY="548.0" mnemonicParsing="false" text="Update Status and Notify" onAction="#handleUpdateStatusAndNotify" />
+      <ComboBox fx:id="listOfFlaggedComplexCasesComboBox" layoutX="175.0" layoutY="167.0" prefHeight="26.0" prefWidth="214.0" promptText="List of Flagged Complex Cases" />
+      <TextArea fx:id="caseDetailsTextArea" layoutX="182.0" layoutY="256.0" prefHeight="200.0" prefWidth="200.0" promptText="Display and Edit Case Details" />
+      <Text fx:id="reviewComplexImmigrationCasesText" layoutX="133.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Review Complex Immigration Cases">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
+      <Button fx:id="backButton" layoutX="11.0" layoutY="18.0" mnemonicParsing="false" text="⬅" onAction="#handleBackToDashboard" />
    </children>
 </AnchorPane>

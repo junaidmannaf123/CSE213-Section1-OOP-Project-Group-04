@@ -12,14 +12,14 @@
             <Font name="Times New Roman" size="37.0" />
          </font>
       </Text>
-      <Button fx:id="reviewcomplximmcasbutton" layoutX="55.0" layoutY="145.0" mnemonicParsing="false" text="Review Complex Immigration Cases" />
-      <Button fx:id="providelegalsupportbutton" layoutX="54.0" layoutY="181.0" mnemonicParsing="false" text="Provide Legal Support for Visa Appeals" />
-      <Button fx:id="prpsponsorshipbutton" layoutX="55.0" layoutY="216.0" mnemonicParsing="false" text="Prepare Sponsorship Legal Documents" />
-      <Button fx:id="scedulelcwcbutton" layoutX="50.0" layoutY="252.0" mnemonicParsing="false" text="Schedule Legal Consultation with Clients" />
-      <Button fx:id="updatelegadvcbutton" layoutX="381.0" layoutY="145.0" mnemonicParsing="false" text="Update Legal Advice for Ongoing Cases" />
-      <Button fx:id="draftvrabutton" layoutX="455.0" layoutY="180.0" mnemonicParsing="false" text="Draft Visa Refusal Appeals" />
-      <Button fx:id="reviewlcfdbutton" layoutX="379.0" layoutY="216.0" mnemonicParsing="false" text="Review Legal Compliance for Documents" />
-      <Button fx:id="conductlrfpcbutton" layoutX="305.0" layoutY="253.0" mnemonicParsing="false" text="Conduct Legal Research forImmigration Policy Changes" />
+      <Button fx:id="reviewcomplximmcasbutton" layoutX="55.0" layoutY="145.0" mnemonicParsing="false" text="Review Complex Immigration Cases" onAction="#handleReviewComplImmCases" />
+      <Button fx:id="providelegalsupportbutton" layoutX="54.0" layoutY="181.0" mnemonicParsing="false" text="Provide Legal Support for Visa Appeals" onAction="#handleProvideLegalSupport" />
+      <Button fx:id="prpsponsorshipbutton" layoutX="55.0" layoutY="216.0" mnemonicParsing="false" text="Prepare Sponsorship Legal Documents" onAction="#handlePrepareSponsorship" />
+      <Button fx:id="scedulelcwcbutton" layoutX="50.0" layoutY="252.0" mnemonicParsing="false" text="Schedule Legal Consultation with Clients" onAction="#handleScheduleLegalConsultation" />
+      <Button fx:id="updatelegadvcbutton" layoutX="381.0" layoutY="145.0" mnemonicParsing="false" text="Update Legal Advice for Ongoing Cases" onAction="#handleUpdateLegalAdvice" />
+      <Button fx:id="draftvrabutton" layoutX="455.0" layoutY="180.0" mnemonicParsing="false" text="Draft Visa Refusal Appeals" onAction="#handleDraftVisaAppeals" />
+      <Button fx:id="reviewlcfdbutton" layoutX="379.0" layoutY="216.0" mnemonicParsing="false" text="Review Legal Compliance for Documents" onAction="#handleReviewCompliance" />
+      <Button fx:id="conductlrfpcbutton" layoutX="305.0" layoutY="253.0" mnemonicParsing="false" text="Conduct Legal Research for Immigration Policy Changes" onAction="#handleConductLegalResearch" />
       <Button fx:id="backButton" layoutX="11.0" layoutY="18.0" mnemonicParsing="false" text="⬅" onAction="#handleBackToLogin" />
    </children>
 </AnchorPane>

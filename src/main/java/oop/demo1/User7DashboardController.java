@@ -13,7 +13,7 @@ public class User7DashboardController {
     @FXML
     private void handleReviewComplImmCases(ActionEvent event) {
         System.out.println("Review Complex Immigration Cases button clicked.");
-        // Add logic here
+        switchScene(event, "/oop/demo1/Sanjida Akter Jui/user7goal1.fxml");
     }
 
     @FXML
@@ -57,22 +57,11 @@ public class User7DashboardController {
         System.out.println("Conduct Legal Research for Immigration Policy Changes button clicked.");
         // Add logic here
     }
+
     @FXML
     private void handleBackToLogin(ActionEvent event) {
-        try {
-            // Load the Login scene
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScene.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-            System.out.println("Navigating back to the Login scene...");
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error while navigating back to Login scene: " + e.getMessage());
-        }
-        System.out.println("Navigating back to Login scene...");
-        switchScene(event, "/oop/demo1/Junaid Mannaf/LoginScene.fxml");
+        System.out.println("Navigating back to the Login scene...");
+        switchScene(event, "/oop/demo1/LoginScene.fxml");
     }
 
     private void switchScene(ActionEvent event, String fxmlFile) {
