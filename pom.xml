@@ -74,25 +74,3 @@
         </plugins>
     </build>
 </project>
-<dependencies>
-<dependency>
-    <groupId>org.openjfx</groupId>
-    <artifactId>javafx-controls</artifactId>
-    <version>21</version>
-</dependency>
-<dependency>
-    <groupId>org.openjfx</groupId>
-    <artifactId>javafx-fxml</artifactId>
-    <version>21</version>
-</dependency>
-<dependency>
-    <groupId>org.openjfx</groupId>
-    <artifactId>javafx-graphics</artifactId>
-    <version>21</version>
-</dependency>
-</dependencies>
-<dependency>
-<groupId>org.openjfx</groupId>
-<artifactId>javafx-controls</artifactId>
-<version>21</version> <!-- Use the version matching your JavaFX runtime -->
-</dependency>
