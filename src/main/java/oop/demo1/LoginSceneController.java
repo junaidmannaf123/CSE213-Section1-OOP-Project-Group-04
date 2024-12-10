@@ -55,7 +55,7 @@ public class LoginSceneController implements Initializable {
         }
 
         // Temporary hardcoded login credentials for testing
-        if (!loginId.equals("A") || !password.equals("1")) {
+        if (!loginId.equals("abcd") || !password.equals("1234")) {
             showAlert("Login Failed", "Invalid login credentials.", Alert.AlertType.ERROR);
             return;
         }
@@ -66,7 +66,7 @@ public class LoginSceneController implements Initializable {
                 switchToDashboard("Tasnin Siza/u3dashboard.fxml", "Immigration Consultant Dashboard");
                 break;
             case "Immigration Applicant":
-                switchToDashboard("u4dashboard.fxml", "Immigration Applicant Dashboard");
+                switchToDashboard("Tasnin Siza/u4dashboard.fxml", "Immigration Applicant Dashboard");
                 break;
             case "Case Manager":
                 switchToDashboard("Junaid Mannaf/User5CaseManagerDashboard.fxml", "Case Manager Dashboard");
@@ -75,10 +75,10 @@ public class LoginSceneController implements Initializable {
                 switchToDashboard("Junaid Mannaf/User6ClientFSDashboard.fxml", "Client Dashboard");
                 break;
             case "Legal Advisor":
-                switchToDashboard("user7coverpage.fxml", "Legal Advisor Dashboard");
+                switchToDashboard("Sanjida Akter Jui/user7dashboard.fxml", "Legal Advisor Dashboard");
                 break;
             case "IT Support":
-                switchToDashboard("user8coverpage.fxml", "IT Support Dashboard");
+                switchToDashboard("Sanjida Akter Jui/user8dashboard.fxml", "IT Support Dashboard");
                 break;
             default:
                 showAlert("Access Denied", "Unknown user type.", Alert.AlertType.ERROR);
