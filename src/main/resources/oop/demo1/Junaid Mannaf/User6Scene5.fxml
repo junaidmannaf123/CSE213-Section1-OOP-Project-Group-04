@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User6Scene5DownloadSponsorshipGuidelines">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User6Scene5DownloadSponsorshipGuidelinesController">
    <children>
       <Text layoutX="98.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Download Sponsorship Guidelines">
          <font>
@@ -15,9 +15,9 @@
          </font>
       </Text>
       <Text layoutX="129.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Sponsorship Guidelines" />
-      <ComboBox layoutX="300.0" layoutY="174.0" prefWidth="150.0" />
-      <Button layoutX="130.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="321.0" text="Download Guidelines" />
-      <Label layoutX="129.0" layoutY="274.0" prefHeight="26.0" prefWidth="322.0" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" />
+      <ComboBox fx:id="guidelinesComboBox" layoutX="300.0" layoutY="174.0" prefWidth="150.0" />
+      <Button fx:id="downloadButton" layoutX="130.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="321.0" text="Download Guidelines" onAction="#handleDownloadGuidelines" />
+      <Label fx:id="statusLabel" layoutX="129.0" layoutY="274.0" prefHeight="26.0" prefWidth="322.0" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" onAction="#handleBack" />
    </children>
 </AnchorPane>

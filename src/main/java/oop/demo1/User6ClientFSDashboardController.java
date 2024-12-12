@@ -17,7 +17,7 @@ public class User6ClientFSDashboardController {
         // Handle submit sponsorship application action
         System.out.println("Sponsorship application submitted.");
         // You can switch to another scene if needed
-        switchScene(event, "SubmitSponsorshipApplication.fxml");
+        switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene2.fxml");
     }
 
     @FXML
@@ -25,7 +25,7 @@ public class User6ClientFSDashboardController {
         // Handle track sponsorship status action
         System.out.println("Tracking sponsorship status.");
         // Switch to another scene if necessary
-        switchScene(event, "TrackSponsorshipStatus.fxml");
+        switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene3.fxml");
     }
 
     @FXML
@@ -33,7 +33,7 @@ public class User6ClientFSDashboardController {
         // Handle upload additional documents action
         System.out.println("Uploading additional documents.");
         // Switch to another scene if necessary
-        switchScene(event, "UploadDocuments.fxml");
+        switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene4.fxml");
     }
 
     @FXML
@@ -41,7 +41,7 @@ public class User6ClientFSDashboardController {
         // Handle schedule consultation action
         System.out.println("Scheduling consultation.");
         // Switch to another scene if necessary
-        switchScene(event, "ScheduleConsultation.fxml");
+        switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene6.fxml");
     }
 
     @FXML
@@ -49,7 +49,7 @@ public class User6ClientFSDashboardController {
         // Handle download guidelines action
         System.out.println("Downloading guidelines.");
         // Switch to another scene if necessary
-        switchScene(event, "DownloadGuidelines.fxml");
+        switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene5.fxml");
     }
 
     @FXML
@@ -57,7 +57,7 @@ public class User6ClientFSDashboardController {
         // Handle submit payment action
         System.out.println("Submitting payment.");
         // Switch to another scene if necessary
-        switchScene(event, "SubmitPayment.fxml");
+        switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene7.fxml");
     }
 
     @FXML
@@ -65,7 +65,7 @@ public class User6ClientFSDashboardController {
         // Handle request legal consultation action
         System.out.println("Requesting legal consultation.");
         // Switch to another scene if necessary
-        switchScene(event, "RequestLegalConsultation.fxml");
+        switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene8.fxml");
     }
 
     @FXML
@@ -73,7 +73,7 @@ public class User6ClientFSDashboardController {
         // Handle upload financial evidence action
         System.out.println("Uploading financial evidence.");
         // Switch to another scene if necessary
-        switchScene(event, "UploadFinancialEvidence.fxml");
+        switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene9.fxml");
     }
     @FXML
     private void handleBackToLogin(ActionEvent event) {

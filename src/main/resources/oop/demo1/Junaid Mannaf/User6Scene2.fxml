@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User6Scene2SubmitSponsorshipApplication">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User6Scene2SubmitSponsorshipApplicationController">
    <children>
       <Text layoutX="111.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Submit Sponsorship Application">
          <font>
@@ -16,12 +16,12 @@
          </font>
       </Text>
       <Text layoutX="160.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Sponsorship Type" />
-      <ComboBox layoutX="300.0" layoutY="106.0" prefWidth="150.0" />
-      <TextField layoutX="301.0" layoutY="149.0" />
+      <ComboBox fx:id="sponsorshipTypeComboBox" layoutX="300.0" layoutY="106.0" prefWidth="150.0" />
+      <TextField fx:id="familyMemberNameTextField" layoutX="301.0" layoutY="149.0" />
       <Text layoutX="164.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Family Member’s Name" />
-      <Button layoutX="225.0" layoutY="200.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Upload Documents" />
-      <Button layoutX="225.0" layoutY="235.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Submit Application" />
-      <Label layoutX="225.0" layoutY="271.0" prefHeight="26.0" prefWidth="150.0" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" />
+      <Button fx:id="uploadDocumentsButton" layoutX="225.0" layoutY="200.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Upload Documents" onAction="#handleUploadDocuments" />
+      <Button fx:id="submitApplicationButton" layoutX="225.0" layoutY="235.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Submit Application" onAction="#handleSubmitApplication" />
+      <Label fx:id="statusLabel" layoutX="225.0" layoutY="271.0" prefHeight="26.0" prefWidth="150.0" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" onAction="#handleBack" />
    </children>
 </AnchorPane>

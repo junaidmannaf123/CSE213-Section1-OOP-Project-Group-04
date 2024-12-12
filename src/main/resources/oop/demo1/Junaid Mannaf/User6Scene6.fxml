@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User6Scene4ScheduleSponsorshipConsultation">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.User6Scene6ScheduleSponsorshipConsultationController">
    <children>
       <Text layoutX="94.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule Sponsorship Consultation">
          <font>
@@ -15,9 +15,9 @@
          </font>
       </Text>
       <Text layoutX="170.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Preferred Date" />
-      <DatePicker layoutX="293.0" layoutY="179.0" />
-      <Button layoutX="170.0" layoutY="222.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="Confirm Appointment" />
-      <Label layoutX="170.0" layoutY="264.0" prefHeight="26.0" prefWidth="298.0" textAlignment="CENTER" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" />
+      <DatePicker fx:id="datePicker" layoutX="293.0" layoutY="179.0" />
+      <Button fx:id="confirmButton" layoutX="170.0" layoutY="222.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="Confirm Appointment" onAction="#handleConfirmAppointment" />
+      <Label fx:id="statusLabel" layoutX="170.0" layoutY="264.0" prefHeight="26.0" prefWidth="298.0" textAlignment="CENTER" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="⬅" onAction="#handleBack" />
    </children>
 </AnchorPane>
