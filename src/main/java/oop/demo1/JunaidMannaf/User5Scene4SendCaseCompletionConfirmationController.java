@@ -1,4 +1,4 @@
-package oop.demo1;
+package oop.demo1.JunaidMannaf;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,51 +14,48 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class User5Scene5HandleClientEscalationsController implements Initializable {
+public class User5Scene4SendCaseCompletionConfirmationController implements Initializable {
 
     @FXML
-    private ComboBox<String> escalatedCaseComboBox;
+    private ComboBox<String> completedCaseComboBox;
 
     @FXML
     private Label statusLabel;
 
-    @FXML
-    private Label notificationLabel;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Populate the ComboBox with sample escalated cases
-        escalatedCaseComboBox.getItems().addAll(
-                "Case 101: Sponsorship Delay",
-                "Case 102: Missing Documents",
-                "Case 103: Legal Adviser Unavailable",
-                "Case 104: Urgent Processing Required"
+        // Populate the ComboBox with sample completed cases
+        completedCaseComboBox.getItems().addAll(
+                "Case 001: Immigration Sponsorship",
+                "Case 002: Refugee Application",
+                "Case 003: Family Reunification",
+                "Case 004: Employment Authorization"
         );
     }
 
-    // Handle "Assign to Consultant/Adviser" button click
+    // Handle "Mark As Complete" button click
     @FXML
-    private void handleAssignToConsultant(ActionEvent event) {
-        String selectedCase = escalatedCaseComboBox.getValue();
+    private void handleMarkAsComplete(ActionEvent event) {
+        String selectedCase = completedCaseComboBox.getValue();
 
         if (selectedCase == null) {
-            statusLabel.setText("Please select an escalated case.");
+            statusLabel.setText("Please select a completed case.");
         } else {
-            statusLabel.setText("Case '" + selectedCase + "' assigned to a consultant/adviser.");
-            System.out.println("Assigned escalated case: " + selectedCase);
+            statusLabel.setText("Case '" + selectedCase + "' marked as complete.");
+            System.out.println("Marked as complete: " + selectedCase);
         }
     }
 
-    // Handle "Send Follow-Up Notification" button click
+    // Handle "Send Notification" button click
     @FXML
-    private void handleFollowUpNotification(ActionEvent event) {
-        String selectedCase = escalatedCaseComboBox.getValue();
+    private void handleSendNotification(ActionEvent event) {
+        String selectedCase = completedCaseComboBox.getValue();
 
         if (selectedCase == null) {
-            notificationLabel.setText("Please select an escalated case before sending a notification.");
+            statusLabel.setText("Please select a completed case before sending a notification.");
         } else {
-            notificationLabel.setText("Follow-up notification sent for case: '" + selectedCase + "'.");
-            System.out.println("Follow-up notification sent for: " + selectedCase);
+            statusLabel.setText("Notification sent for case: '" + selectedCase + "'.");
+            System.out.println("Notification sent for: " + selectedCase);
         }
     }
 
@@ -84,3 +81,4 @@ public class User5Scene5HandleClientEscalationsController implements Initializab
         }
     }
 }
+

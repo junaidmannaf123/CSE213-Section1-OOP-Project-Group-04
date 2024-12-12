@@ -1,4 +1,4 @@
-package oop.demo1;
+package oop.demo1.JunaidMannaf;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -62,7 +62,7 @@ public class User5CaseManagerDashboardController {
     private void handleBackToLogin(ActionEvent event) {
         try {
             // Load the Login scene
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScene.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/demo1/LoginScene.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));

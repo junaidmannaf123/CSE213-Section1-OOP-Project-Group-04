@@ -1,4 +1,4 @@
-package oop.demo1;
+package oop.demo1.JunaidMannaf;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -16,19 +15,16 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class User5Scene7MonitorCaseTimelinesController implements Initializable {
+public class User5Scene8CoordinateBetweenDepartmentsController implements Initializable {
 
     @FXML
-    private ComboBox<String> clientCaseComboBox;
+    private TableView<String> departmentTasksTable;
 
     @FXML
-    private TableView<String> caseTimelineTable;
+    private TableColumn<String, String> departmentColumn;
 
     @FXML
-    private TableColumn<String, String> milestoneColumn;
-
-    @FXML
-    private TableColumn<String, String> dueDateColumn;
+    private TableColumn<String, String> taskColumn;
 
     @FXML
     private TableColumn<String, String> statusColumn;
@@ -38,28 +34,24 @@ public class User5Scene7MonitorCaseTimelinesController implements Initializable 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Populate ComboBox with sample client cases
-        clientCaseComboBox.getItems().addAll(
-                "Case 201: Immigration Sponsorship",
-                "Case 202: Legal Document Review",
-                "Case 203: Visa Application Assistance",
-                "Case 204: Citizenship Process"
-        );
-
-        // Set placeholder for TableView
-        caseTimelineTable.setPlaceholder(new Label("No milestones to display. Please select a case."));
+        // Placeholder for table initialization
+        departmentTasksTable.setPlaceholder(new Label("No tasks to display. Add tasks to manage department coordination."));
     }
 
-    // Handle "Send Follow-Up Notification" button click
+    // Handle "Send Internal Message" button click
     @FXML
-    private void handleSendFollowUpNotification(ActionEvent event) {
-        String selectedCase = clientCaseComboBox.getValue();
-        if (selectedCase == null) {
-            statusLabel.setText("Please select a client case before sending a notification.");
-        } else {
-            statusLabel.setText("Follow-up notification sent for case: " + selectedCase);
-            System.out.println("Notification sent for: " + selectedCase);
-        }
+    private void handleSendInternalMessage(ActionEvent event) {
+        // Logic to send an internal message
+        statusLabel.setText("Internal message sent to the selected department.");
+        System.out.println("Internal message sent.");
+    }
+
+    // Handle "Update Client" button click
+    @FXML
+    private void handleUpdateClient(ActionEvent event) {
+        // Logic to update client
+        statusLabel.setText("Client updated with the latest department status.");
+        System.out.println("Client updated.");
     }
 
     // Handle "Back" button click

@@ -1,4 +1,4 @@
-package oop.demo1;
+package oop.demo1.JunaidMannaf;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,38 +6,40 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class User6Scene3TrackSponsorshipApplicationStatusController {
+import java.time.LocalDate;
+
+public class User6Scene6ScheduleSponsorshipConsultationController {
 
     @FXML
-    private TextField applicationNumberTextField;
+    private DatePicker datePicker;
+
+    @FXML
+    private Button confirmButton;
 
     @FXML
     private Label statusLabel;
 
-    // Handle "Track Status" button click
     @FXML
-    private void handleTrackStatus(ActionEvent event) {
-        String applicationNumber = applicationNumberTextField.getText();
+    private Button backButton;
 
-        if (applicationNumber == null || applicationNumber.isEmpty()) {
-            statusLabel.setText("Please enter an application number.");
+    @FXML
+    void handleConfirmAppointment(ActionEvent event) {
+        LocalDate selectedDate = datePicker.getValue();
+        if (selectedDate == null) {
+            statusLabel.setText("Please select a date.");
+        } else if (selectedDate.isBefore(LocalDate.now())) {
+            statusLabel.setText("Date cannot be in the past. Please select a future date.");
         } else {
-            // Simulate application tracking logic
-            if (applicationNumber.equals("12345")) {
-                statusLabel.setText("Status: Approved");
-            } else if (applicationNumber.equals("67890")) {
-                statusLabel.setText("Status: Pending");
-            } else {
-                statusLabel.setText("Application not found.");
-            }
+            statusLabel.setText("Appointment confirmed for: " + selectedDate.toString());
         }
     }
 
-    // Handle "Back" button click
+    /// Handle "Back" button click
     @FXML
     private void handleBack(ActionEvent event) {
         System.out.println("Navigating back to the previous screen...");
