@@ -10,33 +10,33 @@
 
 <AnchorPane prefHeight="487.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.TasninSiza.u3g6controller">
    <children>
-      <Label layoutX="200.0" layoutY="42.0" prefHeight="26.0" prefWidth="157.0" text="Client Queries">
+      <Label fx:id="clientQueriesLabel" layoutX="200.0" layoutY="42.0" prefHeight="26.0" prefWidth="157.0" text="Client Queries">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="63.0" layoutY="310.0" prefHeight="16.0" prefWidth="79.0" text="Responnse:">
+      <Label fx:id="responseLabel" layoutX="63.0" layoutY="310.0" prefHeight="16.0" prefWidth="79.0" text="Response:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="424.0" layoutY="341.0" mnemonicParsing="false" text="Update" />
-      <Label layoutX="63.0" layoutY="103.0" text="Query List:">
+      <Button fx:id="updateButton" layoutX="424.0" layoutY="341.0" mnemonicParsing="false" onAction="#handleUpdate" text="Update Query" />
+      <Label fx:id="queryListLabel" layoutX="63.0" layoutY="103.0" text="Query List:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="383.0" layoutY="385.0" prefHeight="36.0" prefWidth="165.0">
+      <Label fx:id="statusLabel" layoutX="383.0" layoutY="385.0" prefHeight="36.0" prefWidth="165.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <TableView layoutY="128.0" prefHeight="132.0" prefWidth="651.0">
+      <TableView fx:id="queryTable" layoutY="128.0" prefHeight="132.0" prefWidth="651.0">
          <columns>
             <TableColumn prefWidth="385.59998166561127" text="Query" />
             <TableColumn minWidth="0.0" prefWidth="264.7999572753906" text="Status" />
          </columns>
       </TableView>
-      <TextArea layoutX="35.0" layoutY="335.0" prefHeight="98.0" prefWidth="302.0" />
+      <TextArea fx:id="responseTextArea" layoutX="35.0" layoutY="335.0" prefHeight="98.0" prefWidth="302.0" promptText="Enter your response here..." onKeyReleased="#handleResponseChange"/>
    </children>
 </AnchorPane>

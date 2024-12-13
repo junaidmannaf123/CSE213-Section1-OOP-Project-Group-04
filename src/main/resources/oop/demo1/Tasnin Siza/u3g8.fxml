@@ -9,28 +9,28 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.TasninSiza.u3g8controller">
    <children>
-      <Label layoutX="177.0" layoutY="46.0" prefHeight="27.0" prefWidth="297.0" text="Organize Client Workshops">
+      <Label fx:id="titleLabel" layoutX="177.0" layoutY="46.0" prefHeight="27.0" prefWidth="297.0" text="Organize Client Workshops">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="131.0" layoutY="124.0" text="Topic:">
+      <Label fx:id="topicLabel" layoutX="131.0" layoutY="124.0" text="Topic:">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="194.0" layoutY="119.0" prefWidth="150.0" />
-      <Label layoutX="228.0" layoutY="269.0" prefHeight="27.0" prefWidth="116.0">
+      <ComboBox fx:id="topicComboBox" layoutX="194.0" layoutY="119.0" prefWidth="150.0" promptText="Select Workshop Topic" onAction="#handleTopicSelection"/>
+      <Label fx:id="confirmationLabel" layoutX="228.0" layoutY="269.0" prefHeight="27.0" prefWidth="116.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="238.0" layoutY="220.0" mnemonicParsing="false" text="Comfirm" />
-      <Label layoutX="87.0" layoutY="162.0" text="Workshop Date:">
+      <Button fx:id="confirmButton" layoutX="238.0" layoutY="220.0" mnemonicParsing="false" text="Confirm" onAction="#handleConfirm"/>
+      <Label fx:id="dateLabel" layoutX="87.0" layoutY="162.0" text="Workshop Date:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <DatePicker layoutX="194.0" layoutY="157.0" />
+      <DatePicker fx:id="workshopDatePicker" layoutX="194.0" layoutY="157.0" promptText="Select Workshop Date" onAction="#handleDateSelection"/>
    </children>
 </AnchorPane>

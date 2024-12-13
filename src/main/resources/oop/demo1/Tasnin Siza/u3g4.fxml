@@ -9,28 +9,28 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.TasninSiza.u3g4controller">
    <children>
-      <Label layoutX="131.0" layoutY="124.0" text="Case:">
+      <Label fx:id="caseLabel" layoutX="131.0" layoutY="124.0" text="Case:">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="203.0" layoutY="46.0" prefHeight="26.0" prefWidth="186.0" text="Legal Guidance">
+      <Label fx:id="titleLabel" layoutX="203.0" layoutY="46.0" prefHeight="26.0" prefWidth="186.0" text="Legal Guidance">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <ComboBox layoutX="194.0" layoutY="119.0" prefWidth="150.0" />
-      <Button layoutX="287.0" layoutY="320.0" mnemonicParsing="false" text="Save" />
-      <Label layoutX="130.0" layoutY="172.0" text="Notes:">
+      <ComboBox fx:id="caseComboBox" layoutX="194.0" layoutY="119.0" onAction="#handleCaseSelection" prefWidth="150.0" promptText="Select Case" />
+      <Button fx:id="saveButton" layoutX="287.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleSave" text="Save" />
+      <Label fx:id="notesLabel" layoutX="130.0" layoutY="172.0" text="Notes:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="246.0" layoutY="353.0" prefHeight="16.0" prefWidth="121.0">
+      <Label fx:id="statusLabel" layoutX="246.0" layoutY="353.0" prefHeight="16.0" prefWidth="121.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <TextArea layoutX="177.0" layoutY="163.0" prefHeight="138.0" prefWidth="261.0" />
+      <TextArea fx:id="notesTextArea" layoutX="177.0" layoutY="163.0" onKeyReleased="#handleNotesChange" prefHeight="138.0" prefWidth="261.0" promptText="Enter legal advice here..." />
    </children>
 </AnchorPane>

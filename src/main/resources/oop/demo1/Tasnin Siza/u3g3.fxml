@@ -10,29 +10,29 @@
 
 <AnchorPane prefHeight="443.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.TasninSiza.u3g3controller">
    <children>
-      <Label layoutX="168.0" layoutY="107.0" text="Client:">
+      <Label fx:id="clientLabel" layoutX="168.0" layoutY="107.0" text="Client:">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="177.0" layoutY="46.0" prefHeight="27.0" prefWidth="297.0" text=" Monitor Client Progress">
+      <Label fx:id="titleLabel" layoutX="177.0" layoutY="46.0" prefHeight="27.0" prefWidth="297.0" text="Monitor Client Progress">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <ComboBox layoutX="218.0" layoutY="102.0" prefWidth="150.0" />
-      <Button layoutX="272.0" layoutY="393.0" mnemonicParsing="false" text="Send Updates" />
-      <Label layoutX="35.0" layoutY="149.0" text="Progress Tracker:">
+      <ComboBox fx:id="clientComboBox" layoutX="218.0" layoutY="102.0" onAction="#handleClientSelection" prefWidth="150.0" promptText="Select Client" />
+      <Button fx:id="sendUpdatesButton" layoutX="272.0" layoutY="393.0" mnemonicParsing="false" onAction="#handleSendUpdates" text="Send Updates" />
+      <Label fx:id="progressTrackerLabel" layoutX="35.0" layoutY="149.0" text="Progress Tracker:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TableView layoutY="175.0" prefHeight="200.0" prefWidth="620.0">
-        <columns>
-          <TableColumn prefWidth="172.8000122308731" text="Milestone" />
-          <TableColumn prefWidth="250.39996337890625" text="Status " />
-            <TableColumn prefWidth="207.20004272460938" text="Deadline" />
-        </columns>
+      <TableView fx:id="progressTrackerTable" layoutY="175.0" prefHeight="200.0" prefWidth="620.0">
+         <columns>
+            <TableColumn fx:id="milestoneColumn" prefWidth="172.8000122308731" text="Milestone" />
+            <TableColumn fx:id="statusColumn" prefWidth="250.39996337890625" text="Status" />
+            <TableColumn fx:id="deadlineColumn" prefWidth="207.20004272460938" text="Deadline" />
+         </columns>
       </TableView>
    </children>
 </AnchorPane>
