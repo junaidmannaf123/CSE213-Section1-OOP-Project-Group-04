@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="443.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labproject.U3g3">
    <children>
-      <Label layoutX="295.0" layoutY="107.0" text="Client:">
+      <Label layoutX="168.0" layoutY="107.0" text="Client:">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
@@ -21,23 +20,20 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <ComboBox layoutX="358.0" layoutY="102.0" prefWidth="150.0" />
-      <Button layoutX="376.0" layoutY="200.0" mnemonicParsing="false" text="Send Updates" />
-      <Label layoutX="88.0" layoutY="140.0" text="Progress Tracker:">
+      <ComboBox layoutX="218.0" layoutY="102.0" prefWidth="150.0" />
+      <Button layoutX="272.0" layoutY="393.0" mnemonicParsing="false" text="Send Updates" />
+      <Label layoutX="35.0" layoutY="149.0" text="Progress Tracker:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="319.0" layoutY="245.0" prefHeight="16.0" prefWidth="189.0">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-      </Label>
-      <TableView layoutX="54.0" layoutY="170.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView layoutY="175.0" prefHeight="200.0" prefWidth="620.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="172.8000122308731" text="Milestone" />
+          <TableColumn prefWidth="250.39996337890625" text="Status " />
+            <TableColumn prefWidth="207.20004272460938" text="Deadline" />
         </columns>
       </TableView>
+      <Button fx:id="backButton" layoutX="35.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleBackToLogin" text="⬅" />
    </children>
 </AnchorPane>
