@@ -36,7 +36,6 @@
           <TableColumn prefWidth="106.39997863769531" text="Status" />
         </columns>
       </TableView>
-      <Button fx:id="backButton" layoutX="25.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleBackToLogin" text="⬅" />
       <Label layoutX="368.0" layoutY="159.0" prefHeight="16.0" prefWidth="104.0" text="Upload Document" />
    </children>
 </AnchorPane>

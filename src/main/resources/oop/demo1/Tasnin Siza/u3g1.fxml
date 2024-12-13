@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="428.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.TasninSiza.u3g1controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labproject.U1g1">
    <children>
-      <ComboBox fx:id="clientComboBox" layoutX="35.0" layoutY="135.0" prefHeight="40.0" prefWidth="268.0" onAction="#handleSaveNotes">
-         <items>
-            <FXCollections fx:factory="observableArrayList">
-               <String fx:value="Client 1"/>
-               <String fx:value="Client 2"/>
-               <String fx:value="Client 3"/>
-            </FXCollections>
-         </items>
-      </ComboBox>
-      <TextArea fx:id="consultationNotesTextArea" layoutX="35.0" layoutY="190.0" prefHeight="100.0" prefWidth="268.0" />
-      <Button fx:id="saveNotesButton" layoutX="35.0" layoutY="300.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Save Consultation Notes" onAction="#handleSaveNotes">
+      <Label layoutX="164.0" layoutY="35.0" prefHeight="35.0" prefWidth="205.0" text="Initial Consultation">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="19.0" />
          </font>
-      </Button>
-      <Button fx:id="backButton" layoutX="342.0" layoutY="300.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Back to Dashboard" onAction="#handleBackToLogin">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
+      </Label>
+      <ComboBox layoutX="213.0" layoutY="108.0" prefWidth="150.0" promptText="Select Client" />
+      <TextArea layoutX="79.0" layoutY="146.0" prefHeight="167.0" prefWidth="418.0" text="Enter consultation notes here..." />
+      <Button layoutX="250.0" layoutY="334.0" mnemonicParsing="false" text="Save Notes" />
    </children>
 </AnchorPane>

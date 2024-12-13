@@ -25,6 +25,5 @@
          </font>
       </Label>
       <TextField layoutX="224.0" layoutY="125.0" />
-      <Button fx:id="backButton" layoutX="44.0" layoutY="36.0" mnemonicParsing="false" onAction="#handleBackToLogin" text="⬅" />
    </children>
 </AnchorPane>

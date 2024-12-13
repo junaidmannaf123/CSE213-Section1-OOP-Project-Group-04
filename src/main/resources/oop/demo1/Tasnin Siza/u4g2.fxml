@@ -32,6 +32,5 @@
          </font>
       </Label>
       <DatePicker layoutX="210.0" layoutY="151.0" />
-      <Button fx:id="backButton" layoutX="55.0" layoutY="52.0" mnemonicParsing="false" onAction="#handleBackToLogin" text="⬅" />
    </children>
 </AnchorPane>

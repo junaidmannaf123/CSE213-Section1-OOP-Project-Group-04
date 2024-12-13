@@ -34,6 +34,5 @@
             <TableColumn prefWidth="207.20004272460938" text="Deadline" />
         </columns>
       </TableView>
-      <Button fx:id="backButton" layoutX="35.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleBackToLogin" text="⬅" />
    </children>
 </AnchorPane>
