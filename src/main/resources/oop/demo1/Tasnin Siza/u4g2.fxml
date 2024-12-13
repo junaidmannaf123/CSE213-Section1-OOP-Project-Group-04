@@ -19,8 +19,8 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="236.0" layoutY="193.0" prefWidth="150.0" />
-      <Button layoutX="236.0" layoutY="254.0" mnemonicParsing="false" text="Comfirm" />
+      <ComboBox fx:id="timeSlotComboBox" layoutX="236.0" layoutY="193.0" prefWidth="150.0" onAction="#handleTimeSlotSelection"/>
+      <Button fx:id="confirmButton" layoutX="236.0" layoutY="254.0" mnemonicParsing="false" text="Confirm" onAction="#handleConfirm"/>
       <Label layoutX="202.0" layoutY="289.0" prefHeight="36.0" prefWidth="130.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
@@ -31,6 +31,6 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <DatePicker layoutX="210.0" layoutY="151.0" />
+      <DatePicker fx:id="datePicker" layoutX="210.0" layoutY="151.0" onAction="#handleDateSelection"/>
    </children>
 </AnchorPane>

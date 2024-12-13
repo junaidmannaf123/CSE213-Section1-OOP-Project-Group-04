@@ -20,38 +20,38 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="148.0" layoutY="125.0" prefWidth="150.0" />
+      <ComboBox fx:id="feeTypeComboBox" layoutX="148.0" layoutY="125.0" prefWidth="150.0" />
       <Label layoutX="73.0" layoutY="262.0" prefHeight="16.0" prefWidth="79.0" text="CVV:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="130.0" layoutY="257.0" />
+      <TextField fx:id="cvvTextField" layoutX="130.0" layoutY="257.0" />
       <Label layoutX="71.0" layoutY="220.0" prefHeight="16.0" prefWidth="86.0" text="Expiry Date:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <DatePicker layoutX="161.0" layoutY="215.0" />
+      <DatePicker fx:id="expiryDatePicker" layoutX="161.0" layoutY="215.0" />
       <Label layoutX="72.0" layoutY="303.0" prefHeight="16.0" prefWidth="150.0" text="Card Holder Name:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="207.0" layoutY="298.0" prefHeight="26.0" prefWidth="270.0" />
+      <TextField fx:id="cardHolderTextField" layoutX="207.0" layoutY="298.0" prefHeight="26.0" prefWidth="270.0" />
       <Label layoutX="72.0" layoutY="349.0" prefHeight="16.0" prefWidth="118.0" text="Billing address:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="196.0" layoutY="344.0" />
+      <TextField fx:id="billingAddressTextField" layoutX="196.0" layoutY="344.0" />
       <Label layoutX="72.0" layoutY="175.0" prefHeight="16.0" prefWidth="93.0" text="Card Number:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="175.0" layoutY="170.0" />
-      <Button layoutX="273.0" layoutY="391.0" mnemonicParsing="false" text="Pay" />
+      <TextField fx:id="cardNumberTextField" layoutX="175.0" layoutY="170.0" />
+      <Button fx:id="payButton" layoutX="273.0" layoutY="391.0" mnemonicParsing="false" text="Pay" onAction="#handlePay"/>
       <Label layoutX="226.0" layoutY="442.0" prefHeight="36.0" prefWidth="130.0">
          <font>
             <Font name="Arial Bold" size="14.0" />

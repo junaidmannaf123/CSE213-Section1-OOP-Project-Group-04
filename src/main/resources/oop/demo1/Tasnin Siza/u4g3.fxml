@@ -18,12 +18,12 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="252.0" layoutY="197.0" mnemonicParsing="false" text="Fetch" />
+      <Button fx:id="fetchButton" layoutX="252.0" layoutY="197.0" mnemonicParsing="false" text="Fetch" onAction="#handleFetch"/>
       <Label layoutX="166.0" layoutY="242.0" prefHeight="38.0" prefWidth="246.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="252.0" layoutY="142.0" />
+      <TextField fx:id="applicationIdTextField" layoutX="252.0" layoutY="142.0"/>
    </children>
 </AnchorPane>

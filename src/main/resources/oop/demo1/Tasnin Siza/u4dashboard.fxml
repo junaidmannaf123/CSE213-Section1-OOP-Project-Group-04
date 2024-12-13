@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.TasninSiza.u3g9controller">
    <children>
       <Text layoutX="52.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client (Immigration Applicant) Dashboard" textAlignment="CENTER" wrappingWidth="567.2000732421875">
          <font>
@@ -14,42 +14,42 @@
          </font>
       </Text>
       <Line endX="360.0" endY="-1.1444091796875E-5" layoutX="315.0" layoutY="72.0" startX="-320.3999938964844" startY="-1.52587890625E-5" />
-      <Button layoutX="35.0" layoutY="135.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Submit Immigration Application" textAlignment="CENTER">
+      <Button fx:id="submitApplicationButton" layoutX="35.0" layoutY="135.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Submit Immigration Application" textAlignment="CENTER" onAction="#handleSubmitApplication" >
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="35.0" layoutY="190.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Book Consultation Appointment withImmigration Consultant" textAlignment="CENTER">
+      <Button fx:id="bookConsultationButton" layoutX="35.0" layoutY="190.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Book Consultation Appointment with Immigration Consultant" textAlignment="CENTER" onAction="#handleBookConsultation">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="35.0" layoutY="244.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Track Application Status" textAlignment="CENTER">
+      <Button fx:id="trackApplicationButton" layoutX="35.0" layoutY="244.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Track Application Status" textAlignment="CENTER" onAction="#handleTrackApplication">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="35.0" layoutY="299.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Upload Additional Documents for Ongoing Application" textAlignment="CENTER">
+      <Button fx:id="uploadDocumentsButton" layoutX="35.0" layoutY="299.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Upload Additional Documents for Ongoing Application" textAlignment="CENTER" onAction="#handleUploadDocuments">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="342.0" layoutY="135.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Receive Visa Refusal Consultation" textAlignment="CENTER">
+      <Button fx:id="visaConsultationButton" layoutX="342.0" layoutY="135.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Receive Visa Refusal Consultation" textAlignment="CENTER" onAction="#handleVisaConsultation">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="342.0" layoutY="190.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Download Consultation Notes" textAlignment="CENTER">
+      <Button fx:id="downloadNotesButton" layoutX="342.0" layoutY="190.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Download Consultation Notes" textAlignment="CENTER" onAction="#handleDownloadNotes">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="343.0" layoutY="244.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Request for Application Status Update" textAlignment="CENTER">
+      <Button fx:id="requestStatusUpdateButton" layoutX="343.0" layoutY="244.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Request for Application Status Update" textAlignment="CENTER" onAction="#handleRequestStatusUpdate">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="342.0" layoutY="299.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Pay Consultation Fees" textAlignment="CENTER">
+      <Button fx:id="payConsultationButton" layoutX="342.0" layoutY="299.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Pay Consultation Fees" textAlignment="CENTER" onAction="#handlePayConsultationFees">
          <font>
             <Font size="18.0" />
          </font>

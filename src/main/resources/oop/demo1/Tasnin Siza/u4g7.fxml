@@ -13,7 +13,7 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="231.0" layoutY="187.0" mnemonicParsing="false" text="Request" />
+      <Button fx:id="requestButton" layoutX="231.0" layoutY="187.0" mnemonicParsing="false" text="Request" onAction="#handleRequest"/>
       <Label layoutX="116.0" layoutY="130.0" text="Application ID:">
          <font>
             <Font name="Arial" size="14.0" />
@@ -24,6 +24,6 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="224.0" layoutY="125.0" />
+      <TextField fx:id="applicationIdTextField" layoutX="224.0" layoutY="125.0" />
    </children>
 </AnchorPane>

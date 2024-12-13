@@ -15,8 +15,8 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="129.0" layoutY="508.0" mnemonicParsing="false" text="Upload File" />
-      <Button layoutX="127.0" layoutY="596.0" mnemonicParsing="false" text="Submit" />
+      <Button fx:id="uploadFileButton" layoutX="129.0" layoutY="508.0" mnemonicParsing="false" text="Upload File" onAction="#handleUploadFile"/>
+      <Button fx:id="submitButton" layoutX="127.0" layoutY="596.0" mnemonicParsing="false" text="Submit" onAction="#handleSubmit"/>
       <Label layoutX="127.0" layoutY="543.0" prefHeight="36.0" prefWidth="130.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
@@ -32,66 +32,66 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="152.0" layoutY="115.0" prefWidth="150.0" />
+      <ComboBox fx:id="visaTypeComboBox" layoutX="152.0" layoutY="115.0" prefWidth="150.0" onAction="#handleVisaTypeSelection"/>
       <Label layoutX="71.0" layoutY="245.0" prefHeight="16.0" prefWidth="79.0" text=" Phone:  ">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="133.0" layoutY="241.0" />
+      <TextField fx:id="phoneTextField" layoutX="133.0" layoutY="241.0" onAction="#handlePhoneInput"/>
       <Label layoutX="71.0" layoutY="207.0" prefHeight="16.0" prefWidth="86.0" text=" Date of Birth:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <DatePicker layoutX="167.0" layoutY="202.0" />
+      <DatePicker fx:id="dobDatePicker" layoutX="167.0" layoutY="202.0" onAction="#handleDOBInput"/>
       <Label layoutX="338.0" layoutY="164.0" prefHeight="16.0" prefWidth="79.0" text="Nationality:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="427.0" layoutY="162.0" prefWidth="150.0" />
+      <ComboBox fx:id="nationalityComboBox" layoutX="427.0" layoutY="162.0" prefWidth="150.0" onAction="#handleNationalitySelection"/>
       <Label layoutX="311.0" layoutY="245.0" prefHeight="16.0" prefWidth="54.0" text="Email:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="362.0" layoutY="240.0" prefHeight="26.0" prefWidth="243.0" />
+      <TextField fx:id="emailTextField" layoutX="362.0" layoutY="240.0" prefHeight="26.0" prefWidth="243.0" onAction="#handleEmailInput"/>
       <Label layoutX="71.0" layoutY="284.0" prefHeight="16.0" prefWidth="150.0" text=" Residential Address:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="211.0" layoutY="279.0" prefHeight="16.0" prefWidth="322.0" />
+      <TextField fx:id="addressTextField" layoutX="211.0" layoutY="279.0" prefHeight="16.0" prefWidth="322.0" onAction="#handleAddressInput"/>
       <Label layoutX="74.0" layoutY="332.0" prefHeight="16.0" prefWidth="118.0" text="Passport Number:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="201.0" layoutY="327.0" />
+      <TextField fx:id="passportTextField" layoutX="201.0" layoutY="327.0" onAction="#handlePassportInput"/>
       <Label layoutX="75.0" layoutY="167.0" prefHeight="16.0" prefWidth="79.0" text="Full Name: ">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="153.0" layoutY="162.0" />
+      <TextField fx:id="fullNameTextField" layoutX="153.0" layoutY="162.0" onAction="#handleFullNameInput"/>
       <Label layoutX="72.0" layoutY="462.0" prefHeight="16.0" prefWidth="150.0" text=" Additional Information:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="231.0" layoutY="457.0" />
+      <TextField fx:id="additionalInfoTextField" layoutX="231.0" layoutY="457.0" onAction="#handleAdditionalInfoInput"/>
       <Label layoutX="76.0" layoutY="372.0" prefHeight="16.0" prefWidth="103.0" text="Visa Purpose:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="177.0" layoutY="367.0" prefWidth="150.0" />
+      <ComboBox fx:id="visaPurposeComboBox" layoutX="177.0" layoutY="367.0" prefWidth="150.0" onAction="#handleVisaPurposeSelection"/>
       <Label layoutX="76.0" layoutY="416.0" prefHeight="16.0" prefWidth="150.0" text="Fee Payment Method:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="229.0" layoutY="411.0" prefWidth="150.0" />
+      <ComboBox fx:id="paymentMethodComboBox" layoutX="229.0" layoutY="411.0" prefWidth="150.0" onAction="#handlePaymentMethodSelection"/>
    </children>
 </AnchorPane>

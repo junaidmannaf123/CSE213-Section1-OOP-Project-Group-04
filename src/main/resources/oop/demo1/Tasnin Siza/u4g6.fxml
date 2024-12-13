@@ -18,12 +18,12 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="223.0" layoutY="187.0" mnemonicParsing="false" text="Download" />
+      <Button fx:id="downloadButton" layoutX="223.0" layoutY="187.0" mnemonicParsing="false" text="Download" onAction="#handleDownload"/>
       <Label layoutX="151.0" layoutY="225.0" prefHeight="16.0" prefWidth="189.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="210.0" layoutY="129.0" prefWidth="150.0" />
+      <ComboBox fx:id="sessionComboBox" layoutX="210.0" layoutY="129.0" prefWidth="150.0"/>
    </children>
 </AnchorPane>
