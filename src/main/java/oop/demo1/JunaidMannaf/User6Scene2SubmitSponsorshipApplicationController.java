@@ -25,10 +25,8 @@ public class User6Scene2SubmitSponsorshipApplicationController {
     @FXML
     private Label statusLabel;
 
-    // This method is called when the scene is initialized
     @FXML
     public void initialize() {
-        // Add sample sponsorship types to the ComboBox
         sponsorshipTypeComboBox.getItems().addAll(
                 "Family Sponsorship",
                 "Work Sponsorship",
@@ -36,7 +34,6 @@ public class User6Scene2SubmitSponsorshipApplicationController {
         );
     }
 
-    // Handle "Upload Documents" button click
     @FXML
     private void handleUploadDocuments(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
@@ -52,7 +49,6 @@ public class User6Scene2SubmitSponsorshipApplicationController {
         }
     }
 
-    // Handle "Submit Application" button click
     @FXML
     private void handleSubmitApplication(ActionEvent event) {
         String sponsorshipType = sponsorshipTypeComboBox.getValue();
@@ -69,14 +65,12 @@ public class User6Scene2SubmitSponsorshipApplicationController {
         }
     }
 
-    // Handle "Back" button click
     @FXML
     private void handleBack(ActionEvent event) {
         System.out.println("Navigating back to the previous screen...");
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6ClientFSDashboard.fxml"); // Replace with the actual FXML file for the dashboard
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));

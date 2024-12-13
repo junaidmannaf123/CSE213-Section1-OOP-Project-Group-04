@@ -1,6 +1,8 @@
 module oop.demo1 {
     requires javafx.controls;
     requires javafx.fxml;
+    requires kernel;
+    requires layout;
 
 
     opens oop.demo1 to javafx.fxml;

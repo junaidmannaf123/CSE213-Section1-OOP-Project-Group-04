@@ -1,5 +1,9 @@
 package oop.demo1.JunaidMannaf;
 
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +13,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -26,10 +33,10 @@ public class User5Scene6GenerateClientCaseReportsController implements Initializ
     public void initialize(URL location, ResourceBundle resources) {
         // Populate ComboBox with sample client cases
         clientCaseComboBox.getItems().addAll(
-                "Case 201: Immigration Sponsorship",
-                "Case 202: Legal Document Review",
-                "Case 203: Visa Application Assistance",
-                "Case 204: Citizenship Process"
+                "Case 001 Immigration Sponsorship",
+                "Case 002 Legal Document Review",
+                "Case 003 Visa Application Assistance",
+                "Case 004 Citizenship Process"
         );
     }
 
@@ -52,9 +59,86 @@ public class User5Scene6GenerateClientCaseReportsController implements Initializ
         if (selectedCase == null) {
             statusLabel.setText("Please select a client case to export as PDF.");
         } else {
-            statusLabel.setText("Report for case '" + selectedCase + "' exported as PDF.");
-            System.out.println("Exported report as PDF for: " + selectedCase);
+            // Create case report content
+            String caseReportContent = generateCaseReport(selectedCase);
+
+            // Open file chooser for saving the PDF
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Save PDF");
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+            fileChooser.setInitialFileName(selectedCase + " Report.pdf");
+            File saveFile = fileChooser.showSaveDialog(((Node) event.getSource()).getScene().getWindow());
+
+            if (saveFile != null) {
+                try (FileOutputStream outputStream = new FileOutputStream(saveFile)) {
+                    // Use iText 7 to generate the PDF
+                    PdfWriter writer = new PdfWriter(outputStream);
+                    PdfDocument pdfDoc = new PdfDocument(writer);
+                    Document document = new Document(pdfDoc);
+
+                    // Add the case report content to the PDF
+                    document.add(new Paragraph(caseReportContent));
+
+                    document.close();  // Closing the document
+
+                    statusLabel.setText("Downloaded: " + saveFile.getName());
+                } catch (Exception e) {
+                    statusLabel.setText("Error saving the file.");
+                    e.printStackTrace();
+                }
+            } else {
+                statusLabel.setText("Download canceled.");
+            }
         }
+    }
+
+    // Method to generate case report content based on selected case
+    private String generateCaseReport(String selectedCase) {
+        String caseReportContent;
+
+        switch (selectedCase) {
+            case "Case 001 Immigration Sponsorship":
+                caseReportContent = "Case #001: Immigration Sponsorship\n\n" +
+                        "Client Name: John Doe\n" +
+                        "Sponsorship Type: Family\n" +
+                        "Status: Pending\n" +
+                        "Documents Submitted: Passport, Marriage Certificate\n" +
+                        "Next Steps: Submit additional proof of financial support.\n";
+                break;
+
+            case "Case 002 Legal Document Review":
+                caseReportContent = "Case #002: Legal Document Review\n\n" +
+                        "Client Name: Jane Smith\n" +
+                        "Document Type: Contract\n" +
+                        "Status: Under Review\n" +
+                        "Review Notes: Requires minor modifications.\n" +
+                        "Next Steps: Client to review and provide feedback.\n";
+                break;
+
+            case "Case 003 Visa Application Assistance":
+                caseReportContent = "Case #003: Visa Application Assistance\n\n" +
+                        "Client Name: Michael Johnson\n" +
+                        "Visa Type: Work Visa\n" +
+                        "Status: Application Submitted\n" +
+                        "Documents Submitted: Job Offer, Financial Statements\n" +
+                        "Next Steps: Wait for consulate response.\n";
+                break;
+
+            case "Case 004 Citizenship Process":
+                caseReportContent = "Case #004: Citizenship Process\n\n" +
+                        "Client Name: Emily Davis\n" +
+                        "Citizenship Type: Naturalization\n" +
+                        "Status: In Progress\n" +
+                        "Documents Submitted: Birth Certificate, Passport\n" +
+                        "Next Steps: Attend interview in 2 months.\n";
+                break;
+
+            default:
+                caseReportContent = "Error: Invalid case selection.";
+                break;
+        }
+
+        return caseReportContent;
     }
 
     // Handle "Send to Client/Consultant" button click

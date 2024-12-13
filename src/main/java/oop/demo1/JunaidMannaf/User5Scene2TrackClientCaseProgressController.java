@@ -54,14 +54,11 @@ public class User5Scene2TrackClientCaseProgressController {
         legalReviewColumn.setCellValueFactory(new PropertyValueFactory<>("legalReviewStatus"));
         overallProgressColumn.setCellValueFactory(new PropertyValueFactory<>("overallProgress"));
 
-        // Populate TableView with sample data
-        ObservableList<CaseProgress> caseProgressList = FXCollections.observableArrayList(
-                new CaseProgress("Submitted", "Pending", "25%"),
-                new CaseProgress("Verified", "In Progress", "50%"),
-                new CaseProgress("Pending", "Pending", "10%"),
-                new CaseProgress("Submitted", "Completed", "90%")
-        );
-        progressTableView.setItems(caseProgressList);
+        // Set placeholder for TableView
+        progressTableView.setPlaceholder(new Label("Select a case to view progress."));
+
+        // Add a listener to the ComboBox to update the TableView
+        clientCaseComboBox.setOnAction(event -> updateTableData(clientCaseComboBox.getValue()));
     }
 
     @FXML
@@ -93,6 +90,51 @@ public class User5Scene2TrackClientCaseProgressController {
             e.printStackTrace();
             System.out.println("Error while switching scenes: " + e.getMessage());
         }
+    }
+
+    // Update TableView data based on selected case
+    private void updateTableData(String selectedCase) {
+        ObservableList<CaseProgress> caseProgressList = FXCollections.observableArrayList();
+
+        switch (selectedCase) {
+            case "Case #001: John Doe":
+                caseProgressList.addAll(
+                        new CaseProgress("Submitted", "Pending", "25%"),
+                        new CaseProgress("Verified", "In Progress", "50%"),
+                        new CaseProgress("Approved", "Completed", "100%")
+                );
+                break;
+
+            case "Case #002: Jane Smith":
+                caseProgressList.addAll(
+                        new CaseProgress("Submitted", "Pending", "20%"),
+                        new CaseProgress("Under Review", "In Progress", "60%"),
+                        new CaseProgress("Awaiting Approval", "Pending", "70%")
+                );
+                break;
+
+            case "Case #003: Michael Johnson":
+                caseProgressList.addAll(
+                        new CaseProgress("Drafted", "Pending", "15%"),
+                        new CaseProgress("Submitted", "In Progress", "40%"),
+                        new CaseProgress("Under Legal Review", "Pending", "75%")
+                );
+                break;
+
+            case "Case #004: Emily Davis":
+                caseProgressList.addAll(
+                        new CaseProgress("Submitted", "Pending", "30%"),
+                        new CaseProgress("Reviewed", "Completed", "80%"),
+                        new CaseProgress("Approved", "Completed", "100%")
+                );
+                break;
+
+            default:
+                caseProgressList.clear();
+                break;
+        }
+
+        progressTableView.setItems(caseProgressList);
     }
 
     public static class CaseProgress {

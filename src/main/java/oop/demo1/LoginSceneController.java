@@ -28,12 +28,11 @@ public class LoginSceneController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Populate ComboBox with user types
         userTypeComboBox.getItems().addAll(
                 "Immigration Consultant",
                 "Immigration Applicant",
                 "Case Manager",
-                "Client (Family Sponsorship)",
+                "Client (Sponsorship)",
                 "Legal Advisor",
                 "IT Support"
         );
@@ -41,12 +40,10 @@ public class LoginSceneController implements Initializable {
 
     @FXML
     private void handleLogin() {
-        // Get the values entered by the user
         String loginId = loginIdField.getText();
         String password = passwordField.getText();
         String userType = userTypeComboBox.getValue();
 
-        // Validate the input fields
         if (loginId == null || loginId.isEmpty() ||
                 password == null || password.isEmpty() ||
                 userType == null) {
@@ -54,13 +51,36 @@ public class LoginSceneController implements Initializable {
             return;
         }
 
-        // Temporary hardcoded login credentials for testing
-        if (!loginId.equals("abcd") || !password.equals("1234")) {
+        boolean isAuthenticated = false;
+        switch (userType) {
+            case "Immigration Consultant":
+                isAuthenticated = loginId.equals("consultant01") && password.equals("ic123");
+                break;
+            case "Immigration Applicant":
+                isAuthenticated = loginId.equals("applicant01") && password.equals("ia123");
+                break;
+            case "Case Manager":
+                isAuthenticated = loginId.equals("manager01") && password.equals("cm123");
+                break;
+            case "Client (Sponsorship)":
+                isAuthenticated = loginId.equals("client01") && password.equals("cfs123");
+                break;
+            case "Legal Advisor":
+                isAuthenticated = loginId.equals("advisor01") && password.equals("la123");
+                break;
+            case "IT Support":
+                isAuthenticated = loginId.equals("support01") && password.equals("its123");
+                break;
+            default:
+                showAlert("Access Denied", "Unknown user type.", Alert.AlertType.ERROR);
+                return;
+        }
+
+        if (!isAuthenticated) {
             showAlert("Login Failed", "Invalid login credentials.", Alert.AlertType.ERROR);
             return;
         }
 
-        // Switch scene based on user type
         switch (userType) {
             case "Immigration Consultant":
                 switchToDashboard("Tasnin Siza/u3dashboard.fxml", "Immigration Consultant Dashboard");
@@ -71,7 +91,7 @@ public class LoginSceneController implements Initializable {
             case "Case Manager":
                 switchToDashboard("Junaid Mannaf/User5CaseManagerDashboard.fxml", "Case Manager Dashboard");
                 break;
-            case "Client (Family Sponsorship)":
+            case "Client (Sponsorship)":
                 switchToDashboard("Junaid Mannaf/User6ClientFSDashboard.fxml", "Client Dashboard");
                 break;
             case "Legal Advisor":
@@ -80,23 +100,18 @@ public class LoginSceneController implements Initializable {
             case "IT Support":
                 switchToDashboard("Sanjida Akter Jui/user8dashboard.fxml", "IT Support Dashboard");
                 break;
-            default:
-                showAlert("Access Denied", "Unknown user type.", Alert.AlertType.ERROR);
-                break;
         }
     }
 
     private void switchToDashboard(String fxmlFile, String title) {
         try {
-            // Load the dashboard scene using the correct FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile)); // Load the correct dashboard
-            Parent root = loader.load(); // Load the FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Parent root = loader.load();
 
-            // Set the new scene
-            Stage stage = (Stage) loginIdField.getScene().getWindow(); // Get the current window
-            Scene scene = new Scene(root); // Use the loaded root (dashboard scene)
-            stage.setScene(scene); // Set the new scene
-            stage.setTitle(title); // Set the title of the new scene
+            Stage stage = (Stage) loginIdField.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle(title);
         } catch (IOException e) {
             e.printStackTrace();
             showAlert("Error", "Unable to load the " + title + ".", Alert.AlertType.ERROR);

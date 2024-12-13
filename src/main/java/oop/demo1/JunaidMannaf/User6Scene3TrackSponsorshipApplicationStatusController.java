@@ -18,7 +18,6 @@ public class User6Scene3TrackSponsorshipApplicationStatusController {
     @FXML
     private Label statusLabel;
 
-    // Handle "Track Status" button click
     @FXML
     private void handleTrackStatus(ActionEvent event) {
         String applicationNumber = applicationNumberTextField.getText();
@@ -26,25 +25,28 @@ public class User6Scene3TrackSponsorshipApplicationStatusController {
         if (applicationNumber == null || applicationNumber.isEmpty()) {
             statusLabel.setText("Please enter an application number.");
         } else {
-            // Simulate application tracking logic
-            if (applicationNumber.equals("12345")) {
+
+            if (applicationNumber.equals("001")) {
                 statusLabel.setText("Status: Approved");
-            } else if (applicationNumber.equals("67890")) {
+            } else if (applicationNumber.equals("002")) {
                 statusLabel.setText("Status: Pending");
+            } else if (applicationNumber.equals("003")) {
+                statusLabel.setText("Status: Declined");
+            } else if (applicationNumber.equals("004")) {
+                statusLabel.setText("Status: Approved");
             } else {
                 statusLabel.setText("Application not found.");
             }
         }
     }
 
-    // Handle "Back" button click
+
     @FXML
     private void handleBack(ActionEvent event) {
         System.out.println("Navigating back to the previous screen...");
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6ClientFSDashboard.fxml"); // Replace with the actual FXML file for the dashboard
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));

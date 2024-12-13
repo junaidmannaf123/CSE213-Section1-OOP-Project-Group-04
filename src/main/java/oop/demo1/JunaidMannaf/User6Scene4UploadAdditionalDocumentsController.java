@@ -20,13 +20,11 @@ public class User6Scene4UploadAdditionalDocumentsController {
     @FXML
     private Label statusLabel;
 
-    // Initialize the ComboBox with sample document types
     @FXML
     public void initialize() {
         documentTypeComboBox.getItems().addAll("Passport Copy", "Birth Certificate", "Proof of Residency", "Other");
     }
 
-    // Handle the "Upload Document" button click
     @FXML
     private void handleUploadDocument(ActionEvent event) {
         if (documentTypeComboBox.getValue() == null) {
@@ -34,7 +32,6 @@ public class User6Scene4UploadAdditionalDocumentsController {
             return;
         }
 
-        // Open a file chooser to allow the user to select a file
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Document");
         fileChooser.getExtensionFilters().addAll(
@@ -43,25 +40,22 @@ public class User6Scene4UploadAdditionalDocumentsController {
                 new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
         );
 
-        Stage stage = new Stage(); // You might need to replace this with the current stage reference
+        Stage stage = new Stage();
         File selectedFile = fileChooser.showOpenDialog(stage);
 
         if (selectedFile != null) {
-            // Simulate file upload
             statusLabel.setText("Document uploaded successfully: " + selectedFile.getName());
         } else {
             statusLabel.setText("No file selected.");
         }
     }
 
-    /// Handle "Back" button click
     @FXML
     private void handleBack(ActionEvent event) {
         System.out.println("Navigating back to the previous screen...");
-        switchScene(event, "/oop/demo1/Junaid Mannaf/User6ClientFSDashboard.fxml"); // Replace with the actual FXML file for the dashboard
+        switchScene(event, "/oop/demo1/Junaid Mannaf/User6ClientFSDashboard.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));

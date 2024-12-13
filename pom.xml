@@ -4,10 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Project coordinates -->
     <groupId>oop</groupId>
-    <artifactId>demo1</artifactId>
+    <artifactId>demo1</artifactId> <!-- You can change this to your project name -->
     <version>1.0-SNAPSHOT</version>
-    <name>demo1</name>
+    <name>demo1</name> <!-- You can change this to your project name -->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,6 +16,7 @@
     </properties>
 
     <dependencies>
+        <!-- JavaFX dependencies -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -26,6 +28,39 @@
             <version>21</version>
         </dependency>
 
+        <!-- iText 7 dependencies -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>kernel</artifactId>
+            <version>7.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>io</artifactId>
+            <version>7.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>layout</artifactId>
+            <version>7.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>forms</artifactId>
+            <version>7.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>pdfa</artifactId>
+            <version>7.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>pdftest</artifactId>
+            <version>7.0.4</version>
+        </dependency>
+
+        <!-- JUnit dependencies for testing -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -42,6 +77,7 @@
 
     <build>
         <plugins>
+            <!-- Compiler plugin for Java 21 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -51,6 +87,8 @@
                     <target>21</target>
                 </configuration>
             </plugin>
+
+            <!-- JavaFX Maven plugin -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -60,7 +98,8 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>oop.demo1/oop.demo1.HelloApplication</mainClass>
+                            <!-- Change the mainClass to match your actual main class -->
+                            <mainClass>oop.demo1.HelloApplication</mainClass> <!-- Adjust this according to your project -->
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

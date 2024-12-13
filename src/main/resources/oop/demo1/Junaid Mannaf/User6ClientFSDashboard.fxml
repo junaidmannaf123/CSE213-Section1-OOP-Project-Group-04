@@ -8,7 +8,7 @@
 
 <AnchorPane fx:controller="oop.demo1.JunaidMannaf.User6ClientFSDashboardController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Text layoutX="65.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client (Family Sponsorship) Dashboard" textAlignment="CENTER" wrappingWidth="535.2001037597656">
+        <Text layoutX="65.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client Dashboard" textAlignment="CENTER" wrappingWidth="535.2001037597656">
             <font>
                 <Font name="Times New Roman" size="29.0" />
             </font>

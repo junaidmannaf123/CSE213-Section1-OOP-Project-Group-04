@@ -11,6 +11,10 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class User5Scene9ArchiveCompletedCasesController {
 
     @FXML
@@ -19,15 +23,17 @@ public class User5Scene9ArchiveCompletedCasesController {
     @FXML
     private Label statusLabel;
 
+    private final List<String> archivedCases = new ArrayList<>(); // List to hold archived cases
+
     // This method is called when the scene is initialized
     @FXML
     public void initialize() {
         // Adding sample cases to the ComboBox
         completedCaseComboBox.setItems(FXCollections.observableArrayList(
-                "Case #12345 - John Doe",
-                "Case #12346 - Jane Smith",
-                "Case #12347 - Bob Johnson",
-                "Case #12348 - Alice Williams"
+                "Case #001 - John Doe",
+                "Case #002 - Jane Smith",
+                "Case #003 - Michael Johnson",
+                "Case #004 - Emily Davis"
         ));
     }
 
@@ -52,8 +58,26 @@ public class User5Scene9ArchiveCompletedCasesController {
         if (selectedCase == null) {
             statusLabel.setText("Please select a completed case.");
         } else {
+            // Remove case from ComboBox and add to archived list
+            completedCaseComboBox.getItems().remove(selectedCase);
+            archivedCases.add(selectedCase);
+
+            // Save archived case to binary file
+            saveArchivedCasesToBinFile();
+
             statusLabel.setText("Case '" + selectedCase + "' has been archived.");
             System.out.println("Archived case: " + selectedCase);
+        }
+    }
+
+    // Save archived cases to a binary file
+    private void saveArchivedCasesToBinFile() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("archived_cases.bin"))) {
+            oos.writeObject(archivedCases);
+            System.out.println("Archived cases saved to binary file.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error saving to binary file: " + e.getMessage());
         }
     }
 

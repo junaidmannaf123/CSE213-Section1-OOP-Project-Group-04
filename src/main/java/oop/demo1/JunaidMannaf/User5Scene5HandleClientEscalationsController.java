@@ -29,14 +29,13 @@ public class User5Scene5HandleClientEscalationsController implements Initializab
     public void initialize(URL location, ResourceBundle resources) {
         // Populate the ComboBox with sample escalated cases
         escalatedCaseComboBox.getItems().addAll(
-                "Case 101: Sponsorship Delay",
-                "Case 102: Missing Documents",
-                "Case 103: Legal Adviser Unavailable",
-                "Case 104: Urgent Processing Required"
+                "Case #001: Sponsorship Delay",
+                "Case #002: Missing Documents",
+                "Case #003: Legal Adviser Unavailable",
+                "Case #004: Urgent Processing Required"
         );
     }
 
-    // Handle "Assign to Consultant/Adviser" button click
     @FXML
     private void handleAssignToConsultant(ActionEvent event) {
         String selectedCase = escalatedCaseComboBox.getValue();
@@ -49,7 +48,6 @@ public class User5Scene5HandleClientEscalationsController implements Initializab
         }
     }
 
-    // Handle "Send Follow-Up Notification" button click
     @FXML
     private void handleFollowUpNotification(ActionEvent event) {
         String selectedCase = escalatedCaseComboBox.getValue();
@@ -62,14 +60,12 @@ public class User5Scene5HandleClientEscalationsController implements Initializab
         }
     }
 
-    // Handle "Back" button click
     @FXML
     private void handleBackToDashboard(ActionEvent event) {
         System.out.println("Navigating back to Dashboard...");
         switchScene(event, "/oop/demo1/Junaid Mannaf/User5CaseManagerDashboard.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));

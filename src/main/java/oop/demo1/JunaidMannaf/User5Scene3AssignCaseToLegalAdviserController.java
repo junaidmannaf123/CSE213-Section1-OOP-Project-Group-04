@@ -35,16 +35,14 @@ public class User5Scene3AssignCaseToLegalAdviserController implements Initializa
                 "Case 004: Employment Authorization"
         );
 
-        // Add sample legal advisers
         legalAdviserComboBox.getItems().addAll(
-                "John Doe - Senior Adviser",
-                "Jane Smith - Immigration Specialist",
+                "John Smith - Senior Adviser",
+                "Jane Miller - Immigration Specialist",
                 "Alice Johnson - Legal Consultant",
                 "Bob Brown - Case Analyst"
         );
     }
 
-    // Method for the "Assign Case" button
     @FXML
     private void handleAssignCase(ActionEvent event) {
         String clientCase = clientCaseComboBox.getValue();
@@ -58,7 +56,6 @@ public class User5Scene3AssignCaseToLegalAdviserController implements Initializa
         }
     }
 
-    // Method for the "Send Notification" button
     @FXML
     private void handleSendNotification(ActionEvent event) {
         String legalAdviser = legalAdviserComboBox.getValue();
@@ -77,7 +74,6 @@ public class User5Scene3AssignCaseToLegalAdviserController implements Initializa
         switchScene(event, "/oop/demo1/Junaid Mannaf/User5CaseManagerDashboard.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
