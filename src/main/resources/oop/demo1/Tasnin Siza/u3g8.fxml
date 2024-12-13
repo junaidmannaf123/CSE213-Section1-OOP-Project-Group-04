@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labproject.U3g8">
    <children>
       <Label layoutX="177.0" layoutY="46.0" prefHeight="27.0" prefWidth="297.0" text="Organize Client Workshops">
@@ -21,17 +20,18 @@
          </font>
       </Label>
       <ComboBox layoutX="194.0" layoutY="119.0" prefWidth="150.0" />
-      <Label layoutX="216.0" layoutY="309.0" prefHeight="16.0" prefWidth="189.0">
+      <Label layoutX="228.0" layoutY="269.0" prefHeight="27.0" prefWidth="116.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="269.0" layoutY="236.0" mnemonicParsing="false" text="Comfirm" />
+      <Button layoutX="238.0" layoutY="220.0" mnemonicParsing="false" text="Comfirm" />
       <Label layoutX="87.0" layoutY="162.0" text="Workshop Date:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
       <DatePicker layoutX="194.0" layoutY="157.0" />
+      <Button fx:id="backButton" layoutX="65.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleBackToLogin" text="⬅" />
    </children>
 </AnchorPane>

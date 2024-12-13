@@ -6,24 +6,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labproject.U4g7">
+<AnchorPane prefHeight="306.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labproject.U4g7">
    <children>
       <Label layoutX="116.0" layoutY="49.0" prefHeight="27.0" prefWidth="336.0" text="Request for Application Status Update">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="233.0" layoutY="224.0" mnemonicParsing="false" text="Request" />
+      <Button layoutX="231.0" layoutY="187.0" mnemonicParsing="false" text="Request" />
       <Label layoutX="116.0" layoutY="130.0" text="Application ID:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="182.0" layoutY="267.0" prefHeight="16.0" prefWidth="189.0">
+      <Label layoutX="176.0" layoutY="234.0" prefHeight="16.0" prefWidth="189.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
       <TextField layoutX="224.0" layoutY="125.0" />
+      <Button fx:id="backButton" layoutX="44.0" layoutY="36.0" mnemonicParsing="false" onAction="#handleBackToLogin" text="⬅" />
    </children>
 </AnchorPane>

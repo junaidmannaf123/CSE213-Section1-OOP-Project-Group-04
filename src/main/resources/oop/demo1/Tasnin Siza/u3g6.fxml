@@ -4,40 +4,40 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labproject.U3g6">
+<AnchorPane prefHeight="487.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labproject.U3g6">
    <children>
-      <Label layoutX="177.0" layoutY="46.0" prefHeight="27.0" prefWidth="297.0" text=" Manage Client Queries">
+      <Label layoutX="200.0" layoutY="42.0" prefHeight="26.0" prefWidth="157.0" text="Client Queries">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="274.0" layoutY="124.0" prefHeight="16.0" prefWidth="79.0" text="Responnse:">
+      <Label layoutX="63.0" layoutY="310.0" prefHeight="16.0" prefWidth="79.0" text="Responnse:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="371.0" layoutY="174.0" mnemonicParsing="false" text="Update" />
-      <Label layoutX="82.0" layoutY="88.0" text="Query List:">
+      <Button layoutX="424.0" layoutY="341.0" mnemonicParsing="false" text="Update" />
+      <Label layoutX="63.0" layoutY="103.0" text="Query List:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="285.0" layoutY="219.0" prefHeight="16.0" prefWidth="189.0">
+      <Label layoutX="383.0" layoutY="385.0" prefHeight="36.0" prefWidth="165.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="33.0" layoutY="119.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView layoutY="128.0" prefHeight="132.0" prefWidth="651.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn prefWidth="385.59998166561127" text="Query" />
+            <TableColumn minWidth="0.0" prefWidth="264.7999572753906" text="Status" />
          </columns>
       </TableView>
-      <TextField layoutX="371.0" layoutY="119.0" />
+      <Button fx:id="backButton" layoutX="35.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleBackToLogin" text="⬅" />
+      <TextArea layoutX="35.0" layoutY="335.0" prefHeight="98.0" prefWidth="302.0" />
    </children>
 </AnchorPane>

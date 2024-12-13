@@ -10,54 +10,54 @@
 
 <AnchorPane prefHeight="710.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labproject.U4g1">
    <children>
-      <Label layoutX="135.0" layoutY="47.0" prefHeight="27.0" prefWidth="297.0" text="Submit Immigration Application">
+      <Label layoutX="178.0" layoutY="37.0" prefHeight="27.0" prefWidth="297.0" text="Submit Immigration Application">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="95.0" layoutY="493.0" mnemonicParsing="false" text="Upload File" />
-      <Button layoutX="98.0" layoutY="586.0" mnemonicParsing="false" text="Submit" />
-      <Label layoutX="95.0" layoutY="534.0" prefHeight="36.0" prefWidth="130.0">
+      <Button layoutX="129.0" layoutY="508.0" mnemonicParsing="false" text="Upload File" />
+      <Button layoutX="127.0" layoutY="596.0" mnemonicParsing="false" text="Submit" />
+      <Label layoutX="127.0" layoutY="543.0" prefHeight="36.0" prefWidth="130.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="96.0" layoutY="622.0" prefHeight="26.0" prefWidth="130.0">
+      <Label layoutX="101.0" layoutY="642.0" prefHeight="26.0" prefWidth="130.0">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="72.0" layoutY="120.0" prefHeight="16.0" prefWidth="76.0" text="Visa Type:">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-      </Label>
-      <ComboBox layoutX="160.0" layoutY="115.0" prefWidth="150.0" />
-      <Label layoutX="72.0" layoutY="246.0" prefHeight="16.0" prefWidth="79.0" text=" Phone:  ">
+      <Label layoutX="74.0" layoutY="120.0" prefHeight="16.0" prefWidth="76.0" text="Visa Type:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="122.0" layoutY="241.0" />
-      <Label layoutX="65.0" layoutY="207.0" prefHeight="16.0" prefWidth="86.0" text=" Date of Birth:">
+      <ComboBox layoutX="152.0" layoutY="115.0" prefWidth="150.0" />
+      <Label layoutX="71.0" layoutY="245.0" prefHeight="16.0" prefWidth="79.0" text=" Phone:  ">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <DatePicker layoutX="161.0" layoutY="202.0" />
-      <Label layoutX="339.0" layoutY="167.0" prefHeight="16.0" prefWidth="86.0" text="Nationality:">
+      <TextField layoutX="133.0" layoutY="241.0" />
+      <Label layoutX="71.0" layoutY="207.0" prefHeight="16.0" prefWidth="86.0" text=" Date of Birth:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <DatePicker layoutX="167.0" layoutY="202.0" />
+      <Label layoutX="338.0" layoutY="164.0" prefHeight="16.0" prefWidth="79.0" text="Nationality:">
+         <font>
+            <Font name="Arial" size="14.0" />
          </font>
       </Label>
       <ComboBox layoutX="427.0" layoutY="162.0" prefWidth="150.0" />
-      <Label layoutX="291.0" layoutY="245.0" prefHeight="16.0" prefWidth="96.0" text="Email:">
+      <Label layoutX="311.0" layoutY="245.0" prefHeight="16.0" prefWidth="54.0" text="Email:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="339.0" layoutY="240.0" prefHeight="26.0" prefWidth="243.0" />
-      <Label layoutX="71.0" layoutY="276.0" prefHeight="16.0" prefWidth="150.0" text=" Residential Address:">
+      <TextField layoutX="362.0" layoutY="240.0" prefHeight="26.0" prefWidth="243.0" />
+      <Label layoutX="71.0" layoutY="284.0" prefHeight="16.0" prefWidth="150.0" text=" Residential Address:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -69,29 +69,30 @@
          </font>
       </Label>
       <TextField layoutX="201.0" layoutY="327.0" />
-      <Label layoutX="70.0" layoutY="167.0" prefHeight="16.0" prefWidth="79.0" text="Full Name: ">
+      <Label layoutX="75.0" layoutY="167.0" prefHeight="16.0" prefWidth="79.0" text="Full Name: ">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
       <TextField layoutX="153.0" layoutY="162.0" />
-      <Label layoutX="76.0" layoutY="462.0" prefHeight="16.0" prefWidth="150.0" text=" Additional Information:">
+      <Label layoutX="72.0" layoutY="462.0" prefHeight="16.0" prefWidth="150.0" text=" Additional Information:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
       <TextField layoutX="231.0" layoutY="457.0" />
-      <Label layoutX="74.0" layoutY="372.0" prefHeight="16.0" prefWidth="103.0" text="Visa Purpose:">
+      <Label layoutX="76.0" layoutY="372.0" prefHeight="16.0" prefWidth="103.0" text="Visa Purpose:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Arial" size="14.0" />
          </font>
       </Label>
       <ComboBox layoutX="177.0" layoutY="367.0" prefWidth="150.0" />
-      <Label layoutX="74.0" layoutY="416.0" prefHeight="16.0" prefWidth="150.0" text="Fee Payment Method:">
+      <Label layoutX="76.0" layoutY="416.0" prefHeight="16.0" prefWidth="150.0" text="Fee Payment Method:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="231.0" layoutY="411.0" prefWidth="150.0" />
+      <ComboBox layoutX="229.0" layoutY="411.0" prefWidth="150.0" />
+      <Button fx:id="backButton" layoutX="65.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleBackToLogin" text="⬅" />
    </children>
 </AnchorPane>
