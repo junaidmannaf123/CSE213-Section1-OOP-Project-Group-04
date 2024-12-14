@@ -28,27 +28,25 @@ public class u3g3controller {
 
     @FXML
     private void initialize() {
-        // Sample data for ComboBox
+
         clientComboBox.getItems().addAll("Client A", "Client B", "Client C");
 
-        // Initialize TableView columns
+
         milestoneColumn.setCellValueFactory(new PropertyValueFactory<>("milestone"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
         deadlineColumn.setCellValueFactory(new PropertyValueFactory<>("deadline"));
 
-        // Placeholder text for empty table
+
         progressTrackerTable.setPlaceholder(new javafx.scene.control.Label("Select a client to view progress."));
     }
 
-    /**
-     * Handles client selection from the ComboBox and populates the table with progress data.
-     */
+
     @FXML
     private void handleClientSelection() {
         String selectedClient = clientComboBox.getValue();
         System.out.println("Selected client: " + selectedClient);
 
-        // Populate the table with data based on the selected client
+
         ObservableList<ProgressData> progressData = FXCollections.observableArrayList();
 
         switch (selectedClient) {
@@ -84,9 +82,7 @@ public class u3g3controller {
         progressTrackerTable.setItems(progressData);
     }
 
-    /**
-     * Handles the action when "Send Updates" button is clicked.
-     */
+
     @FXML
     private void handleSendUpdates(ActionEvent event) {
         String selectedClient = clientComboBox.getValue();
@@ -96,16 +92,13 @@ public class u3g3controller {
             return;
         }
 
-        // Logic to send updates for the selected client
-        // You can add functionality to notify clients (e.g., via email, database update)
+
 
         System.out.println("Sending updates for client: " + selectedClient);
         System.out.println("Updates sent successfully!");
     }
 
-    /**
-     * Data model class for progress tracker.
-     */
+
     public static class ProgressData {
         private final String milestone;
         private final String status;

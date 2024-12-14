@@ -31,34 +31,30 @@ public class u3g2controller {
     @FXML
     private TextArea feedbackTextArea;
 
-    private File selectedFile; // To store the selected file for upload
+    private File selectedFile;
 
-    /**
-     * Initializes the controller and sets up data.
-     */
+
     @FXML
     private void initialize() {
-        // Add sample clients to the ComboBox
+
         clientComboBox.getItems().addAll("Client A", "Client B", "Client C");
 
-        // Set up the TableView columns
+
         documentNameColumn.setCellValueFactory(new PropertyValueFactory<>("documentName"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        // Placeholder for TableView when no data is available
+
         documentsTableView.setPlaceholder(new javafx.scene.control.Label("No documents uploaded yet."));
     }
 
-    /**
-     * Handles the selection of a client from the ComboBox.
-     */
+
     @FXML
     private void handleClientSelection() {
         String selectedClient = clientComboBox.getValue();
         System.out.println("Selected client: " + selectedClient);
 
         if (selectedClient != null) {
-            // Populate TableView with mock document data for the selected client
+
             ObservableList<DocumentData> documentData = FXCollections.observableArrayList();
 
             switch (selectedClient) {
@@ -90,18 +86,14 @@ public class u3g2controller {
         }
     }
 
-    /**
-     * Handles feedback text updates when typed in the TextArea.
-     */
+
     @FXML
     private void handleFeedbackChange() {
         String feedback = feedbackTextArea.getText();
         System.out.println("Feedback updated: " + feedback);
     }
 
-    /**
-     * Handles the file selection action when "Choose File" is clicked.
-     */
+
     @FXML
     private void handleChooseFile(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
@@ -122,36 +114,32 @@ public class u3g2controller {
         }
     }
 
-    /**
-     * Handles the action when "Send Feedback" button is clicked.
-     */
+
     @FXML
     private void handleSendFeedback(ActionEvent event) {
         String feedback = feedbackTextArea.getText();
         String client = clientComboBox.getValue();
 
-        // Validate client selection
+
         if (client == null || client.isEmpty()) {
             System.out.println("Error: No client selected. Feedback cannot be sent.");
             return;
         }
 
-        // Validate feedback input
+
         if (feedback == null || feedback.trim().isEmpty()) {
             System.out.println("Error: Feedback is empty. Please enter feedback.");
             return;
         }
 
-        // Simulate feedback sending logic
+
         System.out.println("Sending feedback for " + client + ": " + feedback);
 
-        // Provide confirmation
+
         System.out.println("Feedback sent successfully!");
     }
 
-    /**
-     * Data model class for documents in the TableView.
-     */
+
     public static class DocumentData {
         private final String documentName;
         private final String status;
