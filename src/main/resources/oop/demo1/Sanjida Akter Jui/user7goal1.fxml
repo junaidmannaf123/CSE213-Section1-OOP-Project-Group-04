@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.SanjidaAkterJui.User7Goal1Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.SanjidaAkterJui_2320087.User7Goal1Controller">
    <children>
       <Button fx:id="submitNotesButton" layoutX="240.0" layoutY="512.0" mnemonicParsing="false" text="Submit Notes" onAction="#handleSubmitNotes" />
       <Button fx:id="updateStatusAndNotifyButton" layoutX="210.0" layoutY="548.0" mnemonicParsing="false" text="Update Status and Notify" onAction="#handleUpdateStatusAndNotify" />

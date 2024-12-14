@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="487.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.TasninSiza.u3g6controller">
+<AnchorPane prefHeight="487.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.TasninSiza_2130480.u3g6controller">
    <children>
       <Label fx:id="clientQueriesLabel" layoutX="200.0" layoutY="42.0" prefHeight="26.0" prefWidth="157.0" text="Client Queries">
          <font>
