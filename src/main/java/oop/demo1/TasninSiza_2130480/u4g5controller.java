@@ -14,13 +14,11 @@ public class u4g5controller {
     @FXML
     private Label statusLabel;
 
-
     @FXML
     private void handleSchedule(ActionEvent event) {
         String selectedCase = caseComboBox.getValue();
 
         if (selectedCase == null || selectedCase.isEmpty()) {
-
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Missing Selection");
             alert.setHeaderText("Case Missing");
@@ -28,7 +26,6 @@ public class u4g5controller {
             alert.showAndWait();
             return;
         }
-
 
         System.out.println("Scheduling consultation for case: " + selectedCase);
 
@@ -43,10 +40,9 @@ public class u4g5controller {
         alert.showAndWait();
     }
 
-
     @FXML
     public void initialize() {
-
+        // Populate the ComboBox with case options
         caseComboBox.getItems().addAll(
                 "Overstayed Visa",
                 "Application Error",
@@ -55,7 +51,11 @@ public class u4g5controller {
         );
 
 
-        statusLabel.setText("Please select a case.");
+        if (statusLabel != null) {
+            statusLabel.setText("Please select a case.");
+        } else {
+            System.err.println("Error: statusLabel is null. Check your FXML file for correct fx:id.");
+        }
 
         System.out.println("Controller initialized and case types loaded.");
     }

@@ -33,8 +33,8 @@
       </Label>
       <TableView fx:id="queryTable" layoutY="128.0" prefHeight="132.0" prefWidth="651.0">
          <columns>
-            <TableColumn prefWidth="385.59998166561127" text="Query" />
-            <TableColumn minWidth="0.0" prefWidth="264.7999572753906" text="Status" />
+            <TableColumn fx:id="queryColumn" prefWidth="385.59998166561127" text="Query" />
+            <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="264.7999572753906" text="Status" />
          </columns>
       </TableView>
       <TextArea fx:id="responseTextArea" layoutX="35.0" layoutY="335.0" prefHeight="98.0" prefWidth="302.0" promptText="Enter your response here..." onKeyReleased="#handleResponseChange"/>
