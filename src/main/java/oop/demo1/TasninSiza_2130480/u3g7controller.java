@@ -24,35 +24,45 @@ public class u3g7controller {
     @FXML
     private Label notesLabel;
 
+    /**
+     * Initializes the ComboBox and sets up default messages.
+     */
     @FXML
     private void initialize() {
-        // Populate the ComboBox with refusal cases (could be dynamic or static values)
-        refusalCaseComboBox.getItems().addAll("Case 1", "Case 2", "Case 3", "Case 4");
+        // Populate the ComboBox with refusal cases
+        refusalCaseComboBox.getItems().addAll(
+                "Case 1: Missing Documents",
+                "Case 2: Insufficient Funds",
+                "Case 3: Invalid Application",
+                "Case 4: Rejected Visa Interview"
+        );
 
-        // Default status label
+        // Set the default status message
         statusLabel.setText("Select a case and add notes.");
     }
 
     /**
-     * Handle the selection of a refusal case from the ComboBox.
+     * Handles the selection of a refusal case from the ComboBox.
      */
     @FXML
     private void handleRefusalCaseSelection() {
         String selectedCase = refusalCaseComboBox.getSelectionModel().getSelectedItem();
         if (selectedCase != null && !selectedCase.isEmpty()) {
-            statusLabel.setText("Notes for " + selectedCase + " selected.");
+            System.out.println("Selected case: " + selectedCase);
+            statusLabel.setText("Provide notes for: " + selectedCase);
+        } else {
+            statusLabel.setText("Please select a valid case.");
         }
     }
 
     /**
-     * Handles the change in notes text area.
-     * Updates status label when text is entered.
+     * Handles changes in the notes TextArea and updates the status label.
      */
     @FXML
     private void handleNotesChange() {
         String notes = notesTextArea.getText();
-        if (!notes.isEmpty()) {
-            statusLabel.setText("Notes ready to be saved.");
+        if (notes != null && !notes.trim().isEmpty()) {
+            statusLabel.setText("Notes are ready to be saved.");
         } else {
             statusLabel.setText("Enter consultation notes here...");
         }
@@ -60,27 +70,35 @@ public class u3g7controller {
 
     /**
      * Handles the saving of consultation notes.
-     * Updates the status label when notes are saved.
+     * Validates inputs and updates the status label on success or failure.
      */
     @FXML
     private void handleSaveNotes(ActionEvent event) {
         String selectedCase = refusalCaseComboBox.getSelectionModel().getSelectedItem();
         String notes = notesTextArea.getText();
 
-        if (selectedCase != null && !selectedCase.isEmpty() && !notes.isEmpty()) {
-            // Save the notes (this could involve storing them in a database or file)
-            // For now, just print the notes to console as a placeholder for saving logic.
-            System.out.println("Saving notes for: " + selectedCase);
-            System.out.println("Notes: " + notes);
-
-            // Update the status label to reflect the save
-            statusLabel.setText("Notes for " + selectedCase + " saved successfully.");
-
-            // Optionally, clear the notes text area after saving
-            notesTextArea.clear();
-        } else {
-            // If the case or notes are missing, show an error message
-            statusLabel.setText("Please select a case and enter valid notes.");
+        // Validate the selected case
+        if (selectedCase == null || selectedCase.isEmpty()) {
+            statusLabel.setText("Error: No case selected.");
+            System.out.println("Error: No case selected.");
+            return;
         }
+
+        // Validate the entered notes
+        if (notes == null || notes.trim().isEmpty()) {
+            statusLabel.setText("Error: Notes cannot be empty.");
+            System.out.println("Error: Notes are empty.");
+            return;
+        }
+
+        // Simulate saving the notes (e.g., save to a database or file)
+        System.out.println("Saving notes for: " + selectedCase);
+        System.out.println("Notes: " + notes);
+
+        // Update the status label to reflect the save
+        statusLabel.setText("Notes for " + selectedCase + " saved successfully.");
+
+        // Clear the notes TextArea after saving
+        notesTextArea.clear();
     }
 }

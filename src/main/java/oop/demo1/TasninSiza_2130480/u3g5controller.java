@@ -6,6 +6,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+
 import java.time.LocalDate;
 
 public class u3g5controller {
@@ -22,40 +23,43 @@ public class u3g5controller {
     @FXML
     private Button confirmButton;
 
+    /**
+     * Initializes the ComboBox and status label.
+     */
     @FXML
     private void initialize() {
         // Sample data for ComboBox
-        serviceComboBox.getItems().addAll("Service A", "Service B", "Service C");
+        serviceComboBox.getItems().addAll("Language Training", "Job Assistance", "Housing Support");
 
-        // Initialize labels or other UI components if needed
-        statusLabel.setText("Select a service and follow-up date.");
+        // Set initial status message
+        statusLabel.setText("Please select a service and follow-up date.");
     }
 
     /**
-     * Handles the service selection from the ComboBox.
+     * Handles the selection of a service from the ComboBox.
      */
     @FXML
     private void handleServiceSelection() {
         String selectedService = serviceComboBox.getValue();
         if (selectedService != null) {
             System.out.println("Selected service: " + selectedService);
-            statusLabel.setText("Follow-up date for " + selectedService + " is required.");
+            statusLabel.setText("Selected service: " + selectedService + ". Now select a follow-up date.");
         } else {
-            statusLabel.setText("No service selected.");
+            statusLabel.setText("No service selected. Please select a service.");
         }
     }
 
     /**
-     * Handles the date selection from the DatePicker.
+     * Handles the selection of a date from the DatePicker.
      */
     @FXML
     private void handleDateSelection() {
         LocalDate selectedDate = followUpDatePicker.getValue();
         if (selectedDate != null) {
-            System.out.println("Follow-up date: " + selectedDate);
-            statusLabel.setText("Confirm the follow-up date.");
+            System.out.println("Follow-up date selected: " + selectedDate);
+            statusLabel.setText("Follow-up date selected: " + selectedDate + ". Now confirm your selection.");
         } else {
-            statusLabel.setText("No follow-up date selected.");
+            statusLabel.setText("No follow-up date selected. Please select a date.");
         }
     }
 
@@ -67,21 +71,32 @@ public class u3g5controller {
         String selectedService = serviceComboBox.getValue();
         LocalDate selectedDate = followUpDatePicker.getValue();
 
+        // Validate service selection
         if (selectedService == null || selectedService.isEmpty()) {
-            statusLabel.setText("Please select a service.");
+            statusLabel.setText("Error: Please select a service.");
+            System.out.println("Error: No service selected.");
             return;
         }
 
+        // Validate date selection
         if (selectedDate == null) {
-            statusLabel.setText("Please select a follow-up date.");
+            statusLabel.setText("Error: Please select a follow-up date.");
+            System.out.println("Error: No follow-up date selected.");
             return;
         }
 
-        // Logic to confirm the selected service and follow-up date
+        // Ensure the selected date is not in the past
+        if (selectedDate.isBefore(LocalDate.now())) {
+            statusLabel.setText("Error: Follow-up date cannot be in the past.");
+            System.out.println("Error: Invalid follow-up date.");
+            return;
+        }
+
+        // Simulate confirmation logic (e.g., save to a database or send notification)
         System.out.println("Service confirmed: " + selectedService);
         System.out.println("Follow-up date confirmed: " + selectedDate);
 
         // Update the status label
-        statusLabel.setText("Service and follow-up date confirmed.");
+        statusLabel.setText("Service confirmed: " + selectedService + " on " + selectedDate + ".");
     }
 }
