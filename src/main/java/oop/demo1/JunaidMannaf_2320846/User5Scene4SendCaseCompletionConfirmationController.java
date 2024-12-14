@@ -11,7 +11,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class User5Scene4SendCaseCompletionConfirmationController implements Initializable {
@@ -22,9 +25,10 @@ public class User5Scene4SendCaseCompletionConfirmationController implements Init
     @FXML
     private Label statusLabel;
 
+    private static final String COMPLETED_CASES_FILE = "completed_cases.bin";
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Populate the ComboBox with sample completed cases
         completedCaseComboBox.getItems().addAll(
                 "Case 001: Immigration Sponsorship",
                 "Case 002: Refugee Application",
@@ -40,6 +44,7 @@ public class User5Scene4SendCaseCompletionConfirmationController implements Init
         if (selectedCase == null) {
             statusLabel.setText("Please select a completed case.");
         } else {
+            saveCompletedCase(selectedCase);
             statusLabel.setText("Case '" + selectedCase + "' marked as complete.");
             System.out.println("Marked as complete: " + selectedCase);
         }
@@ -63,6 +68,31 @@ public class User5Scene4SendCaseCompletionConfirmationController implements Init
         switchScene(event, "/oop/demo1/Junaid Mannaf/User5CaseManagerDashboard.fxml");
     }
 
+    private void saveCompletedCase(String completedCase) {
+        List<String> completedCases = readCompletedCases();
+        completedCases.add(completedCase);
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(COMPLETED_CASES_FILE))) {
+            oos.writeObject(completedCases);
+            System.out.println("Case saved to binary file: " + completedCase);
+        } catch (IOException e) {
+            e.printStackTrace();
+            statusLabel.setText("Error saving completed case.");
+        }
+    }
+
+    private List<String> readCompletedCases() {
+        File file = new File(COMPLETED_CASES_FILE);
+        if (!file.exists()) {
+            return new ArrayList<>();
+        }
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+            return (List<String>) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
+
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -77,4 +107,3 @@ public class User5Scene4SendCaseCompletionConfirmationController implements Init
         }
     }
 }
-
