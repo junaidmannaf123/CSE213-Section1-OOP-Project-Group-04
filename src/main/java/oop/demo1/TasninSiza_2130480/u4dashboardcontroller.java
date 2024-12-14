@@ -12,42 +12,42 @@ public class u4dashboardcontroller {
 
     @FXML
     private void handleSubmitApplication(ActionEvent event) {
-        switchScene(event, "/oop/demo1/TasninSiza_2130480/u4g1.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g1.fxml");
     }
 
     @FXML
     private void handleBookConsultation(ActionEvent event) {
-        switchScene(event, "/oop/demo1/TasninSiza_2130480/u4g2.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g2.fxml");
     }
 
     @FXML
     private void handleTrackApplication(ActionEvent event) {
-        switchScene(event, "/oop/demo1/TasninSiza_2130480/u4g3.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g3.fxml");
     }
 
     @FXML
     private void handleUploadDocuments(ActionEvent event) {
-        switchScene(event, "/oop/demo1/TasninSiza_2130480/u4g4.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g4.fxml");
     }
 
     @FXML
     private void handleVisaConsultation(ActionEvent event) {
-        switchScene(event, "/oop/demo1/TasninSiza_2130480/u4g5.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g5.fxml");
     }
 
     @FXML
     private void handleDownloadNotes(ActionEvent event) {
-        switchScene(event, "/oop/demo1/TasninSiza_2130480/u4g6.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g6.fxml");
     }
 
     @FXML
     private void handleRequestStatusUpdate(ActionEvent event) {
-        switchScene(event, "/oop/demo1/TasninSiza_2130480/u4g7.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g7.fxml");
     }
 
     @FXML
     private void handlePayConsultationFees(ActionEvent event) {
-        switchScene(event, "/oop/demo1/TasninSiza_2130480/u4g8.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g8.fxml");
     }
 
     @FXML
