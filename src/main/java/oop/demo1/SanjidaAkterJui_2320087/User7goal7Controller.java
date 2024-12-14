@@ -3,6 +3,7 @@ package oop.demo1.SanjidaAkterJui_2320087;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 
 public class User7goal7Controller {
@@ -11,7 +12,7 @@ public class User7goal7Controller {
     private ComboBox<String> listoccombobox;
 
     @FXML
-    private TableView<?> displaysubdoctableview;
+    private TableView<String> displaysubdoctableview;
 
     @FXML
     private TextArea inputcomfeedbctextarea;

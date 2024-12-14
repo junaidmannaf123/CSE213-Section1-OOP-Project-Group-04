@@ -1,6 +1,7 @@
 package oop.demo1.SanjidaAkterJui_2320087;
 
 import javafx.fxml.FXML;
+import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
