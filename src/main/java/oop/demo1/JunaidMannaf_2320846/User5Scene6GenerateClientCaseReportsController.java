@@ -31,7 +31,6 @@ public class User5Scene6GenerateClientCaseReportsController implements Initializ
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Populate ComboBox with sample client cases
         clientCaseComboBox.getItems().addAll(
                 "Case 001 Immigration Sponsorship",
                 "Case 002 Legal Document Review",
@@ -40,7 +39,6 @@ public class User5Scene6GenerateClientCaseReportsController implements Initializ
         );
     }
 
-    // Handle "Generate Report" button click
     @FXML
     private void handleGenerateReport(ActionEvent event) {
         String selectedCase = clientCaseComboBox.getValue();
@@ -52,17 +50,15 @@ public class User5Scene6GenerateClientCaseReportsController implements Initializ
         }
     }
 
-    // Handle "Export as PDF" button click
     @FXML
     private void handleExportPDF(ActionEvent event) {
         String selectedCase = clientCaseComboBox.getValue();
         if (selectedCase == null) {
             statusLabel.setText("Please select a client case to export as PDF.");
         } else {
-            // Create case report content
+
             String caseReportContent = generateCaseReport(selectedCase);
 
-            // Open file chooser for saving the PDF
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Save PDF");
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
@@ -71,15 +67,13 @@ public class User5Scene6GenerateClientCaseReportsController implements Initializ
 
             if (saveFile != null) {
                 try (FileOutputStream outputStream = new FileOutputStream(saveFile)) {
-                    // Use iText 7 to generate the PDF
                     PdfWriter writer = new PdfWriter(outputStream);
                     PdfDocument pdfDoc = new PdfDocument(writer);
                     Document document = new Document(pdfDoc);
 
-                    // Add the case report content to the PDF
                     document.add(new Paragraph(caseReportContent));
 
-                    document.close();  // Closing the document
+                    document.close();
 
                     statusLabel.setText("Downloaded: " + saveFile.getName());
                 } catch (Exception e) {
@@ -92,7 +86,6 @@ public class User5Scene6GenerateClientCaseReportsController implements Initializ
         }
     }
 
-    // Method to generate case report content based on selected case
     private String generateCaseReport(String selectedCase) {
         String caseReportContent;
 
