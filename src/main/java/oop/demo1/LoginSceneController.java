@@ -15,6 +15,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+// Immigration Consultant / LoginID: consultant01 / Password: ic123 / User Type: Immigration Consultant
+// Immigration Applicant / LoginID: applicant01 / Password: ia123 / User Type: Immigration Applicant
+// Case Manager / LoginID: manager01 / Password: cm123 / User Type: Case Manager
+// Client (Sponsorship) / LoginID: client01 / Password: cs123 / User Type: Client (Sponsorship)
+// Legal Advisor / LoginID: advisor01 / Password: la123 / User Type: Legal Advisor
+// IT Support / LoginID: support01 / Password: its123 / User Type: IT Support
+
 public class LoginSceneController implements Initializable {
 
     @FXML
