@@ -29,6 +29,19 @@ public class u4g8controller {
     @FXML
     private TextField billingAddressTextField;
 
+    @FXML
+    private void initialize() {
+
+        feeTypeComboBox.getItems().addAll(
+                "Application Fee",
+                "Processing Fee",
+                "Late Fee",
+                "Premium Service Fee"
+        );
+
+        // Set a default value (optional)
+        feeTypeComboBox.setValue("Application Fee");
+    }
 
     @FXML
     private void handlePay(ActionEvent event) {
@@ -80,10 +93,8 @@ public class u4g8controller {
         System.out.println("Card Holder Name: " + cardHolderName);
         System.out.println("Billing Address: " + billingAddress);
 
-
         showAlert("Payment Successful", "Your payment has been successfully processed.");
     }
-
 
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -92,7 +103,6 @@ public class u4g8controller {
         alert.setContentText(content);
         alert.showAndWait();
     }
-
 
     private String maskCardNumber(String cardNumber) {
         return "**** **** **** " + cardNumber.substring(cardNumber.length() - 4);

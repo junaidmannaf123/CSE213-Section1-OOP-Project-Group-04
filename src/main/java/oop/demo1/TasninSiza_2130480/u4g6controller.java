@@ -14,13 +14,11 @@ public class u4g6controller {
     @FXML
     private Label statusLabel;
 
-
     @FXML
     private void handleDownload(ActionEvent event) {
         String selectedSession = sessionComboBox.getValue();
 
         if (selectedSession == null || selectedSession.isEmpty()) {
-
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Missing Selection");
             alert.setHeaderText("Session Missing");
@@ -31,10 +29,7 @@ public class u4g6controller {
 
 
         System.out.println("Downloading consultation notes for session: " + selectedSession);
-
-
         statusLabel.setText("Consultation notes downloaded for session: " + selectedSession);
-
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Download Successful");
@@ -43,10 +38,9 @@ public class u4g6controller {
         alert.showAndWait();
     }
 
-
     @FXML
     public void initialize() {
-
+        // Populate the ComboBox with session options
         sessionComboBox.getItems().addAll(
                 "Session 1: Visa Guidance",
                 "Session 2: Document Preparation",
@@ -56,7 +50,11 @@ public class u4g6controller {
         );
 
 
-        statusLabel.setText("Please select a session.");
+        if (statusLabel != null) {
+            statusLabel.setText("Please select a session.");
+        } else {
+            System.err.println("Error: statusLabel is null.");
+        }
 
         System.out.println("Controller initialized and session options loaded.");
     }
