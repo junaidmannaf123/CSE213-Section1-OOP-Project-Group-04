@@ -8,13 +8,13 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal4">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal4Controller">
    <children>
-      <Button fx:id="confappntmntbutton" layoutX="256.0" layoutY="284.0" mnemonicParsing="false" text="confirm appointment" />
-      <Button fx:id="confemailbutton" layoutX="249.0" layoutY="323.0" mnemonicParsing="false" text="send confirmation email" />
+      <Button fx:id="confappntmntbutton" layoutX="256.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleConfirmAppointment" text="confirm appointment" />
+      <Button fx:id="confemailbutton" layoutX="249.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleSendConfirmationEmail" text="send confirmation email" />
       <ComboBox fx:id="loccombobox" layoutX="245.0" layoutY="168.0" prefWidth="150.0" promptText="list of clients" />
       <DatePicker fx:id="appntmntdatepicker" layoutX="224.0" layoutY="229.0" promptText="appointment date" />
-      <Text fx:id="scedulelegcnsltntext" layoutX="158.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Schedule Legal Consultation with Clients" underline="true">
+      <Text fx:id="scedulelegcnsltntext" layoutX="158.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule Legal Consultation with Clients" underline="true">
          <font>
             <Font size="18.0" />
          </font>

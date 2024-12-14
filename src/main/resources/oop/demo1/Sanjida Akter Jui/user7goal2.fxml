@@ -7,11 +7,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="546.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal2">
+<AnchorPane prefHeight="546.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal2Controller">
    <children>
       <ComboBox fx:id="lvaccombobox" layoutX="206.0" layoutY="187.0" prefHeight="26.0" prefWidth="187.0" promptText="list of visa appeals cases" />
       <TextArea fx:id="providelegaladvctextarea" layoutX="200.0" layoutY="240.0" prefHeight="200.0" prefWidth="200.0" promptText="provide legal advice" />
-      <Button fx:id="subnotesupdtstatusbutton" layoutX="208.0" layoutY="477.0" mnemonicParsing="false" text="submit notes and update status" />
+      <Button fx:id="subnotesupdtstatusbutton" layoutX="208.0" layoutY="477.0" mnemonicParsing="false" text="submit notes and update status" onAction="#handleSubmitNotesAndUpdateStatus" />
       <Text fx:id="providelegalsupporttext" layoutX="179.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Provide Legal Support for Visa Appeal " underline="true" wrappingWidth="258.0960693359375">
          <font>
             <Font size="15.0" />

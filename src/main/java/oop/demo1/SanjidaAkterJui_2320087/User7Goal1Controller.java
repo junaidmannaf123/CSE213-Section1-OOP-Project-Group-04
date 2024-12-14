@@ -1,16 +1,17 @@
 package oop.demo1.SanjidaAkterJui_2320087;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
-import javafx.stage.Stage;
 
 public class User7Goal1Controller {
+
+    @FXML
+    private Button submitNotesButton;
+
+    @FXML
+    private Button updateStatusAndNotifyButton;
 
     @FXML
     private ComboBox<String> listOfFlaggedComplexCasesComboBox;
@@ -19,39 +20,31 @@ public class User7Goal1Controller {
     private TextArea caseDetailsTextArea;
 
     @FXML
-    private void handleSubmitNotes(ActionEvent event) {
-        System.out.println("Submit Notes button clicked.");
-        // Logic for submitting notes
-        String selectedCase = listOfFlaggedComplexCasesComboBox.getValue();
-        String notes = caseDetailsTextArea.getText();
-        System.out.println("Submitting notes for case: " + selectedCase + ", Notes: " + notes);
+    private Button backButton;
+
+    // Method to handle "Submit Notes" button click
+    @FXML
+    private void handleSubmitNotes() {
+        // Example: Retrieve and process notes from the TextArea
+        String caseDetails = caseDetailsTextArea.getText();
+        System.out.println("Notes submitted: " + caseDetails);
+        // Add logic to save or process the notes
     }
 
+    // Method to handle "Update Status and Notify" button click
     @FXML
-    private void handleUpdateStatusAndNotify(ActionEvent event) {
-        System.out.println("Update Status and Notify button clicked.");
-        // Logic for updating status and notifying
+    private void handleUpdateStatusAndNotify() {
+        // Example: Notify about the status of the selected case
         String selectedCase = listOfFlaggedComplexCasesComboBox.getValue();
-        System.out.println("Updating status for case: " + selectedCase);
+        System.out.println("Updating status for: " + selectedCase);
+        // Add logic to update the case status and notify relevant parties
     }
 
+    // Method to handle "Back" button click
     @FXML
-    private void handleBackToDashboard(ActionEvent event) {
-        System.out.println("Navigating back to Dashboard...");
-        try {
-            // Load the FXML file for the dashboard
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/demo1/Sanjida Akter Jui/user7dashboard.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage and set the new scene
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene newScene = new Scene(root);
-            stage.setScene(newScene);
-            stage.show();
-            System.out.println("Dashboard scene successfully loaded.");
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error while switching scenes: " + e.getMessage());
-        }
+    private void handleBackToDashboard() {
+        // Example: Navigate back to the dashboard
+        System.out.println("Navigating back to the dashboard.");
+        // Add logic to handle navigation
     }
 }

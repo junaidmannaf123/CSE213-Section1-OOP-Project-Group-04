@@ -10,20 +10,20 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="677.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal7">
-   <children>
-      <ComboBox fx:id="listoccombobox" layoutX="242.0" layoutY="123.0" prefWidth="150.0" promptText="list of cases" />
-      <TableView fx:id="displaysubdoctableview" layoutX="202.0" layoutY="175.0" prefHeight="184.0" prefWidth="210.0">
-        <columns>
-          <TableColumn prefWidth="209.60001220703126" text="display submitted documents" />
-        </columns>
-      </TableView>
-      <TextArea fx:id="inputcomfeedbctextarea" layoutX="202.0" layoutY="392.0" prefHeight="195.0" prefWidth="210.0" promptText="input compliance feedback" />
-      <Button fx:id="markascompliantbutton" layoutX="243.0" layoutY="609.0" mnemonicParsing="false" text="mark as compliant" />
-      <Text fx:id="reviewlegalcmplnctext" layoutX="129.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Review Legal Compliance for Documents" underline="true">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Text>
-   </children>
+<AnchorPane prefHeight="677.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal7Controller">
+    <children>
+        <ComboBox fx:id="listoccombobox" layoutX="242.0" layoutY="123.0" prefWidth="150.0" promptText="list of cases" />
+        <TableView fx:id="displaysubdoctableview" layoutX="202.0" layoutY="175.0" prefHeight="184.0" prefWidth="210.0">
+            <columns>
+                <TableColumn prefWidth="209.60001220703126" text="display submitted documents" />
+            </columns>
+        </TableView>
+        <TextArea fx:id="inputcomfeedbctextarea" layoutX="202.0" layoutY="392.0" prefHeight="195.0" prefWidth="210.0" promptText="input compliance feedback" />
+        <Button fx:id="markascompliantbutton" layoutX="243.0" layoutY="609.0" mnemonicParsing="false" onAction="#handleMarkAsCompliant" text="mark as compliant" />
+        <Text fx:id="reviewlegalcmplnctext" layoutX="129.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Review Legal Compliance for Documents" underline="true">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Text>
+    </children>
 </AnchorPane>

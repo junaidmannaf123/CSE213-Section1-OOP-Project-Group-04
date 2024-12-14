@@ -8,10 +8,10 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="550.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal6">
+<AnchorPane prefHeight="550.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal6Controller">
    <children>
-      <Button fx:id="uploadappletrbutton" layoutX="238.0" layoutY="442.0" mnemonicParsing="false" text="upload appeal letter" />
-      <Button fx:id="sendapplletterbutton" layoutX="244.0" layoutY="489.0" mnemonicParsing="false" text="send appeal letter" />
+      <Button fx:id="uploadappletrbutton" layoutX="238.0" layoutY="442.0" mnemonicParsing="false" onAction="#handleUploadAppealLetter" text="upload appeal letter" />
+      <Button fx:id="sendapplletterbutton" layoutX="244.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleSendAppealLetter" text="send appeal letter" />
       <ComboBox fx:id="lorccombobox" layoutX="224.0" layoutY="163.0" prefWidth="150.0" promptText="list of refusal cases" />
       <TextArea fx:id="draftoaltextarea" layoutX="200.0" layoutY="222.0" prefHeight="200.0" prefWidth="200.0" promptText="draft of appeal letter" />
       <Text fx:id="draftvisarefusalapltext" layoutX="180.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Draft Visa Refusal Appeals" underline="true">

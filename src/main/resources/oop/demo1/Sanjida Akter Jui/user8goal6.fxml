@@ -7,20 +7,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="561.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra2.User8goal6">
-   <children>
-      <TableView fx:id="leastsecpatchtableview" layoutX="187.0" layoutY="130.0" prefHeight="200.0" prefWidth="256.0">
-        <columns>
-          <TableColumn prefWidth="255.20001220703125" text="least security patches and vulnerabilities" />
-        </columns>
-      </TableView>
-      <Button fx:id="installupdatesbutton" layoutX="274.0" layoutY="360.0" mnemonicParsing="false" text="install updates" />
-      <Button fx:id="markresolvedbutton" layoutX="274.0" layoutY="415.0" mnemonicParsing="false" text="mark resolved" />
-      <Button fx:id="sendupdatenotibutton" layoutX="247.0" layoutY="468.0" mnemonicParsing="false" text="send update notification" />
-      <Text fx:id="reviewcompleximmcasetext" layoutX="205.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update System Security" underline="true">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-   </children>
+<AnchorPane prefHeight="561.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra2.User8goal6Controller">
+    <children>
+        <TableView fx:id="leastsecpatchtableview" layoutX="187.0" layoutY="130.0" prefHeight="200.0" prefWidth="256.0">
+            <columns>
+                <TableColumn prefWidth="255.2" text="least security patches and vulnerabilities" />
+            </columns>
+        </TableView>
+        <Button fx:id="installupdatesbutton" layoutX="274.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleInstallUpdates" text="install updates" />
+        <Button fx:id="markresolvedbutton" layoutX="274.0" layoutY="415.0" mnemonicParsing="false" onAction="#handleMarkResolved" text="mark resolved" />
+        <Button fx:id="sendupdatenotibutton" layoutX="247.0" layoutY="468.0" mnemonicParsing="false" onAction="#handleSendUpdateNotification" text="send update notification" />
+        <Text fx:id="reviewcompleximmcasetext" layoutX="205.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update System Security" underline="true">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+    </children>
 </AnchorPane>

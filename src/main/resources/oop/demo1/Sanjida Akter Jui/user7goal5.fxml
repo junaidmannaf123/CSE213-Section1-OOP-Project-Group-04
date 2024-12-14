@@ -8,11 +8,11 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="551.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal5">
+<AnchorPane prefHeight="551.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal5Controller">
    <children>
       <ComboBox fx:id="looccombobox" layoutX="250.0" layoutY="179.0" prefHeight="26.0" prefWidth="156.0" promptText="list of ongoing cases" />
       <TextArea fx:id="dauatextarea" layoutX="228.0" layoutY="254.0" prefHeight="200.0" prefWidth="200.0" promptText="display and update advice" />
-      <Button fx:id="sendupdtadvcbutton" layoutX="260.0" layoutY="490.0" mnemonicParsing="false" text="send updated advice" />
+      <Button fx:id="sendupdtadvcbutton" layoutX="260.0" layoutY="490.0" mnemonicParsing="false" onAction="#handleSendUpdatedAdvice" text="send updated advice" />
       <Text fx:id="updatelegadvtext" layoutX="161.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Legal Advice for Ongoing Cases" underline="true" wrappingWidth="325.6724853515625">
          <font>
             <Font size="18.0" />

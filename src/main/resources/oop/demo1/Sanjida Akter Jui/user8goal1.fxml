@@ -9,25 +9,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <TableView fx:id="alluseraccdisplaytableview" layoutX="185.0" layoutY="111.0" prefHeight="200.0" prefWidth="229.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="user name" />
-          <TableColumn prefWidth="75.0" text="role" />
-            <TableColumn prefWidth="75.0" text="status" />
-        </columns>
-      </TableView>
-      <TextField fx:id="addedituserdtlstextfield" layoutX="228.0" layoutY="333.0" promptText="add/edit user details" />
-      <Button fx:id="adduserbutton" layoutX="165.0" layoutY="394.0" mnemonicParsing="false" text="add user" />
-      <ComboBox fx:id="selectrolecombox" layoutX="205.0" layoutY="454.0" prefWidth="150.0" promptText="select role" />
-      <Button fx:id="savechangesbutton" layoutX="249.0" layoutY="526.0" mnemonicParsing="false" text="save changes" />
-      <Button fx:id="removeuserbutton" layoutX="337.0" layoutY="394.0" mnemonicParsing="false" text="remove user" />
-      <Text fx:id="alluseraccdisplaytext" layoutX="228.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="all user accounts display" />
-      <Text fx:id="reviewcompleximmcasetext" layoutX="195.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage User Accounts " underline="true">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User8goal1Controller">
+    <children>
+        <TableView fx:id="alluseraccdisplaytableview" layoutX="185.0" layoutY="111.0" prefHeight="200.0" prefWidth="229.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="user name" />
+                <TableColumn prefWidth="75.0" text="role" />
+                <TableColumn prefWidth="75.0" text="status" />
+            </columns>
+        </TableView>
+        <TextField fx:id="addedituserdtlstextfield" layoutX="228.0" layoutY="333.0" promptText="add/edit user details" />
+        <Button fx:id="adduserbutton" layoutX="165.0" layoutY="394.0" mnemonicParsing="false" onAction="#handleAddUser" text="add user" />
+        <ComboBox fx:id="selectrolecombox" layoutX="205.0" layoutY="454.0" prefWidth="150.0" promptText="select role" />
+        <Button fx:id="savechangesbutton" layoutX="249.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleSaveChanges" text="save changes" />
+        <Button fx:id="removeuserbutton" layoutX="337.0" layoutY="394.0" mnemonicParsing="false" onAction="#handleRemoveUser" text="remove user" />
+        <Text fx:id="alluseraccdisplaytext" layoutX="228.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="all user accounts display" />
+        <Text fx:id="reviewcompleximmcasetext" layoutX="195.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage User Accounts " underline="true">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+    </children>
 </AnchorPane>

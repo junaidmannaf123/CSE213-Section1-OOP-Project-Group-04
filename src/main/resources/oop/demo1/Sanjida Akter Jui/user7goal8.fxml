@@ -8,12 +8,12 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="502.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal8">
+<AnchorPane prefHeight="502.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cra.User7goal8Controller">
    <children>
       <ComboBox fx:id="topicofresrchcombox" layoutX="216.0" layoutY="163.0" prefWidth="150.0" promptText="topic of research" />
       <TextArea fx:id="inputfindingstextarea" layoutX="191.0" layoutY="218.0" prefHeight="200.0" prefWidth="200.0" promptText="input findings" />
-      <Button fx:id="sendresearchfindingsbutton" layoutX="223.0" layoutY="442.0" mnemonicParsing="false" text="send research findings" />
-      <Text fx:id="conductlegalrsrchtext" layoutX="114.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conduct Legal Research forImmigration Policy Changes" underline="true">
+      <Button fx:id="sendresearchfindingsbutton" layoutX="223.0" layoutY="442.0" mnemonicParsing="false" onAction="#handleSendResearchFindings" text="send research findings" />
+      <Text fx:id="conductlegalrsrchtext" layoutX="114.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conduct Legal Research for Immigration Policy Changes" underline="true">
          <font>
             <Font size="17.0" />
          </font>
