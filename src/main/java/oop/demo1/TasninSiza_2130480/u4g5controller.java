@@ -14,15 +14,13 @@ public class u4g5controller {
     @FXML
     private Label statusLabel;
 
-    /**
-     * This method handles the scheduling of a visa refusal consultation.
-     */
+
     @FXML
     private void handleSchedule(ActionEvent event) {
         String selectedCase = caseComboBox.getValue();
 
         if (selectedCase == null || selectedCase.isEmpty()) {
-            // Show an alert if no case is selected
+
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Missing Selection");
             alert.setHeaderText("Case Missing");
@@ -31,13 +29,13 @@ public class u4g5controller {
             return;
         }
 
-        // Simulate scheduling logic
+
         System.out.println("Scheduling consultation for case: " + selectedCase);
 
-        // Update the status label
+
         statusLabel.setText("Consultation scheduled for case: " + selectedCase);
 
-        // Provide user feedback
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Consultation Scheduled");
         alert.setHeaderText("Success");
@@ -45,19 +43,19 @@ public class u4g5controller {
         alert.showAndWait();
     }
 
-    /**
-     * Initialize the ComboBox with predefined case types.
-     * This method is called automatically when the controller is loaded.
-     */
+
     @FXML
     public void initialize() {
-        // Add predefined case types to the ComboBox
+
         caseComboBox.getItems().addAll(
                 "Overstayed Visa",
                 "Application Error",
                 "Missing Documentation",
                 "Other"
         );
+
+
+        statusLabel.setText("Please select a case.");
 
         System.out.println("Controller initialized and case types loaded.");
     }

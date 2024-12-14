@@ -2,11 +2,12 @@ package oop.demo1.TasninSiza_2130480;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
+import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class u4g1controller {
 
@@ -14,16 +15,13 @@ public class u4g1controller {
     private ComboBox<String> visaTypeComboBox;
 
     @FXML
-    private ComboBox<String> nationalityComboBox;
-
-    @FXML
-    private ComboBox<String> visaPurposeComboBox;
-
-    @FXML
-    private ComboBox<String> paymentMethodComboBox;
-
-    @FXML
     private TextField phoneTextField;
+
+    @FXML
+    private DatePicker dobDatePicker;
+
+    @FXML
+    private ComboBox<String> nationalityComboBox;
 
     @FXML
     private TextField emailTextField;
@@ -41,128 +39,155 @@ public class u4g1controller {
     private TextField additionalInfoTextField;
 
     @FXML
-    private DatePicker dobDatePicker;
+    private ComboBox<String> visaPurposeComboBox;
+
+    @FXML
+    private ComboBox<String> paymentMethodComboBox;
+
+    @FXML
+    private void initialize() {
+
+        visaTypeComboBox.getItems().addAll("Tourist Visa", "Work Visa", "Student Visa", "Permanent Residence");
+        nationalityComboBox.getItems().addAll("United States", "Canada", "India", "United Kingdom", "Australia");
+        visaPurposeComboBox.getItems().addAll("Travel", "Employment", "Education", "Relocation");
+        paymentMethodComboBox.getItems().addAll("Credit Card", "Debit Card", "PayPal", "Bank Transfer");
+
+
+        visaTypeComboBox.setValue("Tourist Visa");
+        nationalityComboBox.setValue("United States");
+        visaPurposeComboBox.setValue("Travel");
+        paymentMethodComboBox.setValue("Credit Card");
+    }
 
     @FXML
     private void handleVisaTypeSelection(ActionEvent event) {
-        String selectedVisaType = visaTypeComboBox.getValue();
-        System.out.println("Selected Visa Type: " + selectedVisaType);
-    }
-
-    @FXML
-    private void handleNationalitySelection(ActionEvent event) {
-        String selectedNationality = nationalityComboBox.getValue();
-        System.out.println("Selected Nationality: " + selectedNationality);
-    }
-
-    @FXML
-    private void handleVisaPurposeSelection(ActionEvent event) {
-        String selectedVisaPurpose = visaPurposeComboBox.getValue();
-        System.out.println("Selected Visa Purpose: " + selectedVisaPurpose);
-    }
-
-    @FXML
-    private void handlePaymentMethodSelection(ActionEvent event) {
-        String selectedPaymentMethod = paymentMethodComboBox.getValue();
-        System.out.println("Selected Payment Method: " + selectedPaymentMethod);
+        System.out.println("Selected Visa Type: " + visaTypeComboBox.getValue());
     }
 
     @FXML
     private void handlePhoneInput(ActionEvent event) {
         String phone = phoneTextField.getText();
-        System.out.println("Entered Phone: " + phone);
+        if (!phone.matches("\\d{10}")) {
+            showAlert(AlertType.ERROR, "Invalid Phone Number", "Phone number must be 10 digits.");
+        } else {
+            System.out.println("Phone number entered: " + phone);
+        }
+    }
+
+    @FXML
+    private void handleDOBInput(ActionEvent event) {
+        LocalDate dob = dobDatePicker.getValue();
+        if (dob != null && dob.isAfter(LocalDate.now())) {
+            showAlert(AlertType.ERROR, "Invalid Date of Birth", "Date of birth cannot be in the future.");
+        } else {
+            System.out.println("Date of Birth selected: " + dob);
+        }
+    }
+
+    @FXML
+    private void handleNationalitySelection(ActionEvent event) {
+        System.out.println("Selected Nationality: " + nationalityComboBox.getValue());
     }
 
     @FXML
     private void handleEmailInput(ActionEvent event) {
         String email = emailTextField.getText();
-        System.out.println("Entered Email: " + email);
+        if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+            showAlert(AlertType.ERROR, "Invalid Email Address", "Please enter a valid email address.");
+        } else {
+            System.out.println("Email entered: " + email);
+        }
     }
 
     @FXML
     private void handleAddressInput(ActionEvent event) {
-        String address = addressTextField.getText();
-        System.out.println("Entered Address: " + address);
+        System.out.println("Residential Address entered: " + addressTextField.getText());
     }
 
     @FXML
     private void handlePassportInput(ActionEvent event) {
-        String passportNumber = passportTextField.getText();
-        System.out.println("Entered Passport Number: " + passportNumber);
+        String passport = passportTextField.getText();
+        if (!passport.matches("^[A-Za-z0-9]{6,9}$")) {
+            showAlert(AlertType.ERROR, "Invalid Passport Number", "Passport number must be 6-9 alphanumeric characters.");
+        } else {
+            System.out.println("Passport Number entered: " + passport);
+        }
     }
 
     @FXML
     private void handleFullNameInput(ActionEvent event) {
-        String fullName = fullNameTextField.getText();
-        System.out.println("Entered Full Name: " + fullName);
-    }
-
-    @FXML
-    private void handleDOBInput(ActionEvent event) {
-        if (dobDatePicker.getValue() != null) {
-            String dateOfBirth = dobDatePicker.getValue().toString();
-            System.out.println("Selected Date of Birth: " + dateOfBirth);
-        } else {
-            System.out.println("Date of Birth not selected.");
-        }
+        System.out.println("Full Name entered: " + fullNameTextField.getText());
     }
 
     @FXML
     private void handleAdditionalInfoInput(ActionEvent event) {
-        String additionalInfo = additionalInfoTextField.getText();
-        System.out.println("Entered Additional Information: " + additionalInfo);
+        System.out.println("Additional Information entered: " + additionalInfoTextField.getText());
+    }
+
+    @FXML
+    private void handleVisaPurposeSelection(ActionEvent event) {
+        System.out.println("Selected Visa Purpose: " + visaPurposeComboBox.getValue());
+    }
+
+    @FXML
+    private void handlePaymentMethodSelection(ActionEvent event) {
+        System.out.println("Selected Payment Method: " + paymentMethodComboBox.getValue());
     }
 
     @FXML
     private void handleUploadFile(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Upload File");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("All Files", "*.*"),
-                new FileChooser.ExtensionFilter("PDF Files", "*.pdf"),
-                new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png")
-        );
-
-        Stage stage = (Stage) phoneTextField.getScene().getWindow(); // Using any component to get the stage
-        java.io.File file = fileChooser.showOpenDialog(stage);
-
-        if (file != null) { // Check if a file was selected
-            System.out.println("Selected file: " + file.getAbsolutePath());
-        } else {
-            System.out.println("No file selected.");
-        }
+        // Placeholder for file upload logic
+        System.out.println("File upload functionality not yet implemented.");
     }
 
     @FXML
     private void handleSubmit(ActionEvent event) {
-        // Collecting all the input data
-        String fullName = fullNameTextField.getText();
-        String phone = phoneTextField.getText();
-        String email = emailTextField.getText();
-        String address = addressTextField.getText();
-        String passportNumber = passportTextField.getText();
-        String visaType = visaTypeComboBox.getValue();
-        String nationality = nationalityComboBox.getValue();
-        String visaPurpose = visaPurposeComboBox.getValue();
-        String paymentMethod = paymentMethodComboBox.getValue();
-        String dob = (dobDatePicker.getValue() != null) ? dobDatePicker.getValue().toString() : "Not Provided";
-        String additionalInfo = additionalInfoTextField.getText();
+        List<String> errors = validateInputs();
 
-        // Log the information (replace this with actual saving logic, e.g., database)
-        System.out.println("Submission Details:");
-        System.out.println("Full Name: " + fullName);
-        System.out.println("Phone: " + phone);
-        System.out.println("Email: " + email);
-        System.out.println("Address: " + address);
-        System.out.println("Passport Number: " + passportNumber);
-        System.out.println("Visa Type: " + visaType);
-        System.out.println("Nationality: " + nationality);
-        System.out.println("Visa Purpose: " + visaPurpose);
-        System.out.println("Payment Method: " + paymentMethod);
-        System.out.println("Date of Birth: " + dob);
-        System.out.println("Additional Info: " + additionalInfo);
+        if (errors.isEmpty()) {
 
-        // Example: Show confirmation
-        System.out.println("Application submitted successfully!");
+            System.out.println("Form submitted successfully!");
+            showAlert(AlertType.INFORMATION, "Submission Successful", "Your application has been submitted successfully.");
+        } else {
+
+            String errorMessage = String.join("\n", errors);
+            showAlert(AlertType.ERROR, "Submission Failed", errorMessage);
+        }
+    }
+
+    private List<String> validateInputs() {
+        List<String> errors = new ArrayList<>();
+
+        if (fullNameTextField.getText().isEmpty()) {
+            errors.add("Full Name is required.");
+        }
+        if (dobDatePicker.getValue() == null) {
+            errors.add("Date of Birth is required.");
+        }
+        if (nationalityComboBox.getValue() == null) {
+            errors.add("Nationality is required.");
+        }
+        if (phoneTextField.getText().isEmpty() || !phoneTextField.getText().matches("\\d{10}")) {
+            errors.add("Valid Phone Number is required.");
+        }
+        if (emailTextField.getText().isEmpty() || !emailTextField.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+            errors.add("Valid Email Address is required.");
+        }
+        if (addressTextField.getText().isEmpty()) {
+            errors.add("Residential Address is required.");
+        }
+        if (passportTextField.getText().isEmpty() || !passportTextField.getText().matches("^[A-Za-z0-9]{6,9}$")) {
+            errors.add("Valid Passport Number is required.");
+        }
+
+        return errors;
+    }
+
+    private void showAlert(AlertType alertType, String title, String content) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 }

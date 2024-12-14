@@ -7,6 +7,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import java.time.LocalDate;
+
 public class u4g8controller {
 
     @FXML
@@ -27,71 +29,72 @@ public class u4g8controller {
     @FXML
     private TextField billingAddressTextField;
 
-    /**
-     * This method handles the Pay button action.
-     */
+
     @FXML
     private void handlePay(ActionEvent event) {
-        // Retrieve user inputs
+
         String feeType = feeTypeComboBox.getValue();
         String cardNumber = cardNumberTextField.getText();
-        String expiryDate = (expiryDatePicker.getValue() != null) ? expiryDatePicker.getValue().toString() : null;
+        LocalDate expiryDate = expiryDatePicker.getValue();
         String cvv = cvvTextField.getText();
         String cardHolderName = cardHolderTextField.getText();
         String billingAddress = billingAddressTextField.getText();
 
-        // Validate inputs
+
         if (feeType == null || feeType.isEmpty()) {
             showAlert("Validation Error", "Please select a Fee Type.");
             return;
         }
 
-        if (cardNumber == null || cardNumber.isEmpty() || cardNumber.length() != 16) {
-            showAlert("Validation Error", "Please enter a valid 16-digit Card Number.");
+        if (cardNumber == null || !cardNumber.matches("\\d{16}")) {
+            showAlert("Validation Error", "Please enter a valid 16-digit Card Number (digits only).");
             return;
         }
 
-        if (expiryDate == null) {
-            showAlert("Validation Error", "Please select an Expiry Date.");
+        if (expiryDate == null || expiryDate.isBefore(LocalDate.now())) {
+            showAlert("Validation Error", "Please select a valid Expiry Date (must be in the future).");
             return;
         }
 
-        if (cvv == null || cvv.isEmpty() || cvv.length() != 3) {
-            showAlert("Validation Error", "Please enter a valid 3-digit CVV.");
+        if (cvv == null || !cvv.matches("\\d{3}")) {
+            showAlert("Validation Error", "Please enter a valid 3-digit CVV (digits only).");
             return;
         }
 
-        if (cardHolderName == null || cardHolderName.isEmpty()) {
+        if (cardHolderName == null || cardHolderName.trim().isEmpty()) {
             showAlert("Validation Error", "Please enter the Card Holder's Name.");
             return;
         }
 
-        if (billingAddress == null || billingAddress.isEmpty()) {
+        if (billingAddress == null || billingAddress.trim().isEmpty()) {
             showAlert("Validation Error", "Please enter the Billing Address.");
             return;
         }
 
-        // Simulate payment processing
+
         System.out.println("Payment Processing...");
         System.out.println("Fee Type: " + feeType);
-        System.out.println("Card Number: " + cardNumber);
+        System.out.println("Card Number: " + maskCardNumber(cardNumber));
         System.out.println("Expiry Date: " + expiryDate);
         System.out.println("CVV: " + cvv);
         System.out.println("Card Holder Name: " + cardHolderName);
         System.out.println("Billing Address: " + billingAddress);
 
-        // Show success alert
+
         showAlert("Payment Successful", "Your payment has been successfully processed.");
     }
 
-    /**
-     * Helper method to show alert messages.
-     */
+
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(content);
         alert.showAndWait();
+    }
+
+
+    private String maskCardNumber(String cardNumber) {
+        return "**** **** **** " + cardNumber.substring(cardNumber.length() - 4);
     }
 }
