@@ -39,7 +39,7 @@ public class LoginData {
     public String toString() {
         return "LoginData{" +
                 "loginId='" + loginId + '\'' +
-                ", password='***'" + // Hide password for security
+                ", password='***'" +
                 ", userType='" + userType + '\'' +
                 '}';
     }

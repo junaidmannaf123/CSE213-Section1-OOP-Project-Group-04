@@ -68,7 +68,7 @@ public class LoginSceneController implements Initializable {
                 isAuthenticated = loginId.equals("manager01") && password.equals("cm123");
                 break;
             case "Client (Sponsorship)":
-                isAuthenticated = loginId.equals("client01") && password.equals("cfs123");
+                isAuthenticated = loginId.equals("client01") && password.equals("cs123");
                 break;
             case "Legal Advisor":
                 isAuthenticated = loginId.equals("advisor01") && password.equals("la123");
