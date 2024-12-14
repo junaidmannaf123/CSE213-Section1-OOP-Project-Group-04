@@ -44,9 +44,14 @@ public class LoginSceneController implements Initializable {
         String password = passwordField.getText();
         String userType = userTypeComboBox.getValue();
 
+        // Debugging Logs
+        System.out.println("Login ID: " + loginId);
+        System.out.println("Password: " + password);
+        System.out.println("User Type: " + userType);
+
         if (loginId == null || loginId.isEmpty() ||
                 password == null || password.isEmpty() ||
-                userType == null) {
+                userType == null || userType.isEmpty()) {
             showAlert("Validation Error", "All fields are required!", Alert.AlertType.ERROR);
             return;
         }
@@ -80,6 +85,8 @@ public class LoginSceneController implements Initializable {
             showAlert("Login Failed", "Invalid login credentials.", Alert.AlertType.ERROR);
             return;
         }
+
+        System.out.println("Login successful for user type: " + userType);
 
         switch (userType) {
             case "Immigration Consultant":

@@ -13,7 +13,7 @@ public class u3dashboardcontroller {
     @FXML
     private void handleInitialConsultation(ActionEvent event) {
         System.out.println("Provide Initial Consultation for Immigration Applicants selected.");
-        switchScene(event, "InitialConsultation.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u3g1.fxml");
     }
 
     @FXML
