@@ -13,40 +13,67 @@ public class u3g1controller {
     private TextArea consultationNotesTextArea;
 
     /**
-     * This method handles the action of selecting a client from the ComboBox.
+     * Initializes the ComboBox with sample client data.
+     * This method should be called during initialization.
+     */
+    @FXML
+    public void initialize() {
+        // Add sample clients to the ComboBox
+        clientComboBox.getItems().addAll("Client A", "Client B", "Client C");
+    }
+
+    /**
+     * Handles the selection of a client from the ComboBox.
      */
     @FXML
     private void handleClientSelection() {
         // Retrieve the selected client
         String selectedClient = clientComboBox.getValue();
-        System.out.println("Selected client: " + selectedClient);
+        if (selectedClient != null) {
+            System.out.println("Selected client: " + selectedClient);
 
-        // You can implement logic here, e.g., load previous consultation notes for the selected client
+            // Logic to load previous consultation notes for the selected client can be added here
+            consultationNotesTextArea.setText("Notes for " + selectedClient);
+        } else {
+            System.out.println("No client selected.");
+        }
     }
 
     /**
-     * This method handles changes in the TextArea where consultation notes are entered.
+     * Handles changes made in the consultation notes TextArea.
      */
     @FXML
     private void handleTextAreaChange() {
-        // Retrieve the text entered in the TextArea
+        // Retrieve the updated notes from the TextArea
         String notes = consultationNotesTextArea.getText();
         System.out.println("Consultation notes updated: " + notes);
 
-        // Implement logic to validate or auto-save notes if needed
+        // You can implement logic to auto-save or validate notes
     }
 
     /**
-     * This method handles the action of saving consultation notes when the "Save Notes" button is clicked.
+     * Handles the action of saving consultation notes when the "Save Notes" button is clicked.
      */
     @FXML
     private void handleSaveNotes() {
         // Retrieve the notes from the TextArea
         String notes = consultationNotesTextArea.getText();
+        String client = clientComboBox.getValue();
 
-        // Save the notes (e.g., save to a database, file, or send to a server)
-        System.out.println("Saving notes: " + notes);
+        if (client == null || client.isEmpty()) {
+            System.out.println("No client selected. Cannot save notes.");
+            return;
+        }
 
-        // Provide user feedback (e.g., show a success message or alert)
+        if (notes == null || notes.trim().isEmpty()) {
+            System.out.println("No notes entered. Cannot save empty notes.");
+            return;
+        }
+
+        // Save logic (e.g., saving to a database, file, or server) would go here
+        System.out.println("Saving notes for " + client + ": " + notes);
+
+        // Provide feedback to the user
+        System.out.println("Notes saved successfully!");
     }
 }
