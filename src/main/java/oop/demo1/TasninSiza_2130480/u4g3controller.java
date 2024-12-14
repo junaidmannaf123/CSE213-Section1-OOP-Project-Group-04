@@ -1,4 +1,4 @@
-package oop.demo1.TasninSiza_2130480;
+package oop.demo1.TasninSiza;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

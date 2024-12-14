@@ -11,7 +11,7 @@ public class LoginData {
         this.userType = userType;
     }
 
-    public Strin getLoginId() {
+    public String getLoginId() {
         return loginId;
     }
 
