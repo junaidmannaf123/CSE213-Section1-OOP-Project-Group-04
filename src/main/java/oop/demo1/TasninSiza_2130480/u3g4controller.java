@@ -17,36 +17,45 @@ public class u3g4controller {
     @FXML
     private Label statusLabel;
 
+    /**
+     * Initializes the ComboBox and status label.
+     */
     @FXML
     private void initialize() {
         // Sample data for ComboBox
-        caseComboBox.getItems().addAll("Case 1", "Case 2", "Case 3");
+        caseComboBox.getItems().addAll("Case 1: Document Review", "Case 2: Legal Objection", "Case 3: Appeal Submission");
 
-        // Initialize labels or other UI components if needed
+        // Set default status message
         statusLabel.setText("Select a case to start providing guidance.");
     }
 
     /**
-     * Handles the case selection from the ComboBox.
+     * Handles the selection of a case from the ComboBox.
      */
     @FXML
     private void handleCaseSelection() {
         String selectedCase = caseComboBox.getValue();
         if (selectedCase != null) {
             System.out.println("Selected case: " + selectedCase);
-            statusLabel.setText("Provide your guidance for the selected case.");
+            // Update the status label to guide the user
+            statusLabel.setText("Provide your guidance for the selected case: " + selectedCase);
         } else {
-            statusLabel.setText("No case selected.");
+            // If no case is selected
+            statusLabel.setText("No case selected. Please choose a case.");
         }
     }
 
     /**
-     * Handles the notes change in the TextArea (e.g., as the user types).
+     * Handles real-time changes in the notes TextArea.
      */
     @FXML
     private void handleNotesChange() {
         String notes = notesTextArea.getText();
-        System.out.println("Legal advice entered: " + notes);
+        if (notes != null && !notes.trim().isEmpty()) {
+            System.out.println("Legal advice entered: " + notes);
+        } else {
+            System.out.println("Legal advice cleared.");
+        }
     }
 
     /**
@@ -57,21 +66,26 @@ public class u3g4controller {
         String selectedCase = caseComboBox.getValue();
         String notes = notesTextArea.getText();
 
+        // Validate case selection
         if (selectedCase == null || selectedCase.isEmpty()) {
-            statusLabel.setText("Please select a case before saving.");
+            statusLabel.setText("Error: Please select a case before saving.");
+            System.out.println("Error: No case selected.");
             return;
         }
 
-        if (notes == null || notes.isEmpty()) {
-            statusLabel.setText("Please enter legal advice before saving.");
+        // Validate notes input
+        if (notes == null || notes.trim().isEmpty()) {
+            statusLabel.setText("Error: Please enter legal advice before saving.");
+            System.out.println("Error: No legal advice provided.");
             return;
         }
 
-        // Logic to save the notes (e.g., save to database or file)
+        // Simulate saving the legal guidance (e.g., save to a database or a file)
         System.out.println("Saving notes for case: " + selectedCase);
         System.out.println("Legal guidance: " + notes);
 
-        // Update the status label
-        statusLabel.setText("Notes saved successfully.");
+        // Provide feedback to the user
+        statusLabel.setText("Notes saved successfully for " + selectedCase + ".");
+        System.out.println("Notes saved successfully.");
     }
 }

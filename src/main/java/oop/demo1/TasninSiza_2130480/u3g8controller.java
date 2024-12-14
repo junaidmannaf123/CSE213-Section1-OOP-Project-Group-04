@@ -23,62 +23,89 @@ public class u3g8controller {
     @FXML
     private Label confirmationLabel;
 
-    @FXML
-    private Label dateLabel;
-
-    @FXML
-    private Label topicLabel;
-
+    /**
+     * Initializes the ComboBox and confirmation label with default values.
+     */
     @FXML
     private void initialize() {
-        // Populate the ComboBox with workshop topics (could be dynamic or static values)
-        topicComboBox.getItems().addAll("Topic 1", "Topic 2", "Topic 3", "Topic 4");
+        // Populate the ComboBox with workshop topics
+        topicComboBox.getItems().addAll(
+                "Immigration Process Overview",
+                "Resume Writing for Jobs",
+                "Housing and Settling in New Country",
+                "Language Training Tips"
+        );
 
-        // Initialize the confirmation label with a message
+        // Set the default confirmation label
         confirmationLabel.setText("Please select a topic and date.");
     }
 
     /**
-     * Handle the selection of a workshop topic from the ComboBox.
+     * Handles the selection of a workshop topic from the ComboBox.
      */
     @FXML
     private void handleTopicSelection() {
-        String selectedTopic = topicComboBox.getSelectionModel().getSelectedItem();
+        String selectedTopic = topicComboBox.getValue();
         if (selectedTopic != null && !selectedTopic.isEmpty()) {
-            confirmationLabel.setText("Topic: " + selectedTopic + " selected.");
+            System.out.println("Selected topic: " + selectedTopic);
+            confirmationLabel.setText("Topic selected: " + selectedTopic + ". Now select a date.");
         } else {
-            confirmationLabel.setText("Please select a topic.");
+            confirmationLabel.setText("Please select a valid topic.");
         }
     }
 
     /**
-     * Handle the selection of the workshop date.
+     * Handles the selection of a date from the DatePicker.
      */
     @FXML
     private void handleDateSelection() {
         LocalDate selectedDate = workshopDatePicker.getValue();
         if (selectedDate != null) {
-            confirmationLabel.setText("Date: " + selectedDate.toString() + " selected.");
+            if (selectedDate.isBefore(LocalDate.now())) {
+                confirmationLabel.setText("Error: Workshop date cannot be in the past.");
+                System.out.println("Error: Invalid workshop date.");
+            } else {
+                System.out.println("Selected date: " + selectedDate);
+                confirmationLabel.setText("Date selected: " + selectedDate + ". Now confirm your workshop.");
+            }
         } else {
-            confirmationLabel.setText("Please select a date.");
+            confirmationLabel.setText("Please select a valid date.");
         }
     }
 
     /**
-     * Handle the confirmation action when the confirm button is clicked.
+     * Handles the confirmation action when the Confirm button is clicked.
      */
     @FXML
     private void handleConfirm(ActionEvent event) {
-        String selectedTopic = topicComboBox.getSelectionModel().getSelectedItem();
+        String selectedTopic = topicComboBox.getValue();
         LocalDate selectedDate = workshopDatePicker.getValue();
 
-        if (selectedTopic != null && !selectedTopic.isEmpty() && selectedDate != null) {
-            // Confirm the selection (this could involve saving the data or triggering further logic)
-            // For now, just update the confirmation label as a placeholder for actual logic.
-            confirmationLabel.setText("Workshop: " + selectedTopic + " scheduled for " + selectedDate.toString());
-        } else {
-            // If either the topic or date is missing, show an error message
-            confirmationLabel.setText("Please select both a topic and a date.");
+        // Validate topic selection
+        if (selectedTopic == null || selectedTopic.isEmpty()) {
+            confirmationLabel.setText("Error: Please select a workshop topic.");
+            System.out.println("Error: No topic selected.");
+            return;
         }
+
+        // Validate date selection
+        if (selectedDate == null) {
+            confirmationLabel.setText("Error: Please select a workshop date.");
+            System.out.println("Error: No date selected.");
+            return;
+        }
+
+        // Ensure the selected date is not in the past
+        if (selectedDate.isBefore(LocalDate.now())) {
+            confirmationLabel.setText("Error: Workshop date cannot be in the past.");
+            System.out.println("Error: Workshop date is in the past.");
+            return;
+        }
+
+        // Confirm the workshop scheduling
+        System.out.println("Workshop scheduled: " + selectedTopic);
+        System.out.println("Scheduled date: " + selectedDate);
+
+        confirmationLabel.setText("Workshop: " + selectedTopic + " scheduled for " + selectedDate + ".");
     }
 }
