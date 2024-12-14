@@ -23,12 +23,10 @@ public class u3g8controller {
     @FXML
     private Label confirmationLabel;
 
-    /**
-     * Initializes the ComboBox and confirmation label with default values.
-     */
+
     @FXML
     private void initialize() {
-        // Populate the ComboBox with workshop topics
+
         topicComboBox.getItems().addAll(
                 "Immigration Process Overview",
                 "Resume Writing for Jobs",
@@ -36,13 +34,11 @@ public class u3g8controller {
                 "Language Training Tips"
         );
 
-        // Set the default confirmation label
+
         confirmationLabel.setText("Please select a topic and date.");
     }
 
-    /**
-     * Handles the selection of a workshop topic from the ComboBox.
-     */
+
     @FXML
     private void handleTopicSelection() {
         String selectedTopic = topicComboBox.getValue();
@@ -54,9 +50,7 @@ public class u3g8controller {
         }
     }
 
-    /**
-     * Handles the selection of a date from the DatePicker.
-     */
+
     @FXML
     private void handleDateSelection() {
         LocalDate selectedDate = workshopDatePicker.getValue();
@@ -73,36 +67,34 @@ public class u3g8controller {
         }
     }
 
-    /**
-     * Handles the confirmation action when the Confirm button is clicked.
-     */
+
     @FXML
     private void handleConfirm(ActionEvent event) {
         String selectedTopic = topicComboBox.getValue();
         LocalDate selectedDate = workshopDatePicker.getValue();
 
-        // Validate topic selection
+
         if (selectedTopic == null || selectedTopic.isEmpty()) {
             confirmationLabel.setText("Error: Please select a workshop topic.");
             System.out.println("Error: No topic selected.");
             return;
         }
 
-        // Validate date selection
+
         if (selectedDate == null) {
             confirmationLabel.setText("Error: Please select a workshop date.");
             System.out.println("Error: No date selected.");
             return;
         }
 
-        // Ensure the selected date is not in the past
+
         if (selectedDate.isBefore(LocalDate.now())) {
             confirmationLabel.setText("Error: Workshop date cannot be in the past.");
             System.out.println("Error: Workshop date is in the past.");
             return;
         }
 
-        // Confirm the workshop scheduling
+
         System.out.println("Workshop scheduled: " + selectedTopic);
         System.out.println("Scheduled date: " + selectedDate);
 

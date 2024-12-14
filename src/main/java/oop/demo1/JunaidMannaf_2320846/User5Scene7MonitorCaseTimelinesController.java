@@ -91,7 +91,6 @@ public class User5Scene7MonitorCaseTimelinesController implements Initializable 
                 break;
         }
 
-        // Update TableView
         caseTimelineTable.setItems(data);
     }
 

@@ -68,7 +68,7 @@ public class User6Scene2SubmitSponsorshipApplicationController {
     @FXML
     private void handleBack(ActionEvent event) {
         System.out.println("Navigating back to the previous screen...");
-        switchScene(event, "/oop/demo1/Junaid Mannaf/User6ClientFSDashboard.fxml"); // Replace with the actual FXML file for the dashboard
+        switchScene(event, "/oop/demo1/Junaid Mannaf/User6ClientFSDashboard.fxml");
     }
 
     private void switchScene(ActionEvent event, String fxmlFile) {
