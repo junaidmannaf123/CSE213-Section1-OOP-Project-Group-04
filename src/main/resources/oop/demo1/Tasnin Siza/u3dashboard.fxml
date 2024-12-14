@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:controller="oop.demo1.TasninSiza.u3dashboardcontroller" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.demo1.TasninSiza.u3dashboardcontroller">
    <children>
       <Text layoutX="129.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Immigration Consultant Dashboard" textAlignment="CENTER" wrappingWidth="424.800048828125">
          <font>
@@ -14,14 +14,14 @@
          </font>
       </Text>
       <Line endX="360.0" endY="0.0" layoutX="310.0" layoutY="72.0" startX="-310.0" startY="0.0" />
-      <Button layoutX="35.0" layoutY="135.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Initial Consultation" onAction="#handleInitialConsultation" />
-      <Button layoutX="35.0" layoutY="190.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Document Preparation" onAction="#handleDocumentPreparation" />
-      <Button layoutX="35.0" layoutY="244.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Monitor Progress" onAction="#handleClientProgress" />
-      <Button layoutX="35.0" layoutY="299.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" text="Legal Guidance" onAction="#handleLegalGuidance" />
-      <Button layoutX="342.0" layoutY="135.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Settlement Consultation" onAction="#handleSettlementConsultation" />
-      <Button layoutX="342.0" layoutY="190.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Client Queries" onAction="#handleClientQueries" />
-      <Button layoutX="342.0" layoutY="244.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Visa Refusal" onAction="#handleVisaRefusal" />
-      <Button layoutX="342.0" layoutY="299.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="294.0" text="Organize Workshops" onAction="#handleClientWorkshops" />
-      <Button layoutX="235.0" layoutY="354.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="130.0" text="Back to Login" onAction="#handleBackToLogin" />
+      <Button layoutX="35.0" layoutY="135.0" mnemonicParsing="false" onAction="#handleInitialConsultation" prefHeight="40.0" prefWidth="268.0" text="Initial Consultation" />
+      <Button layoutX="35.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleDocumentPreparation" prefHeight="40.0" prefWidth="268.0" text="Document Preparation" />
+      <Button layoutX="35.0" layoutY="244.0" mnemonicParsing="false" onAction="#handleClientProgress" prefHeight="40.0" prefWidth="268.0" text="Monitor Progress" />
+      <Button layoutX="35.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleLegalGuidance" prefHeight="40.0" prefWidth="268.0" text="Legal Guidance" />
+      <Button layoutX="342.0" layoutY="135.0" mnemonicParsing="false" onAction="#handleSettlementConsultation" prefHeight="40.0" prefWidth="294.0" text="Settlement Consultation" />
+      <Button layoutX="342.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleClientQueries" prefHeight="40.0" prefWidth="294.0" text="Client Queries" />
+      <Button layoutX="342.0" layoutY="244.0" mnemonicParsing="false" onAction="#handleVisaRefusal" prefHeight="40.0" prefWidth="294.0" text="Visa Refusal" />
+      <Button layoutX="342.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleClientWorkshops" prefHeight="40.0" prefWidth="294.0" text="Organize Workshops" />
+      <Button fx:id="backButton" layoutX="21.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleBackToLogin" text="⬅" />
    </children>
 </AnchorPane>

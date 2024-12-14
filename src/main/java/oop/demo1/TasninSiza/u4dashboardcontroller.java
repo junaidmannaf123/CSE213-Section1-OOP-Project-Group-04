@@ -2,111 +2,88 @@ package oop.demo1.TasninSiza;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class u4dashboardcontroller {
 
     @FXML
-    private Button submitApplicationButton;
-
-    @FXML
-    private Button bookConsultationButton;
-
-    @FXML
-    private Button trackApplicationButton;
-
-    @FXML
-    private Button uploadDocumentsButton;
-
-    @FXML
-    private Button visaConsultationButton;
-
-    @FXML
-    private Button downloadNotesButton;
-
-    @FXML
-    private Button requestStatusUpdateButton;
-
-    @FXML
-    private Button payConsultationButton;
-
-    /**
-     * Handle the action when the 'Submit Immigration Application' button is clicked.
-     */
-    @FXML
     private void handleSubmitApplication(ActionEvent event) {
-        // Implement your logic for submitting the immigration application
-        System.out.println("Submit Immigration Application clicked.");
-        // You can display a confirmation message or navigate to another screen
+        System.out.println("Submit Immigration Application selected.");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g1.fxml");
     }
 
-    /**
-     * Handle the action when the 'Book Consultation Appointment with Immigration Consultant' button is clicked.
-     */
     @FXML
     private void handleBookConsultation(ActionEvent event) {
-        // Implement your logic for booking a consultation appointment
-        System.out.println("Book Consultation clicked.");
-        // You can navigate to a consultation booking screen
+        System.out.println("Book Consultation Appointment with Immigration Consultant selected.");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g2.fxml");
     }
 
-    /**
-     * Handle the action when the 'Track Application Status' button is clicked.
-     */
     @FXML
     private void handleTrackApplication(ActionEvent event) {
-        // Implement your logic for tracking the application status
-        System.out.println("Track Application Status clicked.");
-        // You can show the current status of the application
+        System.out.println("Track Application Status selected.");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g3.fxml");
     }
 
-    /**
-     * Handle the action when the 'Upload Additional Documents for Ongoing Application' button is clicked.
-     */
     @FXML
     private void handleUploadDocuments(ActionEvent event) {
-        // Implement your logic for uploading documents
-        System.out.println("Upload Documents clicked.");
-        // Navigate to an upload form or open a file dialog
+        System.out.println("Upload Additional Documents for Ongoing Application selected.");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g4.fxml");
     }
 
-    /**
-     * Handle the action when the 'Receive Visa Refusal Consultation' button is clicked.
-     */
     @FXML
     private void handleVisaConsultation(ActionEvent event) {
-        // Implement your logic for receiving visa refusal consultation
-        System.out.println("Visa Refusal Consultation clicked.");
-        // You can navigate to a consultation request page
+        System.out.println("Receive Visa Refusal Consultation selected.");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g5.fxml");
     }
 
-    /**
-     * Handle the action when the 'Download Consultation Notes' button is clicked.
-     */
     @FXML
     private void handleDownloadNotes(ActionEvent event) {
-        // Implement your logic for downloading consultation notes
-        System.out.println("Download Consultation Notes clicked.");
-        // Trigger the download of consultation notes
+        System.out.println("Download Consultation Notes selected.");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g6.fxml");
     }
 
-    /**
-     * Handle the action when the 'Request for Application Status Update' button is clicked.
-     */
     @FXML
     private void handleRequestStatusUpdate(ActionEvent event) {
-        // Implement your logic for requesting a status update
-        System.out.println("Request for Application Status Update clicked.");
-        // Send a request for status update, maybe through a service call
+        System.out.println("Request for Application Status Update selected.");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g7.fxml");
     }
 
-    /**
-     * Handle the action when the 'Pay Consultation Fees' button is clicked.
-     */
     @FXML
     private void handlePayConsultationFees(ActionEvent event) {
-        // Implement your logic for paying consultation fees
-        System.out.println("Pay Consultation Fees clicked.");
-        // You can open a payment gateway or confirm the payment
+        System.out.println("Pay Consultation Fees selected.");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u4g8.fxml");
+    }
+
+    @FXML
+    private void handleBackToLogin(ActionEvent event) {
+        try {
+            // Load the Login scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/demo1/LoginScene.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+            System.out.println("Navigating back to the Login scene...");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error while navigating back to Login scene: " + e.getMessage());
+        }
+    }
+
+    private void switchScene(ActionEvent event, String fxmlFile) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error while switching scenes: " + e.getMessage());
+        }
     }
 }
