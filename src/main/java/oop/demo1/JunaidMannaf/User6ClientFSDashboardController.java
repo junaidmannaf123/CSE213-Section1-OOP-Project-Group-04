@@ -10,82 +10,61 @@ import javafx.stage.Stage;
 
 public class User6ClientFSDashboardController {
 
-    // Action methods for buttons
-
     @FXML
     private void handleSubmitSponsorship(ActionEvent event) {
-        // Handle submit sponsorship application action
         System.out.println("Sponsorship application submitted.");
-        // You can switch to another scene if needed
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene2.fxml");
     }
 
     @FXML
     private void handleTrackSponsorship(ActionEvent event) {
-        // Handle track sponsorship status action
         System.out.println("Tracking sponsorship status.");
-        // Switch to another scene if necessary
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene3.fxml");
     }
 
     @FXML
     private void handleUploadDocuments(ActionEvent event) {
-        // Handle upload additional documents action
         System.out.println("Uploading additional documents.");
-        // Switch to another scene if necessary
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene4.fxml");
     }
 
     @FXML
     private void handleScheduleConsultation(ActionEvent event) {
-        // Handle schedule consultation action
         System.out.println("Scheduling consultation.");
-        // Switch to another scene if necessary
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene6.fxml");
     }
 
     @FXML
     private void handleDownloadGuidelines(ActionEvent event) {
-        // Handle download guidelines action
         System.out.println("Downloading guidelines.");
-        // Switch to another scene if necessary
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene5.fxml");
     }
 
     @FXML
     private void handleSubmitPayment(ActionEvent event) {
-        // Handle submit payment action
         System.out.println("Submitting payment.");
-        // Switch to another scene if necessary
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene7.fxml");
     }
 
     @FXML
     private void handleRequestLegalConsultation(ActionEvent event) {
-        // Handle request legal consultation action
         System.out.println("Requesting legal consultation.");
-        // Switch to another scene if necessary
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene8.fxml");
     }
 
     @FXML
     private void handleUploadFinancialEvidence(ActionEvent event) {
-        // Handle upload financial evidence action
         System.out.println("Uploading financial evidence.");
-        // Switch to another scene if necessary
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6Scene9.fxml");
     }
     @FXML
     private void handleBackToLogin(ActionEvent event) {
         try {
-            // Load the Login scene
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/demo1/LoginScene.fxml"));
             Parent root = loader.load();
 
-            // Get the current stage
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // Set the new scene
             stage.setScene(new Scene(root));
             stage.show();
 
@@ -95,17 +74,13 @@ public class User6ClientFSDashboardController {
             System.out.println("Error while navigating back to Login scene: " + e.getMessage());
         }
     }
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
-            // Load the FXML file for the new scene
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = loader.load();
 
-            // Get the current stage (window)
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // Set the new scene
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
             stage.show();

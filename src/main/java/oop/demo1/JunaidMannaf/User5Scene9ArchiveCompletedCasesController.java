@@ -23,12 +23,11 @@ public class User5Scene9ArchiveCompletedCasesController {
     @FXML
     private Label statusLabel;
 
-    private final List<String> archivedCases = new ArrayList<>(); // List to hold archived cases
+    private final List<String> archivedCases = new ArrayList<>();
 
-    // This method is called when the scene is initialized
     @FXML
     public void initialize() {
-        // Adding sample cases to the ComboBox
+
         completedCaseComboBox.setItems(FXCollections.observableArrayList(
                 "Case #001 - John Doe",
                 "Case #002 - Jane Smith",
@@ -37,7 +36,6 @@ public class User5Scene9ArchiveCompletedCasesController {
         ));
     }
 
-    // Handle "Notify Client" button click
     @FXML
     private void handleNotifyClient(ActionEvent event) {
         String selectedCase = completedCaseComboBox.getValue();
@@ -50,7 +48,6 @@ public class User5Scene9ArchiveCompletedCasesController {
         }
     }
 
-    // Handle "Archive Case" button click
     @FXML
     private void handleArchiveCase(ActionEvent event) {
         String selectedCase = completedCaseComboBox.getValue();
@@ -58,11 +55,10 @@ public class User5Scene9ArchiveCompletedCasesController {
         if (selectedCase == null) {
             statusLabel.setText("Please select a completed case.");
         } else {
-            // Remove case from ComboBox and add to archived list
+
             completedCaseComboBox.getItems().remove(selectedCase);
             archivedCases.add(selectedCase);
 
-            // Save archived case to binary file
             saveArchivedCasesToBinFile();
 
             statusLabel.setText("Case '" + selectedCase + "' has been archived.");
@@ -70,7 +66,6 @@ public class User5Scene9ArchiveCompletedCasesController {
         }
     }
 
-    // Save archived cases to a binary file
     private void saveArchivedCasesToBinFile() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("archived_cases.bin"))) {
             oos.writeObject(archivedCases);
@@ -81,14 +76,12 @@ public class User5Scene9ArchiveCompletedCasesController {
         }
     }
 
-    // Handle "Back" button click
     @FXML
     private void handleBackToDashboard(ActionEvent event) {
         System.out.println("Navigating back to Dashboard...");
         switchScene(event, "/oop/demo1/Junaid Mannaf/User5CaseManagerDashboard.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));

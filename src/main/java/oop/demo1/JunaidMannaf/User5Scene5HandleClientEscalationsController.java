@@ -27,7 +27,6 @@ public class User5Scene5HandleClientEscalationsController implements Initializab
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Populate the ComboBox with sample escalated cases
         escalatedCaseComboBox.getItems().addAll(
                 "Case #001: Sponsorship Delay",
                 "Case #002: Missing Documents",

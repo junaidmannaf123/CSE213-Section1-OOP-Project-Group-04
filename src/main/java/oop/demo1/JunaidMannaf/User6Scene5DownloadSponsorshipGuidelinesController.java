@@ -49,7 +49,6 @@ public class User6Scene5DownloadSponsorshipGuidelinesController {
         String selectedGuideline = guidelinesComboBox.getValue();
         String guidelineContent;
 
-        // Assign content based on the selected guideline
         switch (selectedGuideline) {
             case "General Sponsorship Guidelines":
                 guidelineContent = "General Sponsorship Guidelines:\n\n- Ensure all required documents are submitted.\n- Maintain communication with the sponsor.\n- Follow the processing timeline.";
@@ -65,7 +64,6 @@ public class User6Scene5DownloadSponsorshipGuidelinesController {
                 return;
         }
 
-        // Open file chooser for saving the PDF
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save PDF");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
@@ -74,12 +72,12 @@ public class User6Scene5DownloadSponsorshipGuidelinesController {
 
         if (saveFile != null) {
             try (FileOutputStream outputStream = new FileOutputStream(saveFile)) {
-                // Use iText 7 to generate the PDF
+
                 PdfWriter writer = new PdfWriter(outputStream);
                 PdfDocument pdfDoc = new PdfDocument(writer);
                 Document document = new Document(pdfDoc);
-                document.add(new Paragraph(guidelineContent));  // Adding content to the PDF
-                document.close();  // Closing the document
+                document.add(new Paragraph(guidelineContent));
+                document.close();
 
                 statusLabel.setText("Downloaded: " + saveFile.getName());
             } catch (Exception e) {

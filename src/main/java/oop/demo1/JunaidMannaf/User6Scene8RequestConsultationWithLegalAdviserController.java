@@ -30,7 +30,7 @@ public class User6Scene8RequestConsultationWithLegalAdviserController {
 
     @FXML
     public void initialize() {
-        // Populate the ComboBox with predefined legal issues
+
         legalIssueComboBox.getItems().addAll(
                 "Contract Dispute",
                 "Property Law Issue",
@@ -49,19 +49,16 @@ public class User6Scene8RequestConsultationWithLegalAdviserController {
         } else if (selectedDate == null) {
             statusLabel.setText("Please select a consultation date.");
         } else {
-            // Placeholder logic for processing the request
             statusLabel.setText("Consultation requested for " + selectedIssue + " on " + selectedDate + ".");
         }
     }
 
-    /// Handle "Back" button click
     @FXML
     private void handleBack(ActionEvent event) {
         System.out.println("Navigating back to the previous screen...");
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6ClientFSDashboard.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));

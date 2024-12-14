@@ -35,12 +35,11 @@ public class User5Scene8CoordinateBetweenDepartmentsController implements Initia
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Set up TableView columns
+
         departmentColumn.setCellValueFactory(new PropertyValueFactory<>("department"));
         taskColumn.setCellValueFactory(new PropertyValueFactory<>("task"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        // Populate TableView with sample data
         ObservableList<DepartmentTask> departmentTasks = FXCollections.observableArrayList(
                 new DepartmentTask("Immigration Consultant", "Review Application", "Pending"),
                 new DepartmentTask("Immigration Applicant", "Submit Documents", "Completed"),
@@ -51,11 +50,9 @@ public class User5Scene8CoordinateBetweenDepartmentsController implements Initia
         );
         departmentTasksTable.setItems(departmentTasks);
 
-        // Set placeholder for empty table
         departmentTasksTable.setPlaceholder(new Label("No tasks to display. Add tasks to manage department coordination."));
     }
 
-    // Handle "Send Internal Message" button click
     @FXML
     private void handleSendInternalMessage(ActionEvent event) {
         // Logic to send an internal message
@@ -63,7 +60,6 @@ public class User5Scene8CoordinateBetweenDepartmentsController implements Initia
         System.out.println("Internal message sent.");
     }
 
-    // Handle "Update Client" button click
     @FXML
     private void handleUpdateClient(ActionEvent event) {
         // Logic to update client
@@ -71,14 +67,12 @@ public class User5Scene8CoordinateBetweenDepartmentsController implements Initia
         System.out.println("Client updated.");
     }
 
-    // Handle "Back" button click
     @FXML
     private void handleBackToDashboard(ActionEvent event) {
         System.out.println("Navigating back to Dashboard...");
         switchScene(event, "/oop/demo1/Junaid Mannaf/User5CaseManagerDashboard.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -93,7 +87,6 @@ public class User5Scene8CoordinateBetweenDepartmentsController implements Initia
         }
     }
 
-    // Inner class to represent department tasks
     public static class DepartmentTask {
         private final String department;
         private final String task;

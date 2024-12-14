@@ -40,7 +40,6 @@ public class User5Scene2TrackClientCaseProgressController {
 
     @FXML
     public void initialize() {
-        // Populate ComboBox with sample data
         ObservableList<String> clientCases = FXCollections.observableArrayList(
                 "Case #001: John Doe",
                 "Case #002: Jane Smith",
@@ -49,15 +48,12 @@ public class User5Scene2TrackClientCaseProgressController {
         );
         clientCaseComboBox.setItems(clientCases);
 
-        // Set up TableView columns
         documentColumn.setCellValueFactory(new PropertyValueFactory<>("documentStatus"));
         legalReviewColumn.setCellValueFactory(new PropertyValueFactory<>("legalReviewStatus"));
         overallProgressColumn.setCellValueFactory(new PropertyValueFactory<>("overallProgress"));
 
-        // Set placeholder for TableView
         progressTableView.setPlaceholder(new Label("Select a case to view progress."));
 
-        // Add a listener to the ComboBox to update the TableView
         clientCaseComboBox.setOnAction(event -> updateTableData(clientCaseComboBox.getValue()));
     }
 
@@ -77,7 +73,6 @@ public class User5Scene2TrackClientCaseProgressController {
         switchScene(event, "/oop/demo1/Junaid Mannaf/User5CaseManagerDashboard.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -92,7 +87,6 @@ public class User5Scene2TrackClientCaseProgressController {
         }
     }
 
-    // Update TableView data based on selected case
     private void updateTableData(String selectedCase) {
         ObservableList<CaseProgress> caseProgressList = FXCollections.observableArrayList();
 

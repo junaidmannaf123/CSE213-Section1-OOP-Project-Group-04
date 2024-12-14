@@ -41,7 +41,7 @@ public class User5Scene7MonitorCaseTimelinesController implements Initializable 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Populate ComboBox with sample client cases
+
         clientCaseComboBox.getItems().addAll(
                 "Case #001: Immigration Sponsorship",
                 "Case #002: Legal Document Review",
@@ -49,42 +49,38 @@ public class User5Scene7MonitorCaseTimelinesController implements Initializable 
                 "Case #004: Citizenship Process"
         );
 
-        // Set up table columns
         milestoneColumn.setCellValueFactory(new PropertyValueFactory<>("milestone"));
         dueDateColumn.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        // Set placeholder for TableView
         caseTimelineTable.setPlaceholder(new Label("No milestones to display. Please select a case."));
 
-        // Add listener for ComboBox selection changes
         clientCaseComboBox.setOnAction(event -> populateTable(clientCaseComboBox.getValue()));
     }
 
-    // Populate the table based on the selected case
     private void populateTable(String selectedCase) {
         ObservableList<TimelineEntry> data = FXCollections.observableArrayList();
 
         switch (selectedCase) {
-            case "Case 201: Immigration Sponsorship":
+            case "Case #001: Immigration Sponsorship":
                 data.add(new TimelineEntry("Submit Documents", "2024-12-15", "Pending"));
                 data.add(new TimelineEntry("Interview Scheduled", "2025-01-10", "Scheduled"));
                 data.add(new TimelineEntry("Decision Received", "2025-02-20", "In Progress"));
                 break;
 
-            case "Case 202: Legal Document Review":
+            case "Case #002: Legal Document Review":
                 data.add(new TimelineEntry("Submit Contract", "2024-12-18", "Completed"));
                 data.add(new TimelineEntry("Review Feedback", "2024-12-20", "Pending"));
                 data.add(new TimelineEntry("Approval Received", "2024-12-25", "Pending"));
                 break;
 
-            case "Case 203: Visa Application Assistance":
+            case "Case #003: Visa Application Assistance":
                 data.add(new TimelineEntry("Application Submission", "2024-12-10", "Completed"));
                 data.add(new TimelineEntry("Biometrics Appointment", "2024-12-20", "Scheduled"));
                 data.add(new TimelineEntry("Visa Approval", "2025-01-15", "Pending"));
                 break;
 
-            case "Case 204: Citizenship Process":
+            case "Case #004: Citizenship Process":
                 data.add(new TimelineEntry("Submit Application", "2024-12-05", "Completed"));
                 data.add(new TimelineEntry("Oath Ceremony", "2025-01-20", "Scheduled"));
                 data.add(new TimelineEntry("Certificate Issued", "2025-01-25", "Pending"));
@@ -99,7 +95,6 @@ public class User5Scene7MonitorCaseTimelinesController implements Initializable 
         caseTimelineTable.setItems(data);
     }
 
-    // Handle "Send Follow-Up Notification" button click
     @FXML
     private void handleSendFollowUpNotification(ActionEvent event) {
         String selectedCase = clientCaseComboBox.getValue();
@@ -111,14 +106,12 @@ public class User5Scene7MonitorCaseTimelinesController implements Initializable 
         }
     }
 
-    // Handle "Back" button click
     @FXML
     private void handleBackToDashboard(ActionEvent event) {
         System.out.println("Navigating back to Dashboard...");
         switchScene(event, "/oop/demo1/Junaid Mannaf/User5CaseManagerDashboard.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -133,7 +126,6 @@ public class User5Scene7MonitorCaseTimelinesController implements Initializable 
         }
     }
 
-    // Timeline entry data model
     public static class TimelineEntry {
         private final String milestone;
         private final String dueDate;

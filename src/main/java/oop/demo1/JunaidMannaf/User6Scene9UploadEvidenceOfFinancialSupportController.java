@@ -30,7 +30,6 @@ public class User6Scene9UploadEvidenceOfFinancialSupportController {
 
     @FXML
     public void initialize() {
-        // Populate the ComboBox with predefined document types
         documentTypeComboBox.getItems().addAll(
                 "Bank Statement",
                 "Sponsorship Letter",
@@ -46,7 +45,6 @@ public class User6Scene9UploadEvidenceOfFinancialSupportController {
         if (selectedDocumentType == null || selectedDocumentType.isEmpty()) {
             statusLabel.setText("Please select a document type.");
         } else {
-            // Open file chooser to upload the document
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Upload Document");
             fileChooser.getExtensionFilters().addAll(
@@ -66,14 +64,12 @@ public class User6Scene9UploadEvidenceOfFinancialSupportController {
         }
     }
 
-    /// Handle "Back" button click
     @FXML
     private void handleBack(ActionEvent event) {
         System.out.println("Navigating back to the previous screen...");
         switchScene(event, "/oop/demo1/Junaid Mannaf/User6ClientFSDashboard.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));

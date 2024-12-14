@@ -27,7 +27,6 @@ public class User5Scene3AssignCaseToLegalAdviserController implements Initializa
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Add sample client cases
         clientCaseComboBox.getItems().addAll(
                 "Case 001: Immigration Sponsorship",
                 "Case 002: Refugee Application",

@@ -33,7 +33,6 @@ public class User5Scene4SendCaseCompletionConfirmationController implements Init
         );
     }
 
-    // Handle "Mark As Complete" button click
     @FXML
     private void handleMarkAsComplete(ActionEvent event) {
         String selectedCase = completedCaseComboBox.getValue();
@@ -46,7 +45,6 @@ public class User5Scene4SendCaseCompletionConfirmationController implements Init
         }
     }
 
-    // Handle "Send Notification" button click
     @FXML
     private void handleSendNotification(ActionEvent event) {
         String selectedCase = completedCaseComboBox.getValue();
@@ -59,14 +57,12 @@ public class User5Scene4SendCaseCompletionConfirmationController implements Init
         }
     }
 
-    // Handle "Back" button click
     @FXML
     private void handleBackToDashboard(ActionEvent event) {
         System.out.println("Navigating back to Dashboard...");
         switchScene(event, "/oop/demo1/Junaid Mannaf/User5CaseManagerDashboard.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));

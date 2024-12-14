@@ -61,7 +61,6 @@ public class User5CaseManagerDashboardController {
     @FXML
     private void handleBackToLogin(ActionEvent event) {
         try {
-            // Load the Login scene
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/demo1/LoginScene.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

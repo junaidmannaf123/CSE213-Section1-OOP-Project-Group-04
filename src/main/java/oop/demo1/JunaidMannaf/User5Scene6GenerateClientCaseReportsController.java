@@ -141,7 +141,6 @@ public class User5Scene6GenerateClientCaseReportsController implements Initializ
         return caseReportContent;
     }
 
-    // Handle "Send to Client/Consultant" button click
     @FXML
     private void handleSendReport(ActionEvent event) {
         String selectedCase = clientCaseComboBox.getValue();
@@ -153,14 +152,12 @@ public class User5Scene6GenerateClientCaseReportsController implements Initializ
         }
     }
 
-    // Handle "Back" button click
     @FXML
     private void handleBackToDashboard(ActionEvent event) {
         System.out.println("Navigating back to Dashboard...");
         switchScene(event, "/oop/demo1/Junaid Mannaf/User5CaseManagerDashboard.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
