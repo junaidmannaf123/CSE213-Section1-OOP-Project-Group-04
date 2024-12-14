@@ -19,67 +19,73 @@ public class u3dashboardcontroller {
     @FXML
     private void handleDocumentPreparation(ActionEvent event) {
         System.out.println("Assist with Document Preparation selected.");
-        switchScene(event, "DocumentPreparation.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u3g2.fxml");
     }
 
     @FXML
     private void handleClientProgress(ActionEvent event) {
         System.out.println("Monitor Client Progress selected.");
-        switchScene(event, "ClientProgress.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u3g3.fxml");
     }
 
     @FXML
     private void handleLegalGuidance(ActionEvent event) {
         System.out.println("Provide Legal Guidance on Complex selected.");
-        switchScene(event, "LegalGuidance.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u3g4.fxml");
     }
 
     @FXML
     private void handleSettlementConsultation(ActionEvent event) {
         System.out.println("Offer Settlement Consultation selected.");
-        switchScene(event, "SettlementConsultation.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u3g5.fxml");
     }
 
     @FXML
     private void handleClientQueries(ActionEvent event) {
         System.out.println("Manage Client Queries and Follow-ups selected.");
-        switchScene(event, "ClientQueries.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u3g6.fxml");
     }
 
     @FXML
     private void handleVisaRefusal(ActionEvent event) {
         System.out.println("Provide Visa Refusal Consultation selected.");
-        switchScene(event, "VisaRefusal.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u3g7.fxml");
     }
 
     @FXML
     private void handleClientWorkshops(ActionEvent event) {
         System.out.println("Organize Client Workshops selected.");
-        switchScene(event, "ClientWorkshops.fxml");
+        switchScene(event, "/oop/demo1/Tasnin Siza/u3g8.fxml");
     }
 
     @FXML
     private void handleBackToLogin(ActionEvent event) {
-        System.out.println("Navigating back to login.");
-        switchScene(event, "Login.fxml");
+        try {
+            // Load the Login scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/demo1/LoginScene.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+            System.out.println("Navigating back to the Login scene...");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error while navigating back to Login scene: " + e.getMessage());
+        }
+        System.out.println("Navigating back to Login scene...");
+        switchScene(event, "/oop/demo1/Tasnin Siza/LoginScene.fxml");
     }
 
-    // Helper method to switch scenes
     private void switchScene(ActionEvent event, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // Set the new scene
-            Scene newScene = new Scene(root);
-            stage.setScene(newScene);
+            stage.setScene(new Scene(root));
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("Error while switching scenes: " + e.getMessage());
+            System.out.println("Error while switching scenes: " + e.getMessage());
         }
     }
 }
