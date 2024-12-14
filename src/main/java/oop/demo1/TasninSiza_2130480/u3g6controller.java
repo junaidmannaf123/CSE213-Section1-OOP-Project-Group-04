@@ -35,15 +35,15 @@ public class u3g6controller {
             return;
         }
 
-        // Initialize the TableColumn with data
+
         queryColumn.setCellValueFactory(cellData -> cellData.getValue().queryProperty());
         statusColumn.setCellValueFactory(cellData -> cellData.getValue().statusProperty());
 
-        // Add default queries
+
         queryTable.getItems().add(new Query("How to register for a service?", "Pending"));
         queryTable.getItems().add(new Query("What are the available services?", "Pending"));
 
-        // Set initial label text
+
         statusLabel.setText("Select a query and provide a response.");
     }
 
@@ -62,30 +62,30 @@ public class u3g6controller {
         Query selectedQuery = queryTable.getSelectionModel().getSelectedItem();
         String response = responseTextArea.getText();
 
-        // Check if a query is selected
+
         if (selectedQuery == null) {
             statusLabel.setText("Error: No query selected.");
             System.out.println("Error: No query selected.");
             return;
         }
 
-        // Validate the response input
+
         if (response == null || response.trim().isEmpty()) {
             statusLabel.setText("Error: Response cannot be empty.");
             System.out.println("Error: Response is empty.");
             return;
         }
 
-        // Update query status and print the result
+
         selectedQuery.setStatus("Answered");
         System.out.println("Query: " + selectedQuery.getQuery());
         System.out.println("Response: " + response);
 
-        // Update the status label
+
         statusLabel.setText("Query updated successfully.");
         System.out.println("Query updated successfully.");
 
-        // Clear the response field
+
         responseTextArea.clear();
     }
 
