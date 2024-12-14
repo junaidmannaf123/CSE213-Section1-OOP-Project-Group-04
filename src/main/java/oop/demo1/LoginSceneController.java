@@ -51,7 +51,6 @@ public class LoginSceneController implements Initializable {
         String password = passwordField.getText();
         String userType = userTypeComboBox.getValue();
 
-        // Debugging Logs
         System.out.println("Login ID: " + loginId);
         System.out.println("Password: " + password);
         System.out.println("User Type: " + userType);

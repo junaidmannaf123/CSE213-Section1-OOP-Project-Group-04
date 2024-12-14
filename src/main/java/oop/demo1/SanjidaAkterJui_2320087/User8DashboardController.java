@@ -73,7 +73,7 @@ public class User8DashboardController {
             System.out.println("Error while navigating back to Login scene: " + e.getMessage());
         }
         System.out.println("Navigating back to Login scene...");
-        switchScene(event, "/oop/demo1/Junaid Mannaf/LoginScene.fxml");
+        switchScene(event, "/oop/demo1/LoginScene.fxml");
     }
 
     private void switchScene(ActionEvent event, String fxmlFile) {
