@@ -45,9 +45,7 @@ public class u4g7controller {
                 "Your request for a status update on application ID '" + applicationId + "' has been submitted successfully.");
     }
 
-    /**
-     * Helper method to show alerts to the user.
-     */
+
     private void showAlert(Alert.AlertType alertType, String title, String header, String content) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
