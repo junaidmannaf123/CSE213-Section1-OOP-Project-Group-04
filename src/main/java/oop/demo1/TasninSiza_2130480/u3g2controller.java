@@ -2,7 +2,6 @@ package oop.demo1.TasninSiza_2130480;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -20,19 +19,19 @@ public class u3g2controller {
     private ComboBox<String> clientComboBox;
 
     @FXML
-    private TableView<DocumentData> documentsTableView;
+    private TableView<Document> documentsTableView;
 
     @FXML
-    private TableColumn<DocumentData, String> documentNameColumn;
+    private TableColumn<Document, String> documentNameColumn;
 
     @FXML
-    private TableColumn<DocumentData, String> statusColumn;
+    private TableColumn<Document, String> statusColumn;
 
     @FXML
     private TextArea feedbackTextArea;
 
-    private File selectedFile;
-
+    private final ObservableList<Document> allDocuments = FXCollections.observableArrayList();
+    private final ObservableList<Document> filteredDocuments = FXCollections.observableArrayList();
 
     @FXML
     private void initialize() {
@@ -44,7 +43,16 @@ public class u3g2controller {
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
 
-        documentsTableView.setPlaceholder(new javafx.scene.control.Label("No documents uploaded yet."));
+        allDocuments.addAll(
+                new Document("Passport Copy", "Pending", "Client A"),
+                new Document("Visa Application", "Approved", "Client A"),
+                new Document("Bank Statement", "Pending", "Client B"),
+                new Document("Proof of Address", "Rejected", "Client B"),
+                new Document("Employment Letter", "Approved", "Client C")
+        );
+
+
+        documentsTableView.setItems(allDocuments);
     }
 
 
@@ -53,36 +61,18 @@ public class u3g2controller {
         String selectedClient = clientComboBox.getValue();
         System.out.println("Selected client: " + selectedClient);
 
-        if (selectedClient != null) {
+        if (selectedClient == null) {
 
-            ObservableList<DocumentData> documentData = FXCollections.observableArrayList();
-
-            switch (selectedClient) {
-                case "Client A":
-                    documentData.addAll(
-                            new DocumentData("Passport Copy", "Uploaded"),
-                            new DocumentData("Visa Application", "Pending")
-                    );
-                    break;
-
-                case "Client B":
-                    documentData.addAll(
-                            new DocumentData("Bank Statement", "Uploaded"),
-                            new DocumentData("Proof of Address", "Pending")
-                    );
-                    break;
-
-                case "Client C":
-                    documentData.addAll(
-                            new DocumentData("Employment Letter", "Uploaded"),
-                            new DocumentData("Educational Certificate", "Pending")
-                    );
-                    break;
-            }
-
-            documentsTableView.setItems(documentData);
+            documentsTableView.setItems(allDocuments);
         } else {
-            System.out.println("No client selected.");
+
+            filteredDocuments.clear();
+            for (Document doc : allDocuments) {
+                if (doc.getClient().equals(selectedClient)) {
+                    filteredDocuments.add(doc);
+                }
+            }
+            documentsTableView.setItems(filteredDocuments);
         }
     }
 
@@ -91,62 +81,62 @@ public class u3g2controller {
     private void handleFeedbackChange() {
         String feedback = feedbackTextArea.getText();
         System.out.println("Feedback updated: " + feedback);
+
     }
 
-
     @FXML
-    private void handleChooseFile(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select File to Upload");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("PDF Files", "*.pdf"),
-                new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png"),
-                new FileChooser.ExtensionFilter("All Files", "*.*")
-        );
+    private void handleChooseFile() {
+        try {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Select File to Upload");
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("All Files", "*.*"),
+                    new FileChooser.ExtensionFilter("PDF Files", "*.pdf"),
+                    new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png")
+            );
 
-        Stage stage = (Stage) feedbackTextArea.getScene().getWindow(); // Use any component to get the Stage
-        selectedFile = fileChooser.showOpenDialog(stage);
+            Stage stage = (Stage) clientComboBox.getScene().getWindow(); // Use a known component in the main scene
+            File selectedFile = fileChooser.showOpenDialog(stage);
 
-        if (selectedFile != null) {
-            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
-        } else {
-            System.out.println("File selection canceled.");
+            if (selectedFile != null) {
+                System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+            } else {
+                System.out.println("File selection canceled.");
+            }
+        } catch (Exception e) {
+            System.out.println("Error during file selection: " + e.getMessage());
         }
     }
 
-
     @FXML
-    private void handleSendFeedback(ActionEvent event) {
+    private void handleSendFeedback() {
         String feedback = feedbackTextArea.getText();
         String client = clientComboBox.getValue();
 
-
         if (client == null || client.isEmpty()) {
-            System.out.println("Error: No client selected. Feedback cannot be sent.");
+            System.out.println("No client selected. Feedback cannot be sent.");
             return;
         }
-
 
         if (feedback == null || feedback.trim().isEmpty()) {
-            System.out.println("Error: Feedback is empty. Please enter feedback.");
+            System.out.println("No feedback entered. Feedback cannot be sent.");
             return;
         }
 
-
         System.out.println("Sending feedback for " + client + ": " + feedback);
-
 
         System.out.println("Feedback sent successfully!");
     }
 
-
-    public static class DocumentData {
+    public static class Document {
         private final String documentName;
         private final String status;
+        private final String client;
 
-        public DocumentData(String documentName, String status) {
+        public Document(String documentName, String status, String client) {
             this.documentName = documentName;
             this.status = status;
+            this.client = client;
         }
 
         public String getDocumentName() {
@@ -155,6 +145,10 @@ public class u3g2controller {
 
         public String getStatus() {
             return status;
+        }
+
+        public String getClient() {
+            return client;
         }
     }
 }
