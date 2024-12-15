@@ -95,7 +95,7 @@ public class u3g2controller {
                     new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png")
             );
 
-            Stage stage = (Stage) clientComboBox.getScene().getWindow(); // Use a known component in the main scene
+            Stage stage = (Stage) clientComboBox.getScene().getWindow();
             File selectedFile = fileChooser.showOpenDialog(stage);
 
             if (selectedFile != null) {
